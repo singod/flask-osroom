@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import time
 from bson import ObjectId
 from flask import request
@@ -8,8 +11,6 @@ from apps.app import mdbs
 from apps.core.flask.reqparse import arg_verify
 from apps.utils.format.obj_format import objid_to_str, str_to_num, json_to_pyseq
 from apps.utils.paging.paging import datas_paging
-
-__author__ = "Allen Woo"
 
 
 def insert_user_msg(

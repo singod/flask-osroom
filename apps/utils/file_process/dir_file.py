@@ -1,8 +1,9 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import os
 import regex as re
-
-__author__ = "Allen Woo"
 
 
 def file_traversal(path, regex_filter=".*", keep=True):

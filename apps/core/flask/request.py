@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from flask_babel import gettext
 from apps.app import csrf, rest_session
 from apps.core.auth.rest_token_auth import OsrTokenError
@@ -7,8 +9,6 @@ from apps.core.blueprint import api
 from apps.core.utils.get_config import get_config
 from flask import request, g, session, current_app
 from apps.modules.token.process.rest_token import rest_token_auth
-
-__author__ = "Allen Woo"
 
 
 class Request:

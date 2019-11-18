@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from bson import ObjectId
 from flask_babel import gettext
 from flask_login import current_user
@@ -9,8 +12,6 @@ from apps.utils.upload.get_filepath import get_file_url
 from flask import request
 from apps.app import mdbs
 from apps.utils.format.obj_format import json_to_pyseq, objid_to_str, str_to_num
-
-__author__ = "Allen Woo"
 
 
 def get_global_site_data(req_type="api"):

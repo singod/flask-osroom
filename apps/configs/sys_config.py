@@ -1,12 +1,10 @@
 #!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import logging
 import os
-
-from flask_babel import gettext
-
 curren_path = os.path.abspath(os.path.dirname(__file__))
-__author__ = 'Allen Woo'
 
 """
 #################################################
@@ -106,8 +104,7 @@ PRESERVE_CONTEXT_ON_EXCEPTION = False
  Request
 """
 # 不存在的请求警告
-METHOD_WARNING = gettext(
-    "405, The method is not allowed for the requested URL")
+METHOD_WARNING = "405, The method is not allowed for the requested URL"
 
 """
  Babel

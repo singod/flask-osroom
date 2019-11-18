@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from flask import request
 from apps.configs.sys_config import METHOD_WARNING
 from apps.core.blueprint import api
@@ -6,8 +9,6 @@ from apps.core.flask.login_manager import osr_login_required
 from apps.core.flask.permission import permission_required
 from apps.core.flask.response import response_format
 from apps.modules.permission.process.url_permission import get_urls, get_url, update_url, add_url, delete_url
-
-__author__ = "Allen Woo"
 
 
 @api.route('/admin/url/permission', methods=['GET', 'POST', 'PUT', 'DELETE'])

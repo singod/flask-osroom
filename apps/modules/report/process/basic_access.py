@@ -1,9 +1,10 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import time
 from apps.app import mdbs, cache
 from apps.core.utils.get_config import get_config
-
-__author__ = "Allen Woo"
 @cache.cached(key_base64=False, db_type="mongodb")
 def get_post_access():
     """

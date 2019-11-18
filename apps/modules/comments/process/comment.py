@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from collections import Counter
 
 from bson import ObjectId
@@ -15,7 +18,6 @@ from apps.utils.content_evaluation.content import content_inspection_text
 from apps.utils.format.obj_format import json_to_pyseq
 from apps.utils.validation.str_format import short_str_verifi, email_format_ver, content_attack_defense
 from apps.app import mdbs
-__author__ = "Allen Woo"
 
 
 def comments():

@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from flask import request
 from apps.core.flask.login_manager import osr_login_required
 
@@ -10,8 +12,6 @@ from apps.core.flask.response import response_format
 from apps.modules.setting.process.host_setting import get_sys_host, sys_host_edit, \
     sys_host_delete, sys_host_exec_cmd, sys_host_connect_test
 
-
-__author__ = "Allen Woo"
 
 
 @api.route('/admin/setting/sys/host', methods=['GET', 'POST', 'PUT', 'DELETE'])

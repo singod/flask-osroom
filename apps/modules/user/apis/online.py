@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from flask import request
 from flask_babel import gettext
-from flask_login import logout_user, current_user
-
-from apps.app import csrf
+from flask_login import logout_user
 from apps.configs.sys_config import LOGIN_PLATFORM
 from apps.core.auth.jwt_auth import JwtAuth
 from apps.core.blueprint import api, open_api
@@ -14,8 +14,6 @@ from apps.modules.user.process.online import sign_up, sign_in
 from apps.core.utils.get_config import get_config
 from apps.modules.user.process.sign_in import third_party_sign_in
 from apps.utils.format.obj_format import str_to_num
-
-__author__ = "Allen Woo"
 
 
 @api.route('/sign-up', methods=['POST'])

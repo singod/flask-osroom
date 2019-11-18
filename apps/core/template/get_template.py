@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import os
 
 import time
@@ -8,8 +11,6 @@ from apps.core.blueprint import theme_view, admin_view
 from apps.core.template.template import render_absolute_path_template
 from apps.core.utils.get_config import get_config
 from apps.utils.format.time_format import time_to_utcdate
-
-__author__ = "Allen Woo"
 
 
 def get_email_html(data):

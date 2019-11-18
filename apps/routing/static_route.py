@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import os
 from flask import send_file, request
 from werkzeug.exceptions import abort
@@ -10,8 +13,6 @@ from apps.core.utils.get_config import get_config
 from apps.utils.format.obj_format import str_to_num
 
 from apps.utils.image.image import ImageCompression
-
-__author__ = "Allen Woo"
 
 """
  静态文件路由

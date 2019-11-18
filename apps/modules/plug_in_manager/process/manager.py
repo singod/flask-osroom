@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import os
 import zipfile
 import shutil
@@ -11,8 +14,6 @@ from apps.core.flask.reqparse import arg_verify
 from apps.core.plug_in.manager import plugin_manager, verify_plugin
 from apps.utils.format.obj_format import str_to_num, objid_to_str
 from apps.utils.paging.paging import datas_paging
-
-__author__ = "Allen Woo"
 
 
 def get_plugins():

@@ -1,9 +1,10 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from flask_login import current_user
 from apps.core.plug_in.manager import plugin_manager
 from apps.core.utils.get_config import get_config
-
-__author__ = 'Allen Woo'
 
 
 def content_inspection_text(content):

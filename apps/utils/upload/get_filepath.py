@@ -1,10 +1,11 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from flask import url_for
 from apps.configs.sys_config import STATIC_PATH
 from apps.core.plug_in.manager import plugin_manager
 from apps.core.utils.get_config import get_config
-
-__author__ = 'Allen Woo'
 
 
 def get_localfile_path(file_url_obj):

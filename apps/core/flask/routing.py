@@ -1,10 +1,11 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import time
 from werkzeug.routing import BaseConverter
 from apps.app import mdbs, cache
 from apps.utils.format.time_format import time_to_utcdate
-
-__author__ = "Allen Woo"
 
 
 class RegexConverter(BaseConverter):

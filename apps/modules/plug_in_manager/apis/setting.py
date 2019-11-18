@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from flask import request
 
 from apps.configs.sys_config import METHOD_WARNING
@@ -8,8 +11,6 @@ from apps.core.flask.permission import permission_required
 from apps.core.flask.response import response_format
 from apps.modules.plug_in_manager.process.setting import get_plugin_setting, update_plugin_setting, \
     refresh_plugin_setting, install_require_package
-
-__author__ = "Allen Woo"
 
 
 @api.route('/admin/plugin/setting', methods=['GET', "POST", "PUT"])

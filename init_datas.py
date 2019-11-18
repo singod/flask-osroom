@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import time
 """
 web初始化数据

@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from bson.objectid import ObjectId
 from flask_babel import gettext
 from flask_login import UserMixin, current_user, AnonymousUserMixin
@@ -8,8 +11,6 @@ from apps.modules.user.process.get_or_update_user import get_one_user
 from apps.utils.upload.get_filepath import get_avatar_url
 from apps.app import mdbs
 from apps.core.utils.get_config import get_config
-
-__author__ = "Allen Woo"
 
 
 class User(UserMixin):

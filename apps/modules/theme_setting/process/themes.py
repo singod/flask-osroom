@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import glob
 import json
 import os
@@ -19,8 +22,6 @@ from apps.core.utils.get_config import get_config
 from apps.core.utils.update_sys_data import init_theme_data
 from apps.utils.format.time_format import time_to_utcdate
 
-
-__author__ = "Allen Woo"
 
 
 def get_theme_readme():

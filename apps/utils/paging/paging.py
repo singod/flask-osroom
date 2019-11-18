@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*-coding:utf-8-*-
-__author__ = "Allen Woo"
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 
 
 def datas_paging(pre=10, page_num=1, data_cnt=0, datas=[]):

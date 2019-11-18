@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import datetime
 from uuid import uuid1
 import jwt
@@ -10,8 +13,6 @@ from apps.app import mdbs
 from apps.core.utils.get_config import get_config
 from apps.modules.user.process.get_or_update_user import update_one_user, get_one_user
 from apps.modules.user.process.user import User
-
-__author__ = "Allen Woo"
 
 
 class JwtAuth:
@@ -67,8 +68,8 @@ class JwtAuth:
                 leeway=get_config(
                     "rest_auth_token",
                     "LOGIN_LIFETIME"))
-            #payload = jwt.decode(auth_token, get_config("key", "SECRET_KEY"), options={'verify_exp': True})
-            if ('data' in payload and 'id' in payload['data']):
+            # payload = jwt.decode(auth_token, get_config("key", "SECRET_KEY"), options={'verify_exp': True})
+            if 'data' in payload and 'id' in payload['data']:
                 return payload
             else:
                 raise jwt.InvalidTokenError

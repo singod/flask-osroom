@@ -1,9 +1,10 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from bson import ObjectId
 
 from apps.app import cache, mdbs
-
-__author__ = "Allen Woo"
 
 
 @cache.cached(timeout=7200, key_base64=False, db_type="redis")

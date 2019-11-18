@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import os
 
 import shutil
@@ -10,8 +13,6 @@ from apps.app import mdbs
 from apps.configs.sys_config import THEME_TEMPLATE_FOLDER
 from apps.core.flask.reqparse import arg_verify
 from apps.core.utils.get_config import get_config
-
-__author__ = "Allen Woo"
 
 
 def add_page():

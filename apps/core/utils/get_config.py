@@ -1,8 +1,9 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from apps.app import cache, mdbs, app
 from apps.configs.sys_config import CONFIG_CACHE_KEY, CONFIG_CACHE_TIMEOUT
-
-__author__ = 'Allen Woo'
 """
 注意:配置有cache,默认CONFIG_TIMEOUT秒过期, 修改配置的程序中保存新后应该删除此cache，让配置立即生效
 """

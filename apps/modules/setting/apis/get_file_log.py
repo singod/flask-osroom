@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from apps.core.flask.login_manager import osr_login_required
 from apps.core.blueprint import api
 from apps.core.flask.permission import permission_required
 from apps.core.flask.response import response_format
 from apps.modules.setting.process.get_file_log import sys_log
 
-
-__author__ = "Allen Woo"
 
 
 @api.route('/admin/setting/sys/log', methods=['GET'])

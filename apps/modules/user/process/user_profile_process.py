@@ -1,11 +1,12 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from bson import ObjectId
 from flask_babel import gettext
 from flask_login import current_user
 from apps.utils.upload.get_filepath import get_avatar_url
 from apps.app import mdbs, cache
-
-__author__ = "Allen Woo"
 
 # 查询比较多, 加上缓存
 

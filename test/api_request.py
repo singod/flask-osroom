@@ -1,9 +1,10 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import json
 
 import requests
-
-__author__ = "Allen Woo"
 
 
 def api_request(url, json_params):

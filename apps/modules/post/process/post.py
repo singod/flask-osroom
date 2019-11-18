@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from bson.objectid import ObjectId
 from flask import request
 from flask_babel import gettext
@@ -8,8 +11,6 @@ from apps.modules.post.process.post_statistical import post_pv
 from apps.modules.post.process.post_process import get_posts_pr, get_post_pr
 from apps.core.utils.get_config import get_config
 from apps.utils.format.obj_format import json_to_pyseq, str_to_num
-
-__author__ = "Allen Woo"
 
 
 def get_post():

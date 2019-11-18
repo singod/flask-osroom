@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from flask import request
 from apps.core.flask.login_manager import osr_login_required
 
@@ -7,7 +10,6 @@ from apps.core.blueprint import api
 from apps.core.flask.permission import permission_required
 from apps.core.flask.response import response_format
 from apps.modules.theme_setting.process.display_setting import add_display_setting, get_display_setting, edit_display_setting, del_display_setting, get_display_settings
-__author__ = "Allen Woo"
 
 
 @api.route('/admin/theme/display-setting', methods=["GET", "POST", "PUT", "DELETE"])

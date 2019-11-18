@@ -1,10 +1,11 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import platform
 import os
 from PIL import Image
 from apps.configs.sys_config import STATIC_PATH, VERSION
-
-__author__ = 'Allen Woo'
 
 
 def start_info():

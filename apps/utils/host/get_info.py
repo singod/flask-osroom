@@ -1,11 +1,12 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import socket
 
 import pwd
 
 import os
-
-__author__ = "Allen Woo"
 
 
 def get_host_info(ifname='eth0'):

@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import os
 from apps.app import csrf
 from apps.core.blueprint import theme_view
@@ -8,8 +10,6 @@ from werkzeug.exceptions import abort
 from apps.core.flask.permission import page_permission_required
 from apps.core.utils.get_config import get_config
 from apps.modules.global_data.process.global_data import get_global_site_data
-
-__author__ = "Allen Woo"
 
 # robots.txt
 @csrf.exempt

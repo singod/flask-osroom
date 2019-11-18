@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import json
 import time
 import regex as re
@@ -8,8 +11,6 @@ from apps.utils.format.time_format import time_to_utcdate
 from apps.utils.host.get_info import get_host_info
 from apps.configs.sys_config import PROJECT_PATH
 from apps.configs.config import __readme__, OVERWRITE_DB, CONFIG
-
-__author__ = 'Allen Woo'
 now_time = time.time()
 host_info = get_host_info()
 

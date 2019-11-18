@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import base64
 import json
 
@@ -15,8 +18,6 @@ from apps.utils.upload.file_up import file_up, file_del, fileup_base_64
 from apps.app import mdbs
 from apps.core.utils.get_config import get_config
 from apps.utils.upload.get_filepath import get_file_url
-
-__author__ = "Allen Woo"
 
 
 def avatar_upload():

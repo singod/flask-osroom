@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from flask import request
 from apps.core.flask.login_manager import osr_login_required
 from apps.core.blueprint import api
@@ -9,8 +11,6 @@ from apps.modules.report.process.basic_access import get_post_access, get_commen
     get_plugin, get_media, get_inform_data
 from apps.utils.format.obj_format import json_to_pyseq
 
-
-__author__ = "Allen Woo"
 
 
 @api.route('/admin/report/basic', methods=['GET'])

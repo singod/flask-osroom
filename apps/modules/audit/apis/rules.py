@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from flask import request
 from apps.core.flask.login_manager import osr_login_required
 from apps.configs.sys_config import METHOD_WARNING
@@ -7,8 +10,6 @@ from apps.core.flask.permission import permission_required
 from apps.core.flask.response import response_format
 from apps.modules.audit.process.rules import audit_rules, audit_rule_add, audit_rule_delete
 from apps.core.utils.get_config import get_config
-
-__author__ = 'Allen Woo'
 
 
 @api.route('/admin/audit/rule/key', methods=['GET'])

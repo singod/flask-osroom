@@ -1,11 +1,12 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from importlib import import_module
 from flask import Blueprint
 from apps.configs.sys_config import ADMIN_TEMPLATE_FOLDER, THEME_TEMPLATE_FOLDER, API_URL_PREFIX, ADMIN_URL_PREFIX, \
     STATIC_PATH, STATIC_URL_PREFIX, OPEN_API_URL_PREFIX
 from apps.core.plugins_blueprint import plugins_routing_moudel
-
-__author__ = 'Allen Woo'
 
 """
 蓝本:配置路由,url

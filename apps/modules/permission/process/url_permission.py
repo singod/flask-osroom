@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from bson import ObjectId
 from flask import request
 from flask_babel import gettext
@@ -8,8 +11,6 @@ from apps.core.flask.reqparse import arg_verify
 from apps.utils.format.number import get_num_digits
 from apps.utils.format.obj_format import str_to_num, json_to_pyseq
 from apps.utils.paging.paging import datas_paging
-
-__author__ = "Allen Woo"
 
 
 def get_url():

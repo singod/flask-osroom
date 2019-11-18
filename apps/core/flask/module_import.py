@@ -1,6 +1,8 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from importlib import import_module
-__author__ = "Allen Woo"
 
 
 def module_import(modules):

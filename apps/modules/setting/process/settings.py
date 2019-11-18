@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import json
 from flask import request
 from flask_babel import gettext
@@ -10,8 +13,6 @@ from apps.utils.format.obj_format import json_to_pyseq, str_to_num
 from apps.utils.format.time_format import time_to_utcdate
 from apps.app import cache, mdbs
 from apps.utils.paging.paging import datas_paging
-
-__author__ = "Allen Woo"
 
 
 def sys_config_version():

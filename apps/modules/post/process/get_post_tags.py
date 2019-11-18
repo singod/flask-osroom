@@ -1,12 +1,13 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import time
 from flask import request
 from apps.app import mdbs, cache
 from apps.core.utils.get_config import get_config
 from apps.utils.osr_async.osr_async import async_process
 from apps.utils.format.obj_format import json_to_pyseq, str_to_num
-
-__author__ = 'Allen Woo'
 
 
 def get_tags():

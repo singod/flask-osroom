@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import os
 from flask import request
 from flask_babel import gettext
@@ -6,8 +9,6 @@ from apps.configs.sys_config import PROJECT_PATH
 from apps.utils.paging.paging import datas_paging
 from apps.utils.pyssh.pyssh import MySSH, audit_host_info
 from apps.app import mdbs
-
-__author__ = "Allen Woo"
 
 
 def sys_log():

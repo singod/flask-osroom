@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import time
 from uuid import uuid1
 from bson import ObjectId
@@ -16,8 +19,6 @@ from apps.utils.paging.paging import datas_paging
 from apps.utils.text_parsing.text_parsing import richtext_extract_img
 from apps.utils.upload.file_up import file_del
 from apps.utils.upload.get_filepath import get_file_url
-
-__author__ = "Allen Woo"
 
 
 def add_display_setting():

@@ -1,7 +1,8 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from flask import render_template_string
-
-__author__ = 'Allen Woo'
 
 
 def render_absolute_path_template(path, **context):

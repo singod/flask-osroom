@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import os
 from apps.core.flask.login_manager import osr_login_required
 from apps.app import csrf
@@ -7,8 +10,6 @@ from flask import render_template, request, g
 from werkzeug.exceptions import abort
 from apps.core.flask.permission import page_permission_required, adm_page_permission_required
 from apps.modules.global_data.process.global_data import get_global_site_data
-
-__author__ = "Allen Woo"
 @csrf.exempt
 @admin_view.route('/', methods=['GET'])
 @osr_login_required

@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from bson import ObjectId
 from copy import deepcopy
 from flask_babel import gettext
@@ -12,7 +15,6 @@ from apps.utils.paging.paging import datas_paging
 from apps.utils.upload.file_up import file_del
 from apps.utils.upload.get_filepath import get_file_url
 from apps.core.utils.get_config import get_config
-__author__ = 'Allen Woo'
 
 
 def get_posts_pr(

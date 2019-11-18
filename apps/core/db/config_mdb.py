@@ -1,8 +1,9 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from pymongo import ReadPreference
 from apps.configs.db_config import DB_CONFIG
-
-__author__ = 'Allen Woo'
 
 
 class DatabaseConfig:

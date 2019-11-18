@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from flask import request
 from flask_babel import gettext
 
@@ -8,8 +11,6 @@ from apps.modules.post.process.post_process import get_posts_pr
 from apps.utils.format.obj_format import str_to_num
 from apps.utils.paging.paging import datas_paging
 from apps.utils.upload.get_filepath import get_avatar_url
-
-__author__ = "Allen Woo"
 
 
 def search_process():

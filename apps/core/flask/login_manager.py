@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from functools import wraps
 from flask import request, current_app
 from flask_babel import gettext
@@ -6,8 +9,6 @@ from flask_login import current_user
 from flask_login.config import EXEMPT_METHODS
 from werkzeug.exceptions import Unauthorized
 
-
-__author__ = "Allen Woo"
 
 
 def osr_login_required(func):

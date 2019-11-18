@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import time
 import logging
 import logging.config
@@ -9,8 +12,6 @@ from flask_login import current_user
 from apps.configs.sys_config import LOG_PATH, WEBLOG_NORMAL_FILENAME, WEBLOG_EXCEP_FILENAME, LOG_FORMATTER, \
     WEBLOG_EXCEP_LEVEL, WEBLOG_NORMAL_LEVEL, WEBLOG_START_FILENAME
 from apps.core.logger.logger_server import LoggerClientUDP
-
-__author__ = 'Allen Woo'
 
 
 class WebLogger:

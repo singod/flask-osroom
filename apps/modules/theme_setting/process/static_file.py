@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import os
 from flask import request
 from flask_babel import gettext
@@ -7,8 +10,6 @@ from apps.configs.sys_config import THEME_TEMPLATE_FOLDER
 from apps.core.utils.get_config import get_config
 from apps.utils.file_process.dir_file import file_traversal
 from apps.utils.paging.paging import datas_paging
-
-__author__ = "Allen Woo"
 
 
 def get_static_files():

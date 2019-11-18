@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import json
 import os
 import shutil
@@ -8,8 +11,6 @@ from copy import deepcopy
 from apps.configs.sys_config import APPS_PATH
 from apps.core.logger.web_logging import web_start_log
 from init_datas import INIT_DATAS
-
-__author__ = 'Allen Woo'
 
 
 def update_mdb_collections(mdbs):

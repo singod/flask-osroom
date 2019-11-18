@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import time
 from bson import ObjectId
 from flask import request
@@ -7,8 +10,6 @@ from flask_babel import gettext
 from apps.app import mdbs
 from apps.core.flask.reqparse import arg_verify
 from apps.modules.user.process.get_or_update_user import update_one_user
-
-__author__ = 'Allen Woo'
 
 
 def content_inform():

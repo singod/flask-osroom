@@ -1,9 +1,10 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import time
 from werkzeug.security import generate_password_hash
 from apps.core.utils.get_config import get_config
-
-__author__ = 'Allen Woo'
 
 
 def user_model(**kwargs):

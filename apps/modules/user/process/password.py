@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from flask import request
 from flask_babel import gettext
 from flask_login import current_user, logout_user
@@ -12,8 +15,6 @@ from apps.utils.validation.str_format import password_format_ver, email_format_v
 from apps.utils.verify.msg_verify_code import verify_code
 from apps.app import mdbs
 from apps.modules.user.process.user import insert_op_log
-
-__author__ = "Allen Woo"
 
 
 def account_password_reset():

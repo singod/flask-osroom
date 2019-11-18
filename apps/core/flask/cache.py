@@ -1,11 +1,12 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import base64
 from functools import wraps
 import time
 from flask import current_app, request
 from apps.utils.format.obj_format import json_to_pyseq, pyseq_to_json
-
-__author__ = "Allen Woo"
 
 
 class Cache:

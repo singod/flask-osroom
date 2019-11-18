@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from tld import get_tld
-
-__author__ = "Allen Woo"
 
 
 def get_domain(url):

@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from random import randint
 from flask import request
 from flask_babel import gettext
@@ -19,8 +22,6 @@ from apps.utils.validation.str_format import email_format_ver, mobile_phone_form
 from apps.utils.verify.img_verify_code import verify_image_code
 from apps.app import mdbs
 from apps.core.utils.get_config import get_config
-
-__author__ = "Allen Woo"
 
 
 def p_sign_in(
