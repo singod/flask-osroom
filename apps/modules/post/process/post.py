@@ -25,7 +25,7 @@ def get_post(post_id=None):
 def get_posts(page=None):
     if not page:
         page = str_to_num(request.argget.all('page', 1))
-    pre = str_to_num(request.argget.all('pre', 2))
+    pre = str_to_num(request.argget.all('pre', get_config("post", "NUM_PAGE")))
     sort = json_to_pyseq(request.argget.all('sort'))
     status = request.argget.all('status', 'is_issued')
     matching_rec = request.argget.all('matching_rec')
