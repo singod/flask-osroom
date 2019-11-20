@@ -21,7 +21,6 @@
 <h1>{{ gettext('文章|博客|内容地图') }}</h1>
 {% for post in data.posts.datas %}
     <div>
-        <img src="{{ post.user.avatar_url.url }}" width="20px" height="20px">
         <span>{{ post.user.username }}</span>
         <a style="color: #1483d8" href="/st-html/post/{{ post._id }}" target="_blank">
             {{ post.title }}
