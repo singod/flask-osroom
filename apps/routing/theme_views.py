@@ -4,14 +4,18 @@
 # @Author : Allen Woo
 import os
 from apps.app import csrf
-from apps.core.blueprint import theme_view
+from apps.core.blueprint import theme_view, static_html_view
 from flask import render_template, request, send_file, g
 from werkzeug.exceptions import abort
 from apps.core.flask.permission import page_permission_required
 from apps.core.utils.get_config import get_config
 from apps.modules.global_data.process.global_data import get_global_site_data
 
+
 # robots.txt
+from apps.routing.static_html_page import static_html
+
+
 @csrf.exempt
 @theme_view.route('/robots.txt', methods=['GET'])
 def robots():
@@ -42,6 +46,8 @@ def pages(path):
         :param path:
         :return:
     """
+    if path.startswith(static_html_view.url_prefix.strip("/")):
+        return static_html(path)
     return get_render_template(path.rstrip("/"))
 
 

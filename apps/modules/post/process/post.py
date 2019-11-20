@@ -13,18 +13,19 @@ from apps.core.utils.get_config import get_config
 from apps.utils.format.obj_format import json_to_pyseq, str_to_num
 
 
-def get_post():
+def get_post(post_id=None):
 
-    post_id = request.argget.all('post_id')
+    if not post_id:
+        post_id = request.argget.all('post_id')
     post_pv(post_id)
     data = get_post_pr(post_id=post_id)
     return data
 
 
-def get_posts():
-
-    page = str_to_num(request.argget.all('page', 1))
-    pre = str_to_num(request.argget.all('pre', get_config("post", "NUM_PAGE")))
+def get_posts(page=None):
+    if not page:
+        page = str_to_num(request.argget.all('page', 1))
+    pre = str_to_num(request.argget.all('pre', 2))
     sort = json_to_pyseq(request.argget.all('sort'))
     status = request.argget.all('status', 'is_issued')
     matching_rec = request.argget.all('matching_rec')

@@ -484,6 +484,26 @@ CONFIG = {
     },
     "seo": {
         "__restart__": "not_must",
+        "SPIDER_RECOGNITION_ENABLE": {
+            "sort": 99,
+            "value": True,
+            "type": "bool",
+            "info": "是否开启spider识别"
+        },
+        "SUPPORTED_SPIDERS": {
+            "sort": 99,
+            "value": ["Googlebot", "Baiduspider", "bingbot", "Sogou web spider", "Sosospider"],
+            "type": "list",
+            "info": "填入需要支持的蜘蛛的名称, User-Agent中特有的如: Googlebot, Baiduspider. 将会对它们返回静态文章页面"
+        },
+        "THEME_PAGE_FOR_STATIC_PAGE": {
+            "sort": 99,
+            "value": {
+                "post_page": "/post?id=<id>"
+            },
+            "type": "dict",
+            "info": "OSROOM自带的静态文章页面对应的你使用的主题文章页面规则. id位标记为<id>, 目前只支持文章页"
+        },
         "DEFAULT_DESCRIPTION": {
             "sort": 99,
             "value": "开源Web系统, 可以作为企业网站, 个人博客网站, 微信小程序Web服务端",
@@ -569,6 +589,13 @@ CONFIG = {
         "FRIEND_LINK": {
             "sort": 11,
             "value": {
+                "": {
+                    "level": 2,
+                    "url": "/st-html/posts/1",
+                    "icon_url": "",
+                    "aliases": "文章地图"
+
+                },
                 "阿里云": {
                     "level": 1,
                     "url": "www.aliyun.com",

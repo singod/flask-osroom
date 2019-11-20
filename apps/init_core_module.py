@@ -60,7 +60,7 @@ def init_core_module(app):
     from apps.core.utils.get_config import get_configs, get_config
     from apps.core.flask.request import OsrRequestProcess
     from apps.core.flask.errorhandler import ErrorHandler
-    from apps.core.blueprint import api, admin_view, theme_view, static, open_api
+    from apps.core.blueprint import api, admin_view, theme_view, static_html_view, static, open_api
     from apps.core.flask.routing import RegexConverter
     from apps.core.flask.routing import push_url_to_db
 
@@ -101,7 +101,7 @@ def init_core_module(app):
 
     # 登录管理
     login_manager.init_app(app)
-    #login_manager.anonymous_user = AnonymousUser()
+    # login_manager.anonymous_user = AnonymousUser()
     login_manager.session_protection = SESSION_PROTECTION
     oauth.init_app(app)
     # 让路由支持正则
@@ -113,6 +113,7 @@ def init_core_module(app):
     app.register_blueprint(open_api)
     app.register_blueprint(admin_view)
     app.register_blueprint(theme_view)
+    app.register_blueprint(static_html_view)
     app.register_blueprint(static)
     push_url_to_db(app)
 

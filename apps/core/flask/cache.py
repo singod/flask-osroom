@@ -229,7 +229,10 @@ class Cache:
                 and not self.redis_exists_exception:
             try:
                 if key_regex:
-                    key = key.replace(".*", "*")
+                    if ".*" in key:
+                        key = key.replace(".*", "*")
+                    else:
+                        key = "*{}*".format(key)
                     keys = self.redis.keys(pattern=key)
                     for key in keys:
                         self.redis.delete(key.decode())

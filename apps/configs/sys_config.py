@@ -50,6 +50,7 @@ PLUG_IN_CONFIG_CACHE_KEY = "web_get_plugin_config"
 """
 ADMIN_TEMPLATE_FOLDER = "{}/admin_pages/pages".format(APPS_PATH)
 THEME_TEMPLATE_FOLDER = "{}/themes".format(APPS_PATH)
+STATIC_HTML_TEMPLATE_FOLDER = "{}/static_html_pages".format(APPS_PATH)
 ADMIN_STATIC_FOLDER = "{}/admin_pages/static".format(APPS_PATH)
 # 主题包配置文件conf.yaml必须需要的参数
 THEME_REQUIRED_CONF = [
@@ -65,6 +66,7 @@ THEME_REQUIRED_CONF = [
 API_URL_PREFIX = "/api"
 OPEN_API_URL_PREFIX = "/open-api"
 ADMIN_URL_PREFIX = "/osr-admin"
+STATIC_HTML_PAGE_PREFIX = "/st-html"
 STATIC_URL_PREFIX = "/static"
 DEFAULT_ADMIN_LOGIN_PAGE = "/osr-admin/sign-in"
 

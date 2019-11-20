@@ -8,8 +8,10 @@ from apps.app import csrf
 from apps.core.blueprint import admin_view
 from flask import render_template, request, g
 from werkzeug.exceptions import abort
-from apps.core.flask.permission import page_permission_required, adm_page_permission_required
+from apps.core.flask.permission import adm_page_permission_required
 from apps.modules.global_data.process.global_data import get_global_site_data
+
+
 @csrf.exempt
 @admin_view.route('/', methods=['GET'])
 @osr_login_required
