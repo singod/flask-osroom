@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-07-31 11:19+0800\n"
+"POT-Creation-Date: 2019-11-21 10:48+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en_US\n"
@@ -2869,7 +2869,7 @@ msgstr "Key cannot be empty"
 
 #: apps/admin_pages/pages/setting/config-edit.html:194
 msgid "Value不能为空"
-msgstr ""
+msgstr "Value cannot be empty"
 
 #: apps/admin_pages/pages/setting/config-edit.html:197
 msgid "的value格式错误,请检查"
@@ -3081,11 +3081,15 @@ msgstr ""
 
 #: apps/admin_pages/pages/theme-setting/themes.html:45
 msgid "[恢复已删默认设置] 为了防止覆盖存在的设置数据, 只恢复已删除的[默认设置],"
-msgstr "[Restore del default settings] to prevent overwriting existing setting data, restore only deleted [Default settings]"
+msgstr ""
+"[Restore del default settings] to prevent overwriting existing setting "
+"data, restore only deleted [Default settings]"
 
 #: apps/admin_pages/pages/theme-setting/themes.html:49
 msgid "删除主题前请手动清理主题设置数据, 系统不会主动清理!"
-msgstr "Please clean up the theme settings data manually before deleting the theme, the system will not actively clean up"
+msgstr ""
+"Please clean up the theme settings data manually before deleting the "
+"theme, the system will not actively clean up"
 
 #: apps/admin_pages/pages/theme-setting/themes.html:63
 msgid "致命错误"
@@ -3150,22 +3154,22 @@ msgstr "Code Type"
 #: apps/admin_pages/pages/theme-setting/display/image-edit.html:115
 #: apps/admin_pages/pages/theme-setting/display/text-edit.html:98
 msgid "Html/Css/String"
-msgstr ""
+msgstr "Html/Css/字符串"
 
 #: apps/admin_pages/pages/theme-setting/display/image-edit.html:121
 #: apps/admin_pages/pages/theme-setting/display/text-edit.html:104
 msgid "Json/Array"
-msgstr ""
+msgstr "Json/数组"
 
 #: apps/admin_pages/pages/theme-setting/display/image-edit.html:126
 #: apps/admin_pages/pages/theme-setting/display/text-edit.html:109
 msgid "Code"
-msgstr ""
+msgstr "代码"
 
 #: apps/admin_pages/pages/theme-setting/display/image-edit.html:127
 #: apps/admin_pages/pages/theme-setting/display/text-edit.html:110
 msgid "html/array/json"
-msgstr ""
+msgstr "Html/数组/json"
 
 #: apps/admin_pages/pages/theme-setting/display/text-edit.html:2
 msgid "文本展示编辑"
@@ -3423,7 +3427,3 @@ msgstr "Not activated"
 #: apps/admin_pages/pages/user/index.html:286
 msgid "已移除"
 msgstr "Removed"
-
-#~ msgid "主图设置分类管理"
-#~ msgstr ""
-

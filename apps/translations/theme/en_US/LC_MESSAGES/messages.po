@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-08-02 12:08+0800\n"
+"POT-Creation-Date: 2019-11-21 10:47+0800\n"
 "PO-Revision-Date: 2018-01-04 20:50+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en_US\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: apps/themes/osr-style/pages/401.html:2
 #: apps/themes/osr-theme-w/pages/401.html:2
 msgid "401无权访问"
-msgstr ""
+msgstr "401. No permission to restrict access"
 
 #: apps/themes/osr-style/pages/401.html:32
 #: apps/themes/osr-theme-w/pages/401.html:17
@@ -152,11 +152,14 @@ msgstr "There's no more"
 msgid "标签"
 msgstr "Tags"
 
+#: apps/themes/osr-style/pages/based/_header_bar_menu_left.html:4
+#: apps/themes/osr-style/pages/based/_header_bar_menu_left.html:8
 #: apps/themes/osr-style/pages/index.html:2
+#: apps/themes/osr-theme-w/pages/based/_header_bar_menu_left.html:4
+#: apps/themes/osr-theme-w/pages/based/_header_bar_menu_left.html:8
 #: apps/themes/osr-theme-w/pages/index.html:2
-#: apps/themes/osr-theme-w/pages/posts/index.html:2
-msgid "DEMO"
-msgstr "DEMO"
+msgid "首页"
+msgstr "Home"
 
 #: apps/themes/osr-style/pages/recover-password.html:2
 #: apps/themes/osr-theme-w/pages/recover-password.html:2
@@ -729,13 +732,6 @@ msgstr "New password"
 #: apps/themes/osr-theme-w/pages/account/settings/reset-password.html:31
 msgid "确认密码"
 msgstr "Confirm password"
-
-#: apps/themes/osr-style/pages/based/_header_bar_menu_left.html:4
-#: apps/themes/osr-style/pages/based/_header_bar_menu_left.html:8
-#: apps/themes/osr-theme-w/pages/based/_header_bar_menu_left.html:4
-#: apps/themes/osr-theme-w/pages/based/_header_bar_menu_left.html:8
-msgid "首页"
-msgstr "Home"
 
 #: apps/themes/osr-style/pages/based/_header_bar_menu_user.html:27
 #: apps/themes/osr-style/pages/based/_user_dropdown.html:25
@@ -1704,7 +1700,7 @@ msgstr "Preview"
 
 #: apps/themes/osr-theme-w/pages/500.html:2
 msgid "500 Server Error"
-msgstr ""
+msgstr "500 Server Error"
 
 #: apps/themes/osr-theme-w/pages/_index_s2.html:49
 msgid "标签云"
@@ -1727,7 +1723,13 @@ msgstr "Other tags"
 msgid "{[posts.current_page]}/{[posts.page_total]}"
 msgstr "{[posts.current_page]}/{[posts.page_total]}"
 
+#: apps/themes/osr-theme-w/pages/posts/index.html:2
+msgid "文章列表"
+msgstr "Article list"
+
 #: apps/themes/osr-theme-w/pages/user/post/_user_posts.html:63
 #: apps/themes/osr-theme-w/pages/user/post/_user_posts.html:81
 msgid "移除"
 msgstr "Remove"
+
+

@@ -48,8 +48,23 @@ class Transations:
 
         action = [
             "init, [--init --ext <path> -o <dir name> --lan en_US]",
-            "update, [--update --ext <path> -o <dir name> --lan <lang> --cfg <cfg file path>]",
-            "compile, [--compile -o <dir name>]"]
+            "update, [--update --ext <path> -o <dir name> --cfg <cfg file path>]",
+            "compile, [--compile -o <dir name>]",
+            """Eg:
+Ext theme text:
+--update --ext apps/themes -o theme --lan en_US\n
+Ext admin pages text:
+--update --ext apps/admin_pages -o admin_pages --lan en_US\n
+Ext python:
+--update --ext apps -o python-pg --cfg tools/translations/babel_py.cfg --lan zh_Hans_CN\n
+Theme Tr compile:
+--compile -o theme\n
+Admin pages Tr compile:
+--compile -o admin_pages\n
+Python Tr compile:
+--compile -o python-pg
+"""
+        ]
 
         opts, args = getopt.getopt(sys.argv[1:], s_ops, l_ops)
         func = None

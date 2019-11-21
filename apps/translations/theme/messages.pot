@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-08-02 12:08+0800\n"
+"POT-Creation-Date: 2019-11-21 10:47+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -151,10 +151,13 @@ msgstr ""
 msgid "标签"
 msgstr ""
 
+#: apps/themes/osr-style/pages/based/_header_bar_menu_left.html:4
+#: apps/themes/osr-style/pages/based/_header_bar_menu_left.html:8
 #: apps/themes/osr-style/pages/index.html:2
+#: apps/themes/osr-theme-w/pages/based/_header_bar_menu_left.html:4
+#: apps/themes/osr-theme-w/pages/based/_header_bar_menu_left.html:8
 #: apps/themes/osr-theme-w/pages/index.html:2
-#: apps/themes/osr-theme-w/pages/posts/index.html:2
-msgid "DEMO"
+msgid "首页"
 msgstr ""
 
 #: apps/themes/osr-style/pages/recover-password.html:2
@@ -727,13 +730,6 @@ msgstr ""
 #: apps/themes/osr-theme-w/pages/account/settings/reset-password.html:29
 #: apps/themes/osr-theme-w/pages/account/settings/reset-password.html:31
 msgid "确认密码"
-msgstr ""
-
-#: apps/themes/osr-style/pages/based/_header_bar_menu_left.html:4
-#: apps/themes/osr-style/pages/based/_header_bar_menu_left.html:8
-#: apps/themes/osr-theme-w/pages/based/_header_bar_menu_left.html:4
-#: apps/themes/osr-theme-w/pages/based/_header_bar_menu_left.html:8
-msgid "首页"
 msgstr ""
 
 #: apps/themes/osr-style/pages/based/_header_bar_menu_user.html:27
@@ -1714,6 +1710,10 @@ msgstr ""
 #: apps/themes/osr-theme-w/pages/posts/_posts_weiget.html:111
 #: apps/themes/osr-theme-w/pages/user/post/_user_posts.html:141
 msgid "{[posts.current_page]}/{[posts.page_total]}"
+msgstr ""
+
+#: apps/themes/osr-theme-w/pages/posts/index.html:2
+msgid "文章列表"
 msgstr ""
 
 #: apps/themes/osr-theme-w/pages/user/post/_user_posts.html:63
