@@ -96,9 +96,12 @@ class OsrRequestProcess:
             if request.argget.all("_method"):
                 request.c_method = request.argget.all("_method").upper()
             if "site_global" not in g:
-                g.site_global = {}
-                g.site_global["language"] = {"all_language": get_config(
-                    'babel', 'LANGUAGES'), "current": self.get_current_lang()}
+                g.site_global = {
+                    "language": {
+                        "all_language": get_config('babel', 'LANGUAGES'),
+                        "current": self.get_current_lang()
+                    }
+                }
 
     def init_babel_locale_selector(self, babel):
         """
@@ -109,9 +112,12 @@ class OsrRequestProcess:
         @babel.localeselector
         def get_locale():
             if "site_global" not in g:
-                g.site_global = {}
-                g.site_global["language"] = {"all_language": get_config(
-                    'babel', 'LANGUAGES'), "current": self.get_current_lang()}
+                g.site_global = {
+                    "language": {
+                        "all_language": get_config('babel', 'LANGUAGES'),
+                        "current": self.get_current_lang()
+                    }
+                }
             return g.site_global["language"]["current"]
 
     def get_current_lang(self):

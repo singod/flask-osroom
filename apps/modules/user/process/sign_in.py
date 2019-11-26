@@ -108,7 +108,7 @@ def p_sign_in(
         data["custom_status"] = 401
 
     else:
-        #　密码错误
+        # 密码错误
         mdbs["user"].db.user_login_log.update_one({'user_id': user.str_id},
                                               {"$inc": {"pass_error": 1}},
                                               upsert=True)
@@ -117,6 +117,7 @@ def p_sign_in(
         if user_p and 'pass_error' in user_p and user_p['pass_error'] >= PW_WRONG_NUM_IMG_CODE:
             # 图片验证码验证码
             data["open_img_verif_code"] = True
+
         data['msg'] = gettext("Account or password error")
         data["msg_type"] = "e"
         data["custom_status"] = 401

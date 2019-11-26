@@ -168,7 +168,11 @@ class Cache:
                 self.delete(key, db_type=db_type)
                 return self.cache_none
             elif value:
-                return value["value"]
+                value["value"] = value["value"]
+                if value["value"] == self.cache_none_obj.value:
+                    return None
+                value = json_to_pyseq(value["value"])
+                return value
 
             # 防止value为None时, 所以查询不到缓存时, 使用cache空类
             return self.cache_none
@@ -204,10 +208,11 @@ class Cache:
 
         elif db_type == "mongodb" or (not db_type and self.config["CACHE_TYPE"] == "mongodb")\
                 or self.redis_exists_exception:
-
-            r = self.mdb_coll.update_one({"key": key},
-                                         {"$set": {"value": value, "expiration": time.time() + ex}},
-                                         upsert=True)
+            json_value = pyseq_to_json(value)
+            r = self.mdb_coll.update_one(
+                {"key": key},
+                {"$set": {"value": json_value, "expiration": time.time() + ex}},
+                upsert=True)
             if r.modified_count:
                 return value
 

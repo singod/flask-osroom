@@ -42,6 +42,8 @@ def json_to_pyseq(tjson):
     elif not isinstance(tjson, (list, dict, tuple)) and tjson != "":
         if isinstance(tjson, (str, bytes)) and tjson[0] not in ["{", "[", "("]:
             return tjson
+        elif isinstance(tjson, (int, float)):
+            return tjson
         try:
             tjson = json.loads(tjson)
         except BaseException:
@@ -53,7 +55,8 @@ def json_to_pyseq(tjson):
 
 
 def pyseq_to_json(pyseq):
-
+    if isinstance(pyseq, tuple):
+        pyseq = list(pyseq)
     if isinstance(pyseq, (dict, list)):
         try:
             pyseq = json.dumps(pyseq)
