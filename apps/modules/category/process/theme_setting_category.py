@@ -43,7 +43,7 @@ def categorys(user_id=None):
         user_id = current_user.str_id
     data = {}
     ntype = request.argget.all('type')
-    theme_name = get_config("theme", "CURRENT_THEME_NAME")
+    theme_name = request.argget.all('theme_name', get_config("theme", "CURRENT_THEME_NAME"))
 
     s, r = arg_verify([(gettext("category type"), ntype)], required=True)
     if not s:

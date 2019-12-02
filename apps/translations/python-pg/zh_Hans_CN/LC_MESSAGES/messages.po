@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  v1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-11-21 10:49+0800\n"
+"POT-Creation-Date: 2019-12-02 17:27+0800\n"
 "PO-Revision-Date: 2018-05-01 13:31+0800\n"
 "Last-Translator: AllenWoo\n"
 "Language: en_GB\n"
@@ -73,8 +73,8 @@ msgstr "保留至少一个激活令牌"
 #: apps/modules/message/process/user_message.py:211
 #: apps/modules/permission/process/url_permission.py:228
 #: apps/modules/plug_in_manager/process/manager.py:154
-#: apps/modules/theme_setting/process/page.py:113
-#: apps/modules/theme_setting/process/themes.py:430
+#: apps/modules/theme_setting/process/page.py:126
+#: apps/modules/theme_setting/process/themes.py:449
 msgid "Successfully deleted"
 msgstr "删除成功"
 
@@ -83,6 +83,7 @@ msgstr "删除成功"
 #: apps/modules/category/process/theme_setting_category.py:173
 #: apps/modules/comments/process/comment.py:296
 #: apps/modules/permission/process/url_permission.py:233
+#: apps/modules/theme_setting/process/nav_setting.py:177
 msgid "Delete failed"
 msgstr "删除失败"
 
@@ -218,7 +219,7 @@ msgid "Plugin startup file does not exist"
 msgstr "插件启动文件不存在"
 
 #: apps/core/plug_in/manager.py:240
-#: apps/modules/theme_setting/process/themes.py:247
+#: apps/modules/theme_setting/process/themes.py:266
 msgid "Configuration file \"conf.yaml\" but few parameters \"{}\""
 msgstr "插件配置文件\"conf.yaml\"缺少参数\"{}\""
 
@@ -283,8 +284,8 @@ msgstr "category type"
 #: apps/modules/plug_in_manager/process/manager.py:58
 #: apps/modules/plug_in_manager/process/manager.py:110
 #: apps/modules/plug_in_manager/process/manager.py:143
-#: apps/modules/theme_setting/process/display_setting.py:58
-#: apps/modules/theme_setting/process/display_setting.py:233
+#: apps/modules/theme_setting/process/display_setting.py:63
+#: apps/modules/theme_setting/process/display_setting.py:251
 #: apps/modules/user/process/role.py:64 apps/modules/user/process/role.py:67
 #: apps/modules/user/process/role.py:120 apps/utils/validation/str_format.py:24
 msgid "name"
@@ -303,7 +304,7 @@ msgstr "名称已存在"
 #: apps/modules/permission/process/url_permission.py:194
 #: apps/modules/plug_in_manager/process/setting.py:167
 #: apps/modules/setting/process/settings.py:305
-#: apps/modules/theme_setting/process/display_setting.py:344
+#: apps/modules/theme_setting/process/display_setting.py:361
 msgid "Modify the success"
 msgstr "修改成功"
 
@@ -443,53 +444,53 @@ msgstr "取消关注成功"
 msgid "Unfollow failed"
 msgstr "取消关注失败"
 
-#: apps/modules/global_data/process/global_data.py:50
+#: apps/modules/global_data/process/global_data.py:52
 msgid "Get the current user information successfully"
 msgstr "获取当前用户信息成功"
 
 #: apps/modules/media/process/media.py:53
 #: apps/modules/media/process/media.py:162
-#: apps/modules/theme_setting/process/display_setting.py:54
-#: apps/modules/theme_setting/process/display_setting.py:169
+#: apps/modules/theme_setting/process/display_setting.py:59
+#: apps/modules/theme_setting/process/display_setting.py:178
 msgid "type"
 msgstr "类型"
 
 #: apps/modules/media/process/media.py:74
 #: apps/modules/media/process/media.py:285
-#: apps/modules/theme_setting/process/display_setting.py:81
-#: apps/modules/theme_setting/process/display_setting.py:306
+#: apps/modules/theme_setting/process/display_setting.py:85
+#: apps/modules/theme_setting/process/display_setting.py:323
 msgid "The type \"{}\" exists in the name \"{}\""
 msgstr "当前类型 \"{}\" 已存在名称 \"{}\""
 
 #: apps/modules/media/process/media.py:107
-#: apps/modules/theme_setting/process/display_setting.py:116
+#: apps/modules/theme_setting/process/display_setting.py:120
 msgid "{} uploaded successfully"
 msgstr "已成功上传{}"
 
 #: apps/modules/media/process/media.py:113
 #: apps/modules/permission/process/url_permission.py:118
-#: apps/modules/theme_setting/process/display_setting.py:122
-#: apps/modules/theme_setting/process/page.py:78
+#: apps/modules/theme_setting/process/display_setting.py:126
+#: apps/modules/theme_setting/process/page.py:79
 msgid "Added successfully"
 msgstr "添加成功"
 
 #: apps/modules/media/process/media.py:248
-#: apps/modules/theme_setting/process/display_setting.py:267
+#: apps/modules/theme_setting/process/display_setting.py:284
 msgid "Update picture successfully"
 msgstr "更新图片成功"
 
 #: apps/modules/media/process/media.py:253
-#: apps/modules/theme_setting/process/display_setting.py:272
+#: apps/modules/theme_setting/process/display_setting.py:289
 msgid "Failed to update"
 msgstr "更新失败"
 
 #: apps/modules/media/process/media.py:322
-#: apps/modules/theme_setting/process/display_setting.py:349
+#: apps/modules/theme_setting/process/display_setting.py:366
 msgid "The content is not modified"
 msgstr "内容未修改"
 
 #: apps/modules/media/process/media.py:352
-#: apps/modules/theme_setting/process/display_setting.py:381
+#: apps/modules/theme_setting/process/display_setting.py:401
 msgid "{} files have been deleted"
 msgstr "{} 文件已被删除"
 
@@ -498,7 +499,7 @@ msgstr "{} 文件已被删除"
 #: apps/modules/message/process/user_message.py:216
 #: apps/modules/plug_in_manager/process/manager.py:168
 #: apps/modules/setting/process/host_setting.py:82
-#: apps/modules/theme_setting/process/display_setting.py:385
+#: apps/modules/theme_setting/process/display_setting.py:405
 msgid "Failed to delete"
 msgstr "删除失败"
 
@@ -612,6 +613,7 @@ msgid "The update is successful. {}"
 msgstr "更新成功. {}"
 
 #: apps/modules/permission/process/permission.py:226
+#: apps/modules/theme_setting/process/nav_setting.py:149
 msgid "Update failed"
 msgstr "更新失败"
 
@@ -632,7 +634,7 @@ msgid "No relevant data found"
 msgstr "没有相关数据"
 
 #: apps/modules/permission/process/url_permission.py:99
-#: apps/modules/theme_setting/process/page.py:34
+#: apps/modules/theme_setting/process/page.py:37
 msgid "routing"
 msgstr "路由"
 
@@ -673,7 +675,7 @@ msgid "Plug-in failed to stop"
 msgstr "成绩停用失败"
 
 #: apps/modules/plug_in_manager/process/manager.py:185
-#: apps/modules/theme_setting/process/themes.py:164
+#: apps/modules/theme_setting/process/themes.py:183
 msgid "File format error, please upload zip archive"
 msgstr "文件格式错误，请上传zip压缩包"
 
@@ -682,8 +684,8 @@ msgid "The same name plugin already exists"
 msgstr "相同名称的插件已存在"
 
 #: apps/modules/plug_in_manager/process/manager.py:216
-#: apps/modules/theme_setting/process/themes.py:173
-#: apps/modules/theme_setting/process/themes.py:189
+#: apps/modules/theme_setting/process/themes.py:192
+#: apps/modules/theme_setting/process/themes.py:208
 msgid "The same name theme already exists"
 msgstr "相同名称的主题已存在"
 
@@ -854,78 +856,134 @@ msgstr "缺少参数"
 
 #: apps/modules/setting/process/settings.py:69
 #: apps/modules/setting/process/settings.py:78
-#: apps/modules/theme_setting/process/themes.py:303
+#: apps/modules/theme_setting/process/themes.py:322
 msgid "Switch success"
 msgstr "切换成功"
 
+#: apps/modules/theme_setting/process/display_setting.py:42
+#: apps/modules/theme_setting/process/display_setting.py:149
+#: apps/modules/theme_setting/process/display_setting.py:183
+#: apps/modules/theme_setting/process/display_setting.py:243
+#: apps/modules/theme_setting/process/display_setting.py:380
+#: apps/modules/theme_setting/process/nav_setting.py:54
+#: apps/modules/theme_setting/process/nav_setting.py:85
 #: apps/modules/theme_setting/process/page.py:24
+#: apps/modules/theme_setting/process/page.py:93
+#: apps/modules/theme_setting/process/static_file.py:24
+#: apps/modules/theme_setting/process/static_file.py:107
+#: apps/modules/theme_setting/process/static_file.py:137
+msgid "theme name"
+msgstr "theme name"
+
+#: apps/modules/theme_setting/process/nav_setting.py:55
+#: apps/modules/theme_setting/process/nav_setting.py:86
+msgid "language"
+msgstr "language"
+
+#: apps/modules/theme_setting/process/nav_setting.py:84
+msgid "Display name"
+msgstr "显示名称"
+
+#: apps/modules/theme_setting/process/nav_setting.py:87
+msgid "Json data"
+msgstr "Json数据"
+
+#: apps/modules/theme_setting/process/nav_setting.py:96
+msgid "Value must be of type json"
+msgstr "值必须是Json类型"
+
+#: apps/modules/theme_setting/process/nav_setting.py:113
+msgid "Navigation added successfully"
+msgstr "添加成功"
+
+#: apps/modules/theme_setting/process/nav_setting.py:119
+msgid "Failed to add navigation"
+msgstr "添加失败"
+
+#: apps/modules/theme_setting/process/nav_setting.py:137
+msgid "Updated successfully"
+msgstr "更新成功"
+
+#: apps/modules/theme_setting/process/nav_setting.py:143
+msgid "Unmodified"
+msgstr "未修改"
+
+#: apps/modules/theme_setting/process/nav_setting.py:159
+msgid "ids"
+msgstr "ids"
+
+#: apps/modules/theme_setting/process/nav_setting.py:171
+msgid "Deleted successfully"
+msgstr "删除成功"
+
+#: apps/modules/theme_setting/process/page.py:27
 msgid "file type"
 msgstr "文件类型"
 
-#: apps/modules/theme_setting/process/page.py:38
-#: apps/modules/theme_setting/process/page.py:56
+#: apps/modules/theme_setting/process/page.py:41
+#: apps/modules/theme_setting/process/page.py:57
 msgid "This route can not be used"
 msgstr "这个路由不能使用"
 
-#: apps/modules/theme_setting/process/page.py:64
+#: apps/modules/theme_setting/process/page.py:65
 msgid "Routing existing"
 msgstr "路由已存在"
 
-#: apps/modules/theme_setting/process/page.py:101
-#: apps/modules/theme_setting/process/static_file.py:107
+#: apps/modules/theme_setting/process/page.py:108
+#: apps/modules/theme_setting/process/static_file.py:114
 msgid "File not found,'{}'"
 msgstr "文件未找到，”{}”"
 
-#: apps/modules/theme_setting/process/page.py:117
+#: apps/modules/theme_setting/process/page.py:130
 msgid "This file can not be deleted"
 msgstr "该文件不能删除"
 
-#: apps/modules/theme_setting/process/static_file.py:136
+#: apps/modules/theme_setting/process/static_file.py:145
 msgid "File does not exist can not be edited,'{}'"
 msgstr "文件不存在，不能编辑，“{}”"
 
-#: apps/modules/theme_setting/process/static_file.py:142
+#: apps/modules/theme_setting/process/static_file.py:151
 msgid "Saved successfully"
 msgstr "保存成功"
 
-#: apps/modules/theme_setting/process/themes.py:40
+#: apps/modules/theme_setting/process/themes.py:59
 msgid "Get success"
 msgstr "获取成功"
 
-#: apps/modules/theme_setting/process/themes.py:46
+#: apps/modules/theme_setting/process/themes.py:65
 msgid "Readme file does not exist"
 msgstr "Readme文件不存在"
 
-#: apps/modules/theme_setting/process/themes.py:222
+#: apps/modules/theme_setting/process/themes.py:241
 msgid "Theme installed successfully"
 msgstr "主题安装成功"
 
-#: apps/modules/theme_setting/process/themes.py:253
+#: apps/modules/theme_setting/process/themes.py:272
 msgid ""
 "The theme name and theme directory name in the configuration are "
 "inconsistent.(\"{}\" compared with \"{}\")"
 msgstr "主题名称与主题文件夹名称不一致(“{}” 对比 “{}”)"
 
-#: apps/modules/theme_setting/process/themes.py:257
+#: apps/modules/theme_setting/process/themes.py:276
 msgid ""
 "The theme of the upload is incorrect, the configuration file(conf.yaml) "
 "does not exist"
 msgstr "上传的主题不正确，配置文件（conf.yaml）不存在"
 
-#: apps/modules/theme_setting/process/themes.py:272
-#: apps/modules/theme_setting/process/themes.py:378
+#: apps/modules/theme_setting/process/themes.py:291
+#: apps/modules/theme_setting/process/themes.py:397
 msgid "Theme does not exist"
 msgstr "主题不存在"
 
-#: apps/modules/theme_setting/process/themes.py:362
+#: apps/modules/theme_setting/process/themes.py:381
 msgid "Restored"
 msgstr "恢复"
 
-#: apps/modules/theme_setting/process/themes.py:383
+#: apps/modules/theme_setting/process/themes.py:402
 msgid "The current use of the theme can not be deleted"
 msgstr "当前使用主题不能删除"
 
-#: apps/modules/theme_setting/process/themes.py:396
+#: apps/modules/theme_setting/process/themes.py:415
 msgid "Delete failed, at least keep a theme"
 msgstr "删除失败，至少保留一个主题"
 
@@ -1105,7 +1163,7 @@ msgid "Password reset notification"
 msgstr "密码重设通知"
 
 #: apps/modules/user/process/password.py:183
-#: apps/modules/user/process/sign_in.py:182
+#: apps/modules/user/process/sign_in.py:183
 #: apps/modules/user/process/sign_up.py:132
 msgid "End"
 msgstr "结束"
@@ -1131,7 +1189,7 @@ msgid "The date of birth requires an 8-digit date,Such as '{}'"
 msgstr "出生日期需要8个数字，例如：\"{}\""
 
 #: apps/modules/user/process/profile.py:94
-#: apps/modules/user/process/sign_in.py:256
+#: apps/modules/user/process/sign_in.py:257
 msgid "gender"
 msgstr "gender"
 
@@ -1188,7 +1246,7 @@ msgid "Is logged in"
 msgstr "已登录"
 
 #: apps/modules/user/process/sign_in.py:61
-#: apps/modules/user/process/sign_in.py:120
+#: apps/modules/user/process/sign_in.py:121
 msgid "Account or password error"
 msgstr "账号或密码错误"
 
@@ -1199,20 +1257,20 @@ msgid "Verification code error"
 msgstr "验证码错误"
 
 #: apps/modules/user/process/sign_in.py:98
-#: apps/modules/user/process/sign_in.py:226
+#: apps/modules/user/process/sign_in.py:227
 msgid "Sign in success"
 msgstr "登录成功"
 
 #: apps/modules/user/process/sign_in.py:106
-#: apps/modules/user/process/sign_in.py:233
+#: apps/modules/user/process/sign_in.py:234
 msgid "Account is inactive or frozen"
 msgstr "账号未激活或已冻结"
 
-#: apps/modules/user/process/sign_in.py:164
+#: apps/modules/user/process/sign_in.py:165
 msgid "Abnormal login"
 msgstr "异常登录"
 
-#: apps/modules/user/process/sign_in.py:174
+#: apps/modules/user/process/sign_in.py:175
 msgid ""
 "<b>Abnormal login</b><br> Your account <a>{}</a>, is logined in <span "
 "style='color:#483D8B'>{}</span> on {} [UTC Time].<br>"
@@ -1220,18 +1278,18 @@ msgstr ""
 "<b>异常登录</ b> <br>您的帐户<a> {} </a>在UTC时间，在<span style ='color：＃483D8B'> {} "
 "</ span>]地区登录"
 
-#: apps/modules/user/process/sign_in.py:206
+#: apps/modules/user/process/sign_in.py:207
 msgid ""
 "No login processing plugin for this platform, please install the relevant"
 " plugin first"
 msgstr "当前平台没有登录处理插件，请先安装相关插件"
 
-#: apps/modules/user/process/sign_in.py:280
+#: apps/modules/user/process/sign_in.py:281
 #: apps/modules/user/process/sign_up.py:149
 msgid "Registered successfully"
 msgstr "注册成功"
 
-#: apps/modules/user/process/sign_in.py:284
+#: apps/modules/user/process/sign_in.py:285
 #: apps/modules/user/process/sign_up.py:153
 msgid "Data saved incorrectly, please try again"
 msgstr "数据保存不正确，请重试"

@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-12">
             <ul class="breadcrumb">
-                <li><a href="/osr-admin/theme-setting/file?type={{data.from_type}}&page={{data.from_page}}">
+                <li><a href="/osr-admin/theme-setting/file?theme={{ data.theme }}&type={{data.from_type}}&page={{data.from_page}}">
                     <i class="fa fa-html5"></i> {{_("页面")}}</a>
                 </li>
                 <li class="active">{{_("页面编辑")}}</li>
@@ -57,6 +57,7 @@
             content:"",
             file_relative_path:"",
             file_path:"",
+           current_theme_name:null,
             filename:"",
 
             }
@@ -67,13 +68,16 @@
 
         vue.filename = $("#filename").attr("content");
         vue.file_path = $("#path").attr("content");
+        var url_s = get_url_parameter();
+        vue.current_theme_name = get_obj_value(url_s, "theme", null);
         get_content();
 
     })
     function get_content(){
         d = {
             file_path:vue.file_path,
-            filename:vue.filename
+            filename:vue.filename,
+            theme_name: vue.current_theme_name
         }
 
         var result = osrHttp("GET","/api/admin/static/file",d, args={not_prompt:true});
@@ -90,6 +94,7 @@
         d = {
             file_path:vue.file_path,
             filename:vue.filename,
+             theme_name: vue.current_theme_name,
             content:vue.content
         }
         osrHttp("PUT","/api/admin/static/file",d);

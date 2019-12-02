@@ -20,7 +20,10 @@ def add_page():
     routing = request.argget.all('routing')
     content = request.argget.all('content', "")
     ctype = request.argget.all('type', 'html')
-
+    theme_name = request.argget.all("theme_name")
+    s, r = arg_verify([(gettext("theme name"), theme_name)], required=True)
+    if not s:
+        return r
     s, r = arg_verify(reqargs=[(gettext("file type"), ctype)], only=["html"],
                       required=True)
     if not s:
@@ -41,9 +44,7 @@ def add_page():
         filename = os.path.split(routing)[-1]
         path = "{}/{}/{}/{}".format(
             THEME_TEMPLATE_FOLDER,
-            get_config(
-                "theme",
-                "CURRENT_THEME_NAME"),
+            theme_name,
             dirname,
             os.path.split(routing)[0]).replace(
             "//",
@@ -71,7 +72,7 @@ def add_page():
             wf.write(content)
 
         # 记录
-        mdbs["sys"].db.theme.update_one({"theme_name": get_config("theme", "CURRENT_THEME_NAME")},
+        mdbs["sys"].db.theme.update_one({"theme_name": theme_name},
                                     {"$addToSet": {"custom_pages": "{}.{}".format(filename, ctype)}},
                                     upsert=True)
 
@@ -88,26 +89,38 @@ def delete_page():
 
     filename = request.argget.all('filename', "index").strip("/")
     file_path = request.argget.all('file_path', "").strip("/")
-
+    theme_name = request.argget.all("theme_name")
+    s, r = arg_verify([(gettext("theme name"), theme_name)], required=True)
+    if not s:
+        return r
     path = os.path.join(
-        THEME_TEMPLATE_FOLDER, get_config(
-            "theme", "CURRENT_THEME_NAME"))
+        THEME_TEMPLATE_FOLDER,
+        theme_name
+    )
     file_path = "{}/{}".format(path, file_path)
     file = os.path.join(file_path, filename)
     if not os.path.exists(file):
-        mdbs["sys"].db.theme.update_one({"theme_name": get_config(
-            "theme", "CURRENT_THEME_NAME")}, {"$pull": {"custom_pages": filename}})
+        mdbs["sys"].db.theme.update_one(
+            {"theme_name": theme_name},
+            {"$pull": {"custom_pages": filename}}
+        )
 
         data = {"msg": gettext("File not found,'{}'").format(file),
                 "msg_type": "w", "custom_status": 404}
     else:
 
-        custom = mdbs["sys"].db.theme.find_one({"theme_name": get_config(
-            "theme", "CURRENT_THEME_NAME"), "custom_pages": filename})
+        custom = mdbs["sys"].db.theme.find_one(
+            {
+                "theme_name": theme_name,
+                "custom_pages": filename
+            })
         if custom:
             os.remove(file)
-            mdbs["sys"].db.theme.update_one({"theme_name": get_config(
-                "theme", "CURRENT_THEME_NAME")}, {"$pull": {"custom_pages": filename}})
+            mdbs["sys"].db.theme.update_one(
+                {
+                    "theme_name": theme_name
+                },
+                {"$pull": {"custom_pages": filename}})
             if not os.listdir(file_path):
                 shutil.rmtree(file_path)
             data = {"msg": gettext("Successfully deleted"), "msg_type": "s",

@@ -6,6 +6,7 @@ from bson import ObjectId
 from flask_babel import gettext
 from flask_login import current_user
 from apps.configs.sys_config import VERSION
+from apps.modules.theme_setting.process.nav_setting import get_theme_navs
 from apps.utils.paging.paging import datas_paging
 from apps.core.utils.get_config import get_configs, get_config
 from apps.utils.upload.get_filepath import get_file_url
@@ -25,6 +26,7 @@ def get_global_site_data(req_type="api"):
     # 全局数据
     # theme
     data["theme_config"] = get_configs("theme_global_conf")
+    data["theme_config"]["navs"] = get_theme_navs()
     # site
     data["site_config"] = get_configs("site_config")
     data["site_config"] = dict(data["site_config"], **get_configs("seo"))

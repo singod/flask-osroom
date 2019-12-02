@@ -75,7 +75,7 @@
                               <a v-if="!theme.current && !theme.error" v-on:click="switch_theme(theme.theme_name)" class="btn osr-btn btn-info">
                                  {{_("启用")}}
                               </a>
-                              <a href="/osr-admin/setting/config-edit?project=theme_global_conf" class="btn osr-btn btn-success">
+                              <a :href="'/osr-admin/theme-setting/nav?lang=zh_CN&theme='+theme.theme_name" class="btn osr-btn btn-success">
                                  {{_("菜单设置")}}
                               </a>
 

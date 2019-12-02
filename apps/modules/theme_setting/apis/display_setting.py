@@ -20,6 +20,7 @@ def api_add_display_setting():
     GET
         1.获取多个display信息
         file_type:<str>, 文件类型,可选"image", "video", "audio", "other"
+        theme_name:<str>
         category_id:<str>, 分类id, 获取默认分类使用"default"作为category_id, 不传入此参数则表示获取全部
         keyword:<str>,搜索用
         page:<int>, 第几页, 默认1
@@ -34,7 +35,7 @@ def api_add_display_setting():
 
     POST
         添加媒体
-
+        theme_name:<str>
         name:<str>, 名字
         link:<str>, 链接, 用于展示的时候跳转链接
         link_name:<str>,链接名字
@@ -65,6 +66,7 @@ def api_add_display_setting():
     PUT
         编辑display信息
         id:<str>,要编辑的display_setting id
+        theme_name:<str>
         category_id:<str>,要编辑的文件的分类id, 如果不修改分类可以不提交
         name:<str>
         link:<str>, 链接
@@ -91,6 +93,7 @@ def api_add_display_setting():
 
     DELETE
         删除display文件
+        theme_name:<str>
         ids:<array>,要删除的文件的id
         :return:
     """

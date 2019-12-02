@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-11-21 10:49+0800\n"
+"POT-Creation-Date: 2019-12-02 17:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,8 +72,8 @@ msgstr ""
 #: apps/modules/message/process/user_message.py:211
 #: apps/modules/permission/process/url_permission.py:228
 #: apps/modules/plug_in_manager/process/manager.py:154
-#: apps/modules/theme_setting/process/page.py:113
-#: apps/modules/theme_setting/process/themes.py:430
+#: apps/modules/theme_setting/process/page.py:126
+#: apps/modules/theme_setting/process/themes.py:449
 msgid "Successfully deleted"
 msgstr ""
 
@@ -82,6 +82,7 @@ msgstr ""
 #: apps/modules/category/process/theme_setting_category.py:173
 #: apps/modules/comments/process/comment.py:296
 #: apps/modules/permission/process/url_permission.py:233
+#: apps/modules/theme_setting/process/nav_setting.py:177
 msgid "Delete failed"
 msgstr ""
 
@@ -213,7 +214,7 @@ msgid "Plugin startup file does not exist"
 msgstr ""
 
 #: apps/core/plug_in/manager.py:240
-#: apps/modules/theme_setting/process/themes.py:247
+#: apps/modules/theme_setting/process/themes.py:266
 msgid "Configuration file \"conf.yaml\" but few parameters \"{}\""
 msgstr ""
 
@@ -278,8 +279,8 @@ msgstr ""
 #: apps/modules/plug_in_manager/process/manager.py:58
 #: apps/modules/plug_in_manager/process/manager.py:110
 #: apps/modules/plug_in_manager/process/manager.py:143
-#: apps/modules/theme_setting/process/display_setting.py:58
-#: apps/modules/theme_setting/process/display_setting.py:233
+#: apps/modules/theme_setting/process/display_setting.py:63
+#: apps/modules/theme_setting/process/display_setting.py:251
 #: apps/modules/user/process/role.py:64 apps/modules/user/process/role.py:67
 #: apps/modules/user/process/role.py:120 apps/utils/validation/str_format.py:24
 msgid "name"
@@ -298,7 +299,7 @@ msgstr ""
 #: apps/modules/permission/process/url_permission.py:194
 #: apps/modules/plug_in_manager/process/setting.py:167
 #: apps/modules/setting/process/settings.py:305
-#: apps/modules/theme_setting/process/display_setting.py:344
+#: apps/modules/theme_setting/process/display_setting.py:361
 msgid "Modify the success"
 msgstr ""
 
@@ -438,53 +439,53 @@ msgstr ""
 msgid "Unfollow failed"
 msgstr ""
 
-#: apps/modules/global_data/process/global_data.py:50
+#: apps/modules/global_data/process/global_data.py:52
 msgid "Get the current user information successfully"
 msgstr ""
 
 #: apps/modules/media/process/media.py:53
 #: apps/modules/media/process/media.py:162
-#: apps/modules/theme_setting/process/display_setting.py:54
-#: apps/modules/theme_setting/process/display_setting.py:169
+#: apps/modules/theme_setting/process/display_setting.py:59
+#: apps/modules/theme_setting/process/display_setting.py:178
 msgid "type"
 msgstr ""
 
 #: apps/modules/media/process/media.py:74
 #: apps/modules/media/process/media.py:285
-#: apps/modules/theme_setting/process/display_setting.py:81
-#: apps/modules/theme_setting/process/display_setting.py:306
+#: apps/modules/theme_setting/process/display_setting.py:85
+#: apps/modules/theme_setting/process/display_setting.py:323
 msgid "The type \"{}\" exists in the name \"{}\""
 msgstr ""
 
 #: apps/modules/media/process/media.py:107
-#: apps/modules/theme_setting/process/display_setting.py:116
+#: apps/modules/theme_setting/process/display_setting.py:120
 msgid "{} uploaded successfully"
 msgstr ""
 
 #: apps/modules/media/process/media.py:113
 #: apps/modules/permission/process/url_permission.py:118
-#: apps/modules/theme_setting/process/display_setting.py:122
-#: apps/modules/theme_setting/process/page.py:78
+#: apps/modules/theme_setting/process/display_setting.py:126
+#: apps/modules/theme_setting/process/page.py:79
 msgid "Added successfully"
 msgstr ""
 
 #: apps/modules/media/process/media.py:248
-#: apps/modules/theme_setting/process/display_setting.py:267
+#: apps/modules/theme_setting/process/display_setting.py:284
 msgid "Update picture successfully"
 msgstr ""
 
 #: apps/modules/media/process/media.py:253
-#: apps/modules/theme_setting/process/display_setting.py:272
+#: apps/modules/theme_setting/process/display_setting.py:289
 msgid "Failed to update"
 msgstr ""
 
 #: apps/modules/media/process/media.py:322
-#: apps/modules/theme_setting/process/display_setting.py:349
+#: apps/modules/theme_setting/process/display_setting.py:366
 msgid "The content is not modified"
 msgstr ""
 
 #: apps/modules/media/process/media.py:352
-#: apps/modules/theme_setting/process/display_setting.py:381
+#: apps/modules/theme_setting/process/display_setting.py:401
 msgid "{} files have been deleted"
 msgstr ""
 
@@ -493,7 +494,7 @@ msgstr ""
 #: apps/modules/message/process/user_message.py:216
 #: apps/modules/plug_in_manager/process/manager.py:168
 #: apps/modules/setting/process/host_setting.py:82
-#: apps/modules/theme_setting/process/display_setting.py:385
+#: apps/modules/theme_setting/process/display_setting.py:405
 msgid "Failed to delete"
 msgstr ""
 
@@ -607,6 +608,7 @@ msgid "The update is successful. {}"
 msgstr ""
 
 #: apps/modules/permission/process/permission.py:226
+#: apps/modules/theme_setting/process/nav_setting.py:149
 msgid "Update failed"
 msgstr ""
 
@@ -627,7 +629,7 @@ msgid "No relevant data found"
 msgstr ""
 
 #: apps/modules/permission/process/url_permission.py:99
-#: apps/modules/theme_setting/process/page.py:34
+#: apps/modules/theme_setting/process/page.py:37
 msgid "routing"
 msgstr ""
 
@@ -668,7 +670,7 @@ msgid "Plug-in failed to stop"
 msgstr ""
 
 #: apps/modules/plug_in_manager/process/manager.py:185
-#: apps/modules/theme_setting/process/themes.py:164
+#: apps/modules/theme_setting/process/themes.py:183
 msgid "File format error, please upload zip archive"
 msgstr ""
 
@@ -677,8 +679,8 @@ msgid "The same name plugin already exists"
 msgstr ""
 
 #: apps/modules/plug_in_manager/process/manager.py:216
-#: apps/modules/theme_setting/process/themes.py:173
-#: apps/modules/theme_setting/process/themes.py:189
+#: apps/modules/theme_setting/process/themes.py:192
+#: apps/modules/theme_setting/process/themes.py:208
 msgid "The same name theme already exists"
 msgstr ""
 
@@ -849,78 +851,134 @@ msgstr ""
 
 #: apps/modules/setting/process/settings.py:69
 #: apps/modules/setting/process/settings.py:78
-#: apps/modules/theme_setting/process/themes.py:303
+#: apps/modules/theme_setting/process/themes.py:322
 msgid "Switch success"
 msgstr ""
 
+#: apps/modules/theme_setting/process/display_setting.py:42
+#: apps/modules/theme_setting/process/display_setting.py:149
+#: apps/modules/theme_setting/process/display_setting.py:183
+#: apps/modules/theme_setting/process/display_setting.py:243
+#: apps/modules/theme_setting/process/display_setting.py:380
+#: apps/modules/theme_setting/process/nav_setting.py:54
+#: apps/modules/theme_setting/process/nav_setting.py:85
 #: apps/modules/theme_setting/process/page.py:24
+#: apps/modules/theme_setting/process/page.py:93
+#: apps/modules/theme_setting/process/static_file.py:24
+#: apps/modules/theme_setting/process/static_file.py:107
+#: apps/modules/theme_setting/process/static_file.py:137
+msgid "theme name"
+msgstr ""
+
+#: apps/modules/theme_setting/process/nav_setting.py:55
+#: apps/modules/theme_setting/process/nav_setting.py:86
+msgid "language"
+msgstr ""
+
+#: apps/modules/theme_setting/process/nav_setting.py:84
+msgid "Display name"
+msgstr ""
+
+#: apps/modules/theme_setting/process/nav_setting.py:87
+msgid "Json data"
+msgstr ""
+
+#: apps/modules/theme_setting/process/nav_setting.py:96
+msgid "Value must be of type json"
+msgstr ""
+
+#: apps/modules/theme_setting/process/nav_setting.py:113
+msgid "Navigation added successfully"
+msgstr ""
+
+#: apps/modules/theme_setting/process/nav_setting.py:119
+msgid "Failed to add navigation"
+msgstr ""
+
+#: apps/modules/theme_setting/process/nav_setting.py:137
+msgid "Updated successfully"
+msgstr ""
+
+#: apps/modules/theme_setting/process/nav_setting.py:143
+msgid "Unmodified"
+msgstr ""
+
+#: apps/modules/theme_setting/process/nav_setting.py:159
+msgid "ids"
+msgstr ""
+
+#: apps/modules/theme_setting/process/nav_setting.py:171
+msgid "Deleted successfully"
+msgstr ""
+
+#: apps/modules/theme_setting/process/page.py:27
 msgid "file type"
 msgstr ""
 
-#: apps/modules/theme_setting/process/page.py:38
-#: apps/modules/theme_setting/process/page.py:56
+#: apps/modules/theme_setting/process/page.py:41
+#: apps/modules/theme_setting/process/page.py:57
 msgid "This route can not be used"
 msgstr ""
 
-#: apps/modules/theme_setting/process/page.py:64
+#: apps/modules/theme_setting/process/page.py:65
 msgid "Routing existing"
 msgstr ""
 
-#: apps/modules/theme_setting/process/page.py:101
-#: apps/modules/theme_setting/process/static_file.py:107
+#: apps/modules/theme_setting/process/page.py:108
+#: apps/modules/theme_setting/process/static_file.py:114
 msgid "File not found,'{}'"
 msgstr ""
 
-#: apps/modules/theme_setting/process/page.py:117
+#: apps/modules/theme_setting/process/page.py:130
 msgid "This file can not be deleted"
 msgstr ""
 
-#: apps/modules/theme_setting/process/static_file.py:136
+#: apps/modules/theme_setting/process/static_file.py:145
 msgid "File does not exist can not be edited,'{}'"
 msgstr ""
 
-#: apps/modules/theme_setting/process/static_file.py:142
+#: apps/modules/theme_setting/process/static_file.py:151
 msgid "Saved successfully"
 msgstr ""
 
-#: apps/modules/theme_setting/process/themes.py:40
+#: apps/modules/theme_setting/process/themes.py:59
 msgid "Get success"
 msgstr ""
 
-#: apps/modules/theme_setting/process/themes.py:46
+#: apps/modules/theme_setting/process/themes.py:65
 msgid "Readme file does not exist"
 msgstr ""
 
-#: apps/modules/theme_setting/process/themes.py:222
+#: apps/modules/theme_setting/process/themes.py:241
 msgid "Theme installed successfully"
 msgstr ""
 
-#: apps/modules/theme_setting/process/themes.py:253
+#: apps/modules/theme_setting/process/themes.py:272
 msgid ""
 "The theme name and theme directory name in the configuration are "
 "inconsistent.(\"{}\" compared with \"{}\")"
 msgstr ""
 
-#: apps/modules/theme_setting/process/themes.py:257
+#: apps/modules/theme_setting/process/themes.py:276
 msgid ""
 "The theme of the upload is incorrect, the configuration file(conf.yaml) "
 "does not exist"
 msgstr ""
 
-#: apps/modules/theme_setting/process/themes.py:272
-#: apps/modules/theme_setting/process/themes.py:378
+#: apps/modules/theme_setting/process/themes.py:291
+#: apps/modules/theme_setting/process/themes.py:397
 msgid "Theme does not exist"
 msgstr ""
 
-#: apps/modules/theme_setting/process/themes.py:362
+#: apps/modules/theme_setting/process/themes.py:381
 msgid "Restored"
 msgstr ""
 
-#: apps/modules/theme_setting/process/themes.py:383
+#: apps/modules/theme_setting/process/themes.py:402
 msgid "The current use of the theme can not be deleted"
 msgstr ""
 
-#: apps/modules/theme_setting/process/themes.py:396
+#: apps/modules/theme_setting/process/themes.py:415
 msgid "Delete failed, at least keep a theme"
 msgstr ""
 
@@ -1100,7 +1158,7 @@ msgid "Password reset notification"
 msgstr ""
 
 #: apps/modules/user/process/password.py:183
-#: apps/modules/user/process/sign_in.py:182
+#: apps/modules/user/process/sign_in.py:183
 #: apps/modules/user/process/sign_up.py:132
 msgid "End"
 msgstr ""
@@ -1126,7 +1184,7 @@ msgid "The date of birth requires an 8-digit date,Such as '{}'"
 msgstr ""
 
 #: apps/modules/user/process/profile.py:94
-#: apps/modules/user/process/sign_in.py:256
+#: apps/modules/user/process/sign_in.py:257
 msgid "gender"
 msgstr ""
 
@@ -1183,7 +1241,7 @@ msgid "Is logged in"
 msgstr ""
 
 #: apps/modules/user/process/sign_in.py:61
-#: apps/modules/user/process/sign_in.py:120
+#: apps/modules/user/process/sign_in.py:121
 msgid "Account or password error"
 msgstr ""
 
@@ -1194,37 +1252,37 @@ msgid "Verification code error"
 msgstr ""
 
 #: apps/modules/user/process/sign_in.py:98
-#: apps/modules/user/process/sign_in.py:226
+#: apps/modules/user/process/sign_in.py:227
 msgid "Sign in success"
 msgstr ""
 
 #: apps/modules/user/process/sign_in.py:106
-#: apps/modules/user/process/sign_in.py:233
+#: apps/modules/user/process/sign_in.py:234
 msgid "Account is inactive or frozen"
 msgstr ""
 
-#: apps/modules/user/process/sign_in.py:164
+#: apps/modules/user/process/sign_in.py:165
 msgid "Abnormal login"
 msgstr ""
 
-#: apps/modules/user/process/sign_in.py:174
+#: apps/modules/user/process/sign_in.py:175
 msgid ""
 "<b>Abnormal login</b><br> Your account <a>{}</a>, is logined in <span "
 "style='color:#483D8B'>{}</span> on {} [UTC Time].<br>"
 msgstr ""
 
-#: apps/modules/user/process/sign_in.py:206
+#: apps/modules/user/process/sign_in.py:207
 msgid ""
 "No login processing plugin for this platform, please install the relevant"
 " plugin first"
 msgstr ""
 
-#: apps/modules/user/process/sign_in.py:280
+#: apps/modules/user/process/sign_in.py:281
 #: apps/modules/user/process/sign_up.py:149
 msgid "Registered successfully"
 msgstr ""
 
-#: apps/modules/user/process/sign_in.py:284
+#: apps/modules/user/process/sign_in.py:285
 #: apps/modules/user/process/sign_up.py:153
 msgid "Data saved incorrectly, please try again"
 msgstr ""

@@ -6,26 +6,29 @@
 
     var upload_data = {
         name:"{{_('批量上传')}}",
+        theme_name: vue.current_theme_name,
         ctype:vue.media_type,
         batch:1,
         category_name:"{{_('默认')}}"
     }
     //加载完页面立即执行
     $(document).ready(function(){
-
         var cid = $("#cid").attr("content");
         if(vue.cid=="null" || vue.cid == undefined){
             vue.cid = ""
         }
         vue.curren_category = cid;
-        get_category();
+        var url_s = get_url_parameter();
+        vue.current_theme_name = get_obj_value(url_s, "theme", null);
+
+        get_theme_names();
         var page = $("#page").attr("content");
         vue.page = page?page:vue.page;
         var sort = $("#sort").attr("content");
         vue.sort = sort?sort:vue.sort;
         var keyword = $("#keyword").attr("content");
         vue.keyword = keyword?keyword:vue.keyword;
-        get_media(vue.page, vue.keyword);
+        //get_media(vue.page, vue.keyword);
 
     });
     $("#start-upload").click(function(){
@@ -41,12 +44,27 @@
         }
     });
 
-    //获取分类
-    function get_category(){
+    //获取所有主题名称
+    function get_theme_names(){
 
-        var result = osrHttp("GET","/api/admin/content/theme-category",{type:vue.media_type},args={not_prompt:true});
+        var result = osrHttp("GET","/api/admin/theme-names",{},args={not_prompt:true});
+        result.then(function (r) {
+            vue.theme_names = r.data.names;
+            vue.current_theme_name = vue.current_theme_name?vue.current_theme_name:r.data.current_theme_name;
+            get_category(vue.current_theme_name);
+        });
+    }
+
+    //获取分类
+    function get_category(theme_name){
+
+        var result = osrHttp(
+            "GET","/api/admin/content/theme-category",
+            {type:vue.media_type, theme_name:theme_name},
+            args={not_prompt:true});
         result.then(function (r) {
             vue.media_categorys = r.data.categorys;
+            get_media(1, "");
         });
     }
 
@@ -59,6 +77,7 @@
 
         var d = {
             ctype:vue.media_type,
+            theme_name: vue.current_theme_name,
             category_id:vue.curren_category,
             keyword:vue.keyword,
             page:vue.page,
@@ -80,6 +99,9 @@
         if(vue.keyword){
             url = url + "&keyword="+vue.keyword;
         }
+        if(vue.current_theme_name){
+            url = url + "&theme="+vue.current_theme_name;
+        }
         history_state(title=null,url=url);
     }
 
@@ -90,6 +112,7 @@
         if(ids.length){
             ids = JSON.stringify(ids);
             var d = {
+                theme_name: vue.current_theme_name,
                 ids:ids
             }
 
@@ -103,6 +126,12 @@
         }else{
             alert_msg({msg:'{{_("请选择要删除的项")}}', msg_type:"w"});
         }
+    }
+
+    //切换要设置的主题
+    function switch_theme_name(value) {
+        vue.current_theme_name = value;
+        get_category(value);
     }
 
     //切换分类

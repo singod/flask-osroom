@@ -169,3 +169,22 @@ def compatible_processing(mdbs):
             r = mdbs["web"].db.theme_category.insert_one(category)
             if r.inserted_id:
                 mdbs["web"].db.category.delete_one({"_id": category["_id"]})
+
+        # v2.0之后新功能
+        if not mdbs["sys"].dbs["theme_nav_setting"].find_one({}):
+            # 将导航设置迁移到主题导航设置专属模块数据库
+            r = mdbs["sys"].dbs["sys_config"].find(
+                {"project": "theme_global_conf", "key": "TOP_NAV"}
+            ).sort([("update_time", -1)]).limit(1)
+            if r.count(True):
+                for i, v in r[0]["value"].items():
+                    updata = {
+                        "order": 1,
+                        "display_name": v["nav"],
+                        "theme_name": theme_name,
+                        "language": "zh_CN"
+                    }
+                    del v["nav"]
+                    updata["json_data"] = v
+                    mdbs["sys"].dbs["theme_nav_setting"].insert(updata)
+

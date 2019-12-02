@@ -11,17 +11,17 @@
 
         {% endif %}
     <ul id="navbar_left" class="nav navbar-nav">
-        {% for k,v in g.site_global.theme_config.TOP_NAV.items()|sort%}
+        {% for nav in g.site_global.theme_config.navs%}
 
-            {% if v.next_lev %}
+            {% if nav.json_data.next_lev %}
                 <li class="user-menu dropdown">
                 <a class="osr-pointer lv1-a dropdown-toggle" data-toggle="dropdown">
-                {{v.nav}}
+                {{nav.display_name}}
                 <i class="caret"></i>
                 </a>
 
-                <ul id="{{v.nav}}" class="dropdown-menu dropdown-custom dropdown-menu-right">
-                    {% for nav2 in v.next_lev %}
+                <ul id="{{nav.display_name}}" class="dropdown-menu dropdown-custom dropdown-menu-right">
+                    {% for nav2 in nav.json_data.next_lev %}
                     <li>
                         <a href="{{nav2.link}}">
                             {{nav2.nav}}
@@ -32,8 +32,8 @@
                 </li>
             {% else %}
                 <li class="user-menu dropdown" >
-                    <a class="lv1-a" href="{{v.link}}">
-                        {{v.nav}}
+                    <a class="lv1-a" href="{{nav.json_data.link}}">
+                        {{nav.display_name}}
                     </a>
                 </li>
             {% endif %}

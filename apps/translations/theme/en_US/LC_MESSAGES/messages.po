@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-11-21 10:47+0800\n"
+"POT-Creation-Date: 2019-12-02 17:28+0800\n"
 "PO-Revision-Date: 2018-01-04 20:50+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en_US\n"
@@ -118,7 +118,7 @@ msgstr "Default"
 #: apps/themes/osr-theme-w/pages/post/index.html:26
 #: apps/themes/osr-theme-w/pages/post/index.html:100
 #: apps/themes/osr-theme-w/pages/posts/_posts_weiget.html:19
-#: apps/themes/osr-theme-w/pages/search/index.html:64
+#: apps/themes/osr-theme-w/pages/search/index.html:63
 #: apps/themes/osr-theme-w/pages/user/_self_introduction.html:6
 #: apps/themes/osr-theme-w/pages/user/_user_info.html:4
 #: apps/themes/osr-theme-w/pages/user/follow/index.html:30
@@ -1150,7 +1150,7 @@ msgstr " Articles"
 #: apps/themes/osr-style/pages/search/index.html:26
 #: apps/themes/osr-style/pages/user/index.html:24
 #: apps/themes/osr-theme-w/pages/post/index.html:2
-#: apps/themes/osr-theme-w/pages/search/index.html:22
+#: apps/themes/osr-theme-w/pages/search/index.html:21
 #: apps/themes/osr-theme-w/pages/user/index.html:58
 msgid "文章"
 msgstr " Articles"
@@ -1209,8 +1209,8 @@ msgstr "Agreement"
 
 #: apps/themes/osr-style/pages/photo/index.html:2
 #: apps/themes/osr-theme-w/pages/photo/index.html:2
-msgid "摄影"
-msgstr "Photography"
+msgid "图库"
+msgstr "Pictures"
 
 #: apps/themes/osr-style/pages/photo/index.html:12
 #: apps/themes/osr-theme-w/pages/photo/index.html:12
@@ -1246,7 +1246,7 @@ msgstr "Uploaded"
 #: apps/themes/osr-theme-w/pages/photo/index.html:80
 #: apps/themes/osr-theme-w/pages/post/_comment.html:306
 #: apps/themes/osr-theme-w/pages/posts/_posts_weiget.html:108
-#: apps/themes/osr-theme-w/pages/search/index.html:85
+#: apps/themes/osr-theme-w/pages/search/index.html:84
 #: apps/themes/osr-theme-w/pages/user/follow/index.html:63
 #: apps/themes/osr-theme-w/pages/user/message/index.html:85
 #: apps/themes/osr-theme-w/pages/user/post/_comment.html:155
@@ -1270,7 +1270,7 @@ msgstr "{{photos.current_page]}Page/Total {[photos.page_total]}Page"
 #: apps/themes/osr-theme-w/pages/photo/index.html:86
 #: apps/themes/osr-theme-w/pages/post/_comment.html:310
 #: apps/themes/osr-theme-w/pages/posts/_posts_weiget.html:114
-#: apps/themes/osr-theme-w/pages/search/index.html:91
+#: apps/themes/osr-theme-w/pages/search/index.html:90
 #: apps/themes/osr-theme-w/pages/user/follow/index.html:69
 #: apps/themes/osr-theme-w/pages/user/message/index.html:89
 #: apps/themes/osr-theme-w/pages/user/post/_comment.html:159
@@ -1569,12 +1569,12 @@ msgid "文章 用户"
 msgstr "Articles User"
 
 #: apps/themes/osr-style/pages/search/index.html:31
-#: apps/themes/osr-theme-w/pages/search/index.html:27
+#: apps/themes/osr-theme-w/pages/search/index.html:26
 msgid "用户"
 msgstr "User"
 
 #: apps/themes/osr-style/pages/search/index.html:92
-#: apps/themes/osr-theme-w/pages/search/index.html:88
+#: apps/themes/osr-theme-w/pages/search/index.html:87
 msgid "第{[posts.items.current_page]}页/共{[posts.items.page_total]}页"
 msgstr "Page{[posts.items.current_page]}/Pages of {[posts.items.page_total]}"
 
@@ -1732,4 +1732,6 @@ msgstr "Article list"
 msgid "移除"
 msgstr "Remove"
 
+#~ msgid "摄影"
+#~ msgstr "Photography"
 

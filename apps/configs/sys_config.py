@@ -86,6 +86,7 @@ CONFIG_CACHE_KEY = "web_get_config"
 # 配置的缓存时间,主要是为了当你修改了CONFIG_CACHE_KEY后,老的配置缓存未清理，过期自动清理
 CONFIG_CACHE_TIMEOUT = 3600 * 24  # 单位s
 
+THEME_NAVS_CAHCE_KEY = "theme_navs_caches"
 
 """
  日志 log
