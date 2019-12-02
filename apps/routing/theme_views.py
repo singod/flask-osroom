@@ -3,6 +3,7 @@
 # @Time : 2017/11/1 ~ 2019/9/1
 # @Author : Allen Woo
 import os
+import time
 from apps.app import csrf
 from apps.core.blueprint import theme_view, static_html_view
 from flask import render_template, request, send_file, g
@@ -10,25 +11,11 @@ from werkzeug.exceptions import abort
 from apps.core.flask.permission import page_permission_required
 from apps.core.utils.get_config import get_config
 from apps.modules.global_data.process.global_data import get_global_site_data
+from apps.routing.static_html_page import static_html, get_post_page_nums
+from apps.utils.format.time_format import time_to_utcdate
 
 
-# robots.txt
-from apps.routing.static_html_page import static_html
-
-
-@csrf.exempt
-@theme_view.route('/robots.txt', methods=['GET'])
-def robots():
-    """
-    robots.txt
-    :return:
-    """
-    absolute_path = "{}/{}/pages/robots.txt".format(
-        theme_view.template_folder, get_config(
-            "theme", "CURRENT_THEME_NAME"))
-    return send_file(absolute_path)
-
-
+# homepage
 @csrf.exempt
 @theme_view.route('/', methods=['GET', 'POST'])
 @page_permission_required()
@@ -36,6 +23,7 @@ def index():
     return get_render_template("index")
 
 
+# other
 @csrf.exempt
 @theme_view.route('/<path:path>', methods=['GET'])
 @page_permission_required()
@@ -97,3 +85,53 @@ def get_render_template_email(path, params):
                          **get_global_site_data(req_type="view"))
     return render_template('{}.html'.format(path), data=params)
 
+
+@csrf.exempt
+@theme_view.route('/robots.txt', methods=['GET'])
+def robots():
+    """
+    robots.txt
+    :return:
+    """
+    absolute_path = "{}/{}/pages/robots.txt".format(
+        theme_view.template_folder, get_config(
+            "theme", "CURRENT_THEME_NAME"))
+    return send_file(absolute_path)
+
+
+# sitemap
+@csrf.exempt
+@theme_view.route('/sitemap.xml', methods=['GET'])
+def sitemap():
+    """
+    sitemap.xml
+    :return:
+    """
+    ut = time.time()
+    content = ""
+    host_url = request.host_url
+    for n in get_post_page_nums():
+        content = """
+{content}
+<url>
+    <loc>{domain}st-html/posts/{page}</loc>
+    <lastmod>{date}</lastmod>
+    <changefreq>{freq}</changefreq>
+    <priority>{priority}</priority>
+</url>""".format(
+            content=content,
+            page=n,
+            domain=host_url,
+            date=time_to_utcdate(ut, "%Y-%m-%d"),
+            freq="daily",
+            priority="0.6"
+        )
+
+    content = """<?xml version="1.0" encoding="utf-8"?>
+<urlset  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {content}
+</urlset>""".format(content=content)
+    absolute_path = os.path.abspath("{}/sitemap.xml".format(static_html_view.template_folder))
+    with open(absolute_path, "w") as wf:
+        wf.write(content)
+    return send_file(absolute_path)

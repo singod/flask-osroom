@@ -5,10 +5,20 @@
 import os
 import re
 from flask import render_template, abort, g, request, redirect
+
+from apps.app import cache
 from apps.core.blueprint import static_html_view
 from apps.core.utils.get_config import get_config
 from apps.modules.global_data.process.global_data import get_global_site_data
 from apps.modules.post.process.post import get_post, get_posts
+
+
+@cache.cached(timeout=86400, key_base64=False, db_type="redis")
+def get_post_page_nums():
+
+    data = get_posts(page=1)
+    page_nums = list(range(1, data["posts"]["page_total"] + 1))
+    return page_nums
 
 
 def static_html(path):
