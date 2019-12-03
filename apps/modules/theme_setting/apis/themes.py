@@ -3,11 +3,8 @@
 # @Time : 2017/11/1 ~ 2019/9/1
 # @Author : Allen Woo
 from flask import request
-
-from apps.app import cache
 from apps.core.flask.login_manager import osr_login_required
-
-from apps.configs.sys_config import METHOD_WARNING, THEME_NAVS_CAHCE_KEY
+from apps.configs.sys_config import METHOD_WARNING
 from apps.core.blueprint import api
 from apps.core.flask.permission import permission_required
 from apps.core.flask.response import response_format
@@ -111,5 +108,4 @@ def api_theme_nav():
     else:
         data = {"msg_type": "w", "msg": METHOD_WARNING, "custom_status": 405}
 
-    cache.delete(THEME_NAVS_CAHCE_KEY)
     return response_format(data)

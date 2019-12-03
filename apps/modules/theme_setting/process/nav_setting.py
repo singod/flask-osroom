@@ -5,21 +5,13 @@
 from bson import ObjectId
 from flask import request, g
 from flask_babel import gettext
-
 from apps.app import mdbs, cache
-from apps.configs.sys_config import THEME_NAVS_CAHCE_KEY
 from apps.core.flask.reqparse import arg_verify
-from apps.core.utils.get_config import get_config
 from apps.utils.format.obj_format import json_to_pyseq, objid_to_str, str_to_num
 
 
-@cache.cached(timeout=86400, key=THEME_NAVS_CAHCE_KEY, key_base64=False, db_type="redis")
-def get_theme_navs():
-    theme_name = get_config(
-        "theme",
-        "CURRENT_THEME_NAME"
-    )
-    lang = g.site_global["language"]["current"]
+@cache.cached(timeout=86400, key_base64=False, db_type="redis")
+def get_global_theme_navs(theme_name, lang):
     langs = g.site_global["language"]["all_language"].keys()
     navs = mdbs["sys"].dbs["theme_nav_setting"].find(
         {
@@ -150,6 +142,11 @@ def nav_setting():
                 "msg_type": "w",
                 "custom_status": 400
             }
+    cache.delete_autokey(
+        fun="get_global_theme_navs",
+        db_type="redis",
+        key_regex=True
+    )
     return data
 
 
@@ -178,4 +175,9 @@ def del_navs():
             "msg_type": "s",
             "custom_status": 200
         }
+    cache.delete_autokey(
+        fun="get_global_theme_navs",
+        db_type="redis",
+        key_regex=True
+    )
     return data

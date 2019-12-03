@@ -59,5 +59,63 @@ INIT_DATAS = [
             {"url": "/osr-admin/comment", "endpoint": "", "type": "page", "methods": ["GET"], "create": "auto",
              "custom_permission": {"GET": 0b10}, "login_auth": {"GET": 1}},
         ]
+    },
+
+    {
+        "db": "osr_sys",
+        "coll": "theme_nav_setting",
+        "condition": {"theme_name": "osr-theme-w"},
+        "datas": [
+            {"order": 1, "display_name": "首页", "theme_name": "osr-theme-w", "language": "zh_CN", "json_data": {"link": "/", "next_lev": None}},
+            {"order": 2, "display_name": "文章", "theme_name": "osr-theme-w", "language": "zh_CN", "json_data": {"link": "/posts", "next_lev": None}},
+            {"order": 3, "display_name": "图库", "theme_name": "osr-theme-w", "language": "zh_CN", "json_data": {"link": "/photo", "next_lev": None}},
+            {"order": 4, "display_name": "关于", "theme_name": "osr-theme-w", "language": "zh_CN",
+             "json_data": {
+                  "link": "",
+                  "next_lev": [
+                      {"link": "/about-us", "display_name": "关于我们"},
+                      {"link": "/contact", "display_name": "联系我们"}
+                  ]
+              }},
+            {"order": 1, "display_name": "Home", "theme_name": "osr-theme-w", "language": "en_US", "json_data": {"link": "/", "next_lev": None}},
+            {"order": 2, "display_name": "Blogs", "theme_name": "osr-theme-w", "language": "en_US", "json_data": {"link": "/posts", "next_lev": None}},
+            {"order": 3, "display_name": "Pictures", "theme_name": "osr-theme-w", "language": "en_US", "json_data": {"link": "/photo", "next_lev": None}},
+            {"order": 4, "display_name": "About", "theme_name": "osr-theme-w", "language": "en_US",
+             "json_data": {
+                  "link": "",
+                  "next_lev": [
+                      {"link": "/about-us", "display_name": "About us"},
+                      {"link": "/contact", "display_name": "Contact"}
+                  ]
+              }}
+            ]
+    },
+
+    {
+        "db": "osr_sys",
+        "coll": "theme_nav_setting",
+        "condition": {"theme_name": "osr-style"},
+        "datas": [
+            {"order": 1, "display_name": "首页", "theme_name": "osr-style", "language": "zh_CN", "json_data": {"link": "/", "next_lev": None}},
+            {"order": 2, "display_name": "图库", "theme_name": "osr-style", "language": "zh_CN", "json_data": {"link": "/photo", "next_lev": None}},
+            {"order": 3, "display_name": "关于", "theme_name": "osr-style", "language": "zh_CN",
+             "json_data": {
+                  "link": "",
+                  "next_lev": [
+                      {"link": "/about-us", "display_name": "关于我们"},
+                      {"link": "/contact", "display_name": "联系我们"}
+                  ]
+              }},
+            {"order": 1, "display_name": "Home", "theme_name": "osr-style", "language": "en_US", "json_data": {"link": "/", "next_lev": None}},
+            {"order": 3, "display_name": "Pictures", "theme_name": "osr-style", "language": "en_US", "json_data": {"link": "/photo", "next_lev": None}},
+            {"order": 4, "display_name": "About", "theme_name": "osr-style", "language": "en_US",
+             "json_data": {
+                  "link": "",
+                  "next_lev": [
+                      {"link": "/about-us", "display_name": "About us"},
+                      {"link": "/contact", "display_name": "Contact"}
+                  ]
+              }},
+        ]
     }
 ]

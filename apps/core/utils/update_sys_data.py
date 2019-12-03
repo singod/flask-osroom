@@ -170,21 +170,30 @@ def compatible_processing(mdbs):
             if r.inserted_id:
                 mdbs["web"].db.category.delete_one({"_id": category["_id"]})
 
-        # v2.0之后新功能
-        if not mdbs["sys"].dbs["theme_nav_setting"].find_one({}):
+        '''
+        v2.0之后新功能: 兼容 2.0Beta, v2.0
+        '''
+        # 判断是第一次部署网站还是升级版本
+        its_not_first = mdbs["user"].dbs["permission"].find_one({})
+        if its_not_first and not mdbs["sys"].dbs["theme_nav_setting"].find_one({}):
             # 将导航设置迁移到主题导航设置专属模块数据库
             r = mdbs["sys"].dbs["sys_config"].find(
                 {"project": "theme_global_conf", "key": "TOP_NAV"}
             ).sort([("update_time", -1)]).limit(1)
             if r.count(True):
                 for i, v in r[0]["value"].items():
+                    display_name = v["nav"]
                     updata = {
                         "order": 1,
-                        "display_name": v["nav"],
+                        "display_name": display_name,
                         "theme_name": theme_name,
                         "language": "zh_CN"
                     }
                     del v["nav"]
                     updata["json_data"] = v
-                    mdbs["sys"].dbs["theme_nav_setting"].insert(updata)
+                    mdbs["sys"].dbs["theme_nav_setting"].update_one(
+                        {"theme_name": theme_name, "display_name": display_name},
+                        {"$set": updata},
+                        upsert=True
+                    )
 
