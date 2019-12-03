@@ -144,6 +144,8 @@ def nav_setting():
             }
     cache.delete_autokey(
         fun="get_global_theme_navs",
+        theme_name=".*",
+        lang=".*",
         db_type="redis",
         key_regex=True
     )
@@ -177,6 +179,8 @@ def del_navs():
         }
     cache.delete_autokey(
         fun="get_global_theme_navs",
+        theme_name=".*",
+        lang=".*",
         db_type="redis",
         key_regex=True
     )
