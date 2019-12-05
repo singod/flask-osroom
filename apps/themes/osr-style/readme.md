@@ -5,12 +5,12 @@
 
 > 解释1
 
-![](/theme/static/sys_imgs/theme_doc_1.png)
+![](/theme/osr-style/static/sys_imgs/theme_doc_1.png)
 <br>
 > 解释2
 
-![](/theme/static/sys_imgs/theme_doc_2.png)
+![](/theme/osr-style/static/sys_imgs/theme_doc_2.png)
 <br>
 > 解释2
 
-![](/theme/static/sys_imgs/theme_doc_3.png)
+![](/theme/osr-style/static/sys_imgs/theme_doc_3.png)

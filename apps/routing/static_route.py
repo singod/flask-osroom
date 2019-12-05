@@ -100,9 +100,9 @@ def admin_static_file(path):
 
 
 @csrf.exempt
-@theme_view.route('/theme/static/<regex(".+"):path>', methods=['GET'])
+@theme_view.route('/theme/<theme_name>/static/<regex(".+"):path>', methods=['GET'])
 @page_permission_required()
-def theme_static_file(path):
+def theme_static_file(path, theme_name=None):
     """
     获取主题下静态文件
     注意:
@@ -114,6 +114,8 @@ def theme_static_file(path):
     :param h:获取的高
     :return:w和ｈ都大于0则返回相应尺寸图片; w和ｈ都等于0则返回原图; 其中一个值大于０则返回以这个值为基础等比缩放图片
     """
+    if not theme_name:
+        theme_name = get_config("theme", "CURRENT_THEME_NAME")
     w = str_to_num(request.args.get("w", 0))
     h = str_to_num(request.args.get("h", 0))
     if w or h:
@@ -122,9 +124,7 @@ def theme_static_file(path):
         absolute_path = os.path.abspath(
             "{}/{}/static/{}_w_{}_h_{}{}".format(
                 theme_view.template_folder,
-                get_config(
-                    "theme",
-                    "CURRENT_THEME_NAME"),
+                theme_name,
                 path_list[0],
                 w,
                 h,
@@ -132,8 +132,7 @@ def theme_static_file(path):
         if not os.path.isfile(absolute_path):
             img_path = os.path.abspath(
                 "{}/{}/static/{}".format(
-                    theme_view.template_folder, get_config(
-                        "theme", "CURRENT_THEME_NAME"), path))
+                    theme_view.template_folder, theme_name, path))
             try:
                 imgcs = ImageCompression(img_path, absolute_path)
             except BaseException:
@@ -147,8 +146,7 @@ def theme_static_file(path):
     else:
         absolute_path = os.path.abspath(
             "{}/{}/static/{}".format(
-                theme_view.template_folder, get_config(
-                    "theme", "CURRENT_THEME_NAME"), path))
+                theme_view.template_folder, theme_name, path))
         if not os.path.isfile(absolute_path):
             abort(404)
     return send_file(filename_or_fp=absolute_path,

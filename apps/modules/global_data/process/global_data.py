@@ -79,7 +79,8 @@ def get_global_media(dbname, collname):
 
     medias = {}
     if collname == "theme_display_setting":
-        q = {"theme_name": get_config("theme", "CURRENT_THEME_NAME")}
+        # q = {"theme_name": get_config("theme", "CURRENT_THEME_NAME")}
+        q = {"theme_name": g.get_config("theme", "CURRENT_THEME_NAME")}
     else:
         q = {}
 

@@ -43,3 +43,14 @@ def get_configs(project):
     """
     with app.app_context():
         return get_all_config()[project]
+
+
+class GetConfig:
+    def __init__(self, fixed_value={}):
+        self.fixed_value = fixed_value
+
+    def get_config(self, project, key):
+        return get_config(project, key)
+
+    def get_config_fixed(self, project, key):
+        return self.fixed_value[project][key]

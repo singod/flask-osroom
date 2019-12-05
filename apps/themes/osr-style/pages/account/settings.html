@@ -2,7 +2,7 @@
 {% block title %}{{_("个人设置")}}{% endblock %}
 {% block content %}
 <!-- Date Picker -->
-<link href="/theme/static/css/bootstrap-datetimepicker.min.css?v={{g.site_global.site_config.STATIC_FILE_VERSION}}" rel="stylesheet" type="text/css" />
+<link href="/theme/osr-style/static/css/bootstrap-datetimepicker.min.css?v={{g.site_global.site_config.STATIC_FILE_VERSION}}" rel="stylesheet" type="text/css" />
 <data id="user_set" content="{{data.set}}" hidden></data>
 <div id="app" class="row osr-edit-page" v-cloak>
     <section class="osr-panel">
@@ -29,7 +29,7 @@
     </section>
 </div>
 
-<script src="/theme/static/js/plugins/bs-datetimepicker/bootstrap-datetimepicker.min.js?v={{g.site_global.site_config.STATIC_FILE_VERSION}}" type="text/javascript"></script>
+<script src="/theme/osr-style/static/js/plugins/bs-datetimepicker/bootstrap-datetimepicker.min.js?v={{g.site_global.site_config.STATIC_FILE_VERSION}}" type="text/javascript"></script>
 <script>
 
     var vue = new Vue({

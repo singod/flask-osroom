@@ -9,7 +9,7 @@ from apps.core.blueprint import theme_view, static_html_view
 from flask import render_template, request, send_file, g
 from werkzeug.exceptions import abort
 from apps.core.flask.permission import page_permission_required
-from apps.core.utils.get_config import get_config
+from apps.core.utils.get_config import get_config, GetConfig
 from apps.modules.global_data.process.global_data import get_global_site_data
 from apps.routing.static_html_page import static_html, get_post_page_nums
 from apps.utils.format.time_format import time_to_utcdate
@@ -39,6 +39,52 @@ def pages(path):
     return get_render_template(path.rstrip("/"))
 
 
+# other
+@csrf.exempt
+@theme_view.route('/view/<name>/<path:path>', methods=['GET'])
+@page_permission_required()
+def view_pages(name, path):
+    """
+    GET:
+        通用视图函数,那些公共的页面将从此进入
+        :param path:
+        :return:
+    """
+    fixed_value = {
+        "theme": {
+            "CURRENT_THEME_NAME": name
+        }
+    }
+    get_conf = GetConfig(fixed_value=fixed_value)
+    g.get_config = get_conf.get_config_fixed
+    if path.startswith(static_html_view.url_prefix.strip("/")):
+        return static_html(path)
+    return get_render_template_view(path.rstrip("/"), name)
+
+
+def get_render_template_view(path, theme_name):
+    """
+    根据路由path,返回一个render_template
+    :param path:
+    :return:
+    """
+    # 拼接当前主题目录
+    path = "{}/pages/{}".format(theme_name, path)
+    absolute_path = os.path.abspath(
+        "{}/{}.html".format(theme_view.template_folder, path))
+    if not os.path.isfile(absolute_path):
+        path = "{}/index".format(path)
+        absolute_path = os.path.abspath(
+            "{}/{}.html".format(theme_view.template_folder, path))
+        if not os.path.isfile(absolute_path):
+            abort(404)
+
+    data = dict(request.args.items())
+    g.site_global = dict(g.site_global,
+                         **get_global_site_data(req_type="view"))
+    return render_template('{}.html'.format(path), data=data)
+
+
 def get_render_template(path):
     """
     根据路由path,返回一个render_template
@@ -46,8 +92,7 @@ def get_render_template(path):
     :return:
     """
     # 拼接当前主题目录
-    path = "{}/pages/{}".format(get_config("theme",
-                                           "CURRENT_THEME_NAME"), path)
+    path = "{}/pages/{}".format(get_config("theme", "CURRENT_THEME_NAME"), path)
     absolute_path = os.path.abspath(
         "{}/{}.html".format(theme_view.template_folder, path))
     if not os.path.isfile(absolute_path):

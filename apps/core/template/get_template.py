@@ -5,7 +5,7 @@
 import os
 
 import time
-from flask import render_template, url_for
+from flask import render_template, url_for, g
 
 from apps.core.blueprint import theme_view, admin_view
 from apps.core.template.template import render_absolute_path_template
@@ -37,7 +37,9 @@ def get_email_html(data):
         tformat="%Y-%m-%d %H:%M:%S")
 
     path = "{}/pages/module/email/send-temp.html".format(
-        get_config("theme", "CURRENT_THEME_NAME"))
+        # get_config("theme", "CURRENT_THEME_NAME")
+        g.get_config("theme", "CURRENT_THEME_NAME")
+    )
     absolute_path = os.path.abspath(
         "{}/{}".format(theme_view.template_folder, path))
     if os.path.isfile(absolute_path):
