@@ -12,7 +12,7 @@ from apps.app import mail, app, mdbs
 __author__ = 'woo'
 
 
-def send_email(msg="", tp_path=None, tp_data=None, send_independently=True):
+def send_email(msg="", tp_path=None, tp_data=None, send_independently=True, ctype="other"):
     """
     Send email
     :return:
@@ -22,7 +22,13 @@ def send_email(msg="", tp_path=None, tp_data=None, send_independently=True):
     else:
         html = get_render_template_email(path=tp_path, params=tp_data)
     if html:
-        send_async_email(msg=msg, html=html, text="", send_independently=send_independently)
+        send_async_email(
+            msg=msg,
+            html=html,
+            text="",
+            send_independently=send_independently,
+            ctype=ctype
+        )
     else:
         status = "failed"
         log = {
@@ -36,7 +42,7 @@ def send_email(msg="", tp_path=None, tp_data=None, send_independently=True):
 
 # 之后需要改成celery异步
 @async_process()
-def send_async_email(msg, html, text, attach=None, send_independently=True):
+def send_async_email(msg, html, text, attach=None, send_independently=True, ctype="other"):
     """
     发送email
     :param subject:
@@ -70,10 +76,25 @@ def send_async_email(msg, html, text, attach=None, send_independently=True):
                 with mail.connect() as conn:
                     for recipient in msg["recipients"]:
                         msg_obj.recipients = [recipient]
-                        send_email_process(msg_obj, conn)
+                        status, result_msg = send_email_process(msg_obj, conn)
             else:
                 msg_obj.recipients = msg["recipients"]
-                return send_email_process(msg_obj)
+                status, result_msg = send_email_process(msg_obj)
+            log = {
+                "type": "email",
+                "error_info": result_msg,
+                'status':  status,
+                'subject': msg_obj.subject,
+                'from': msg_obj.sender,
+                'to': list(msg["recipients"]),
+                'date': msg_obj.date,
+                'body': msg_obj.body,
+                'html': msg_obj.html,
+                'msgid': msg_obj.msgId,
+                'time': time.time(),
+                'msg_type': ctype
+            }
+            mdbs["sys"].db.sys_message.insert_one(log)
 
 
 def send_email_process(msg_obj, connected_instance=None):
@@ -96,18 +117,5 @@ def send_email_process(msg_obj, connected_instance=None):
     except Exception as e:
         result_msg = str(e)
         status = "error"
-    log = {
-        "type": "email",
-        "error_info": result_msg,
-        'status': status,
-        'subject': msg_obj.subject,
-        'from': msg_obj.sender,
-        'to': list(msg_obj.send_to),
-        'date': msg_obj.date,
-        'body': msg_obj.body,
-        'html': msg_obj.html,
-        'msgid': msg_obj.msgId,
-        'time': time.time()
 
-    }
-    mdbs["sys"].db.sys_message.insert_one(log)
+    return status, result_msg

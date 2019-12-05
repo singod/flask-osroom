@@ -93,13 +93,12 @@ def send_msg():
             for user in users:
                 to_emails.append(user["email"])
             if to_emails:
-                path = "email/code"
                 msg = {
                     "subject": title,
                     "recipients": to_emails,
                     "html_msg": content_html
                 }
-                send_email(msg=msg)
+                send_email(msg=msg, ctype="nt")
 
                 data["msg"] = "{}. {}".format(
                     data["msg"], gettext("Mail message is being sent"))

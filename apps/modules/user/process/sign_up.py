@@ -138,7 +138,7 @@ def p_sign_up(
                     "recipients": [email],
                     "html_msg": html
                 }
-                send_email(msg=msg)
+                send_email(msg=msg, ctype="nt")
 
             elif mobile_phone_number:
                 # 发送短信

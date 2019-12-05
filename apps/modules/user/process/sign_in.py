@@ -189,7 +189,7 @@ def login_log(user, client):
                 "recipients": [user["email"]],
                 "html_msg": html
             }
-            send_email(msg=msg)
+            send_email(msg=msg, ctype="nt")
 
 
 def third_party_sign_in(platform_name):

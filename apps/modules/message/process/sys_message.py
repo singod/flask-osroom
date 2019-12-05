@@ -21,13 +21,18 @@ def get_sys_message():
     :return:
     """
     data = {}
+    msg_type = request.argget.all("msg_type")
     ctype = request.argget.all("type")
-    status = request.argget.all("status", "normal")
+    status = request.argget.all("status", "successful")
     keyword = request.argget.all("keyword", "")
     pre = str_to_num(request.argget.all("pre", 10))
     page = str_to_num(request.argget.all("page", 1))
 
+    if status == "normal":
+        status = "successful"
     q = {"status": status, "type": ctype}
+    if msg_type:
+        q["msg_type"] = msg_type
     if keyword:
         keyword = {"$regex": keyword, "$options": "$i"}
         q["$or"] = [
