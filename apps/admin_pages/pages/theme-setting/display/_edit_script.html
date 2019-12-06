@@ -121,7 +121,8 @@
             var result = osrHttp("POST","/api/admin/theme/display-setting", d);
             result.then(function (r) {
                 if(r.data.msg_type == "s"){
-                    window.location.href='/osr-admin/theme-setting/display/'+vue.media.type+'?cid='+vue.cid;
+                    //window.location.href='/osr-admin/theme-setting/display/'+vue.media.type+'?cid='+vue.cid;
+                    location.reload();
                 }
             });
         }
@@ -145,8 +146,9 @@
         var result = osrHttpUpload("PUT","/api/admin/theme/display-setting", formData);
         result.then(function (r) {
             if(r.data.msg_type=="s"){
-                 window.location.href='/osr-admin/theme-setting/display/'+vue.media.type+'-edit?cid='+vue.cid
-                 +'&id='+vue.id;
+                 //window.location.href='/osr-admin/theme-setting/display/'+vue.media.type+'-edit?cid='+vue.cid
+                 //+'&id='+vue.id;
+                location.reload();
             }
         });
 
