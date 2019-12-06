@@ -69,6 +69,10 @@
                           </p>
                          <br><br>
                           <div class="btn-group-sm">
+
+                              <a :href="'/osr-admin/theme-view?theme='+theme.theme_name" target="_blank" class="btn osr-btn btn-success">
+                                    {{_("预览")}}
+                              </a>
                               <a v-if="theme.current" class="btn osr-btn btn-default">
                                     {{_("已启用")}}
                               </a>

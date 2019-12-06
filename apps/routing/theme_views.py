@@ -41,7 +41,7 @@ def pages(path):
 
 # other
 @csrf.exempt
-@theme_view.route('/view/<name>/<path:path>', methods=['GET'])
+@theme_view.route('/theme/view/<name>/<path:path>', methods=['GET'])
 @page_permission_required()
 def view_pages(name, path):
     """
