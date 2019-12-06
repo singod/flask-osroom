@@ -26,7 +26,7 @@ def get_global_site_data(req_type="api"):
     # 全局数据
     # theme
     data["theme_config"] = get_configs("theme_global_conf")
-    theme_name = get_config(
+    theme_name = g.get_config(
         "theme",
         "CURRENT_THEME_NAME"
     )
