@@ -85,7 +85,7 @@ def get_global_media(dbname, collname):
         q = {"theme_name": theme_name}
     else:
         q = {}
-
+    q["switch"] = {"$in": [1, True]}
     if media_id:
         q["_id"] = ObjectId(media_id)
         media = mdb.dbs[collname].find_one(q)
