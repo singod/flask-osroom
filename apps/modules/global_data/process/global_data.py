@@ -76,11 +76,13 @@ def get_global_media(dbname, collname):
     conditions = json_to_pyseq(request.argget.all("conditions", []))
     category_name = json_to_pyseq(request.argget.all("category_name", []))
     media_id = request.argget.all("media_id")
+    theme_name = request.argget.all("theme_name")
 
     medias = {}
     if collname == "theme_display_setting":
-        # q = {"theme_name": get_config("theme", "CURRENT_THEME_NAME")}
-        q = {"theme_name": g.get_config("theme", "CURRENT_THEME_NAME")}
+        if not theme_name:
+            theme_name = g.get_config("theme", "CURRENT_THEME_NAME")
+        q = {"theme_name": theme_name}
     else:
         q = {}
 

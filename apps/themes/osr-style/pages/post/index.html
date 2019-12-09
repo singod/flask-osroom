@@ -300,7 +300,8 @@
 
         ];
         var d ={
-            conditions:JSON.stringify(conditions)
+            conditions:JSON.stringify(conditions),
+            theme_name:"osr-style"
         }
         var result = osrHttp("GET","/api/global/theme-data/display", d, args={not_prompt:true});
         result.then(function (r) {
