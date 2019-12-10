@@ -53,9 +53,12 @@ def categorys(user_id=None):
     s, r = arg_verify([(gettext("category type"), ntype)], required=True)
     if not s:
         return r
-    category = list(mdbs["web"].db.theme_category.find({"user_id": user_id,
-                                                    "type": ntype,
-                                                    "theme_name": theme_name}))
+    category = list(mdbs["web"].db.theme_category.find(
+        {
+            "user_id": user_id,
+            "type": ntype,
+            "theme_name": theme_name}
+    ))
     data["categorys"] = objid_to_str(category, ["_id", "user_id"])
     data["theme_name"] = theme_name
     return data
@@ -68,8 +71,11 @@ def category_add(user_id=None):
 
     ntype = request.argget.all('type')
     name = request.argget.all('name', '')
-    # theme_name = get_config("theme", "CURRENT_THEME_NAME")
-    theme_name = g.get_config("theme", "CURRENT_THEME_NAME")
+    theme_name = request.argget.all('theme_name')
+
+    s, r = arg_verify([(gettext("Theme name"), theme_name)], required=True)
+    if not s:
+        return r
 
     s, r = arg_verify([(gettext("category type"), ntype)],
                       only=get_config("category", "CATEGORY_TYPE").values())

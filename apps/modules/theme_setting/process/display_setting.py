@@ -209,10 +209,21 @@ def get_display_settings():
     data_cnt = display_settings.count(True)
     display_settings = list(display_settings.sort(
         sort).skip(pre * (page - 1)).limit(pre))
+
+    r = list(mdbs["web"].db.theme_category.find(
+        {
+            "user_id": 0,
+            "type": ctype,
+            "theme_name": theme_name}
+    ))
+    categories = {}
+    for cate in r:
+        categories[str(cate["_id"])] = cate["name"]
     for d in display_settings:
         d["_id"] = str(d["_id"])
         if "url" in d and d["url"]:
             d["url"] = get_file_url(d["url"])
+        d["category"] = categories[str(d["category_id"])]
 
     data["medias"] = datas_paging(
         pre=pre,

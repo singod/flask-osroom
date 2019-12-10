@@ -86,11 +86,23 @@ def get_global_media(dbname, collname):
     else:
         q = {}
     q["switch"] = {"$nin": [0, False]}
+
+    # categiries
+    r = list(mdbs["web"].db.theme_category.find(
+        {
+            "user_id": 0,
+            "theme_name": theme_name}
+    ))
+    categories = {}
+    for cate in r:
+        categories[str(cate["_id"])] = cate["name"]
+
     if media_id:
         q["_id"] = ObjectId(media_id)
         media = mdb.dbs[collname].find_one(q)
         media["_id"] = str(media["_id"])
         media["url"] = get_file_url(media["url"])
+        media["category"] = categories[str(media["category_id"])]
         data = {"media": media}
         return data
 
@@ -106,7 +118,8 @@ def get_global_media(dbname, collname):
             {
                 "type": category_type, "user_id": category_user_id, "name": {
                     "$in": category_name}}, {
-                "_id": 1})
+                "_id": 1}
+        )
 
         category_ids = []
         for category in categorys:
@@ -123,6 +136,7 @@ def get_global_media(dbname, collname):
             d["_id"] = str(d["_id"])
             if "url" in d and d["url"]:
                 d["url"] = get_file_url(d["url"])
+            d["category"] = categories[str(d["category_id"])]
         medias = datas_paging(
             pre=pre,
             page_num=page,
@@ -144,6 +158,7 @@ def get_global_media(dbname, collname):
                 d["_id"] = str(d["_id"])
                 if "url" in d and d["url"]:
                     d["url"] = get_file_url(d["url"])
+                d["category"] = categories[str(d["category_id"])]
             medias[condition["result_key"]] = temp_media
     data = {"medias": medias}
     return data
