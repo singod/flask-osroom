@@ -102,7 +102,8 @@ def get_global_media(dbname, collname):
         media = mdb.dbs[collname].find_one(q)
         media["_id"] = str(media["_id"])
         media["url"] = get_file_url(media["url"])
-        media["category"] = categories[str(media["category_id"])]
+        if media["category_id"] and str(media["category_id"]) in categories:
+            media["category"] = categories[str(media["category_id"])]
         data = {"media": media}
         return data
 
@@ -136,7 +137,8 @@ def get_global_media(dbname, collname):
             d["_id"] = str(d["_id"])
             if "url" in d and d["url"]:
                 d["url"] = get_file_url(d["url"])
-            d["category"] = categories[str(d["category_id"])]
+            if d["category_id"] and str(d["category_id"]) in categories:
+                d["category"] = categories[str(d["category_id"])]
         medias = datas_paging(
             pre=pre,
             page_num=page,
