@@ -6,6 +6,7 @@
     <h4 style="color: white; padding-top: 15px;padding-left: 25px">
         <i class="fa fa-laptop"></i>
         {{_("主题预览")}}: {{data.theme}}
+        <span style="color:#8a6d3b">({{_("部分开启新Tab链接已被修改")}})</span>
     </h4>
 </div>
 
@@ -62,6 +63,7 @@
                 }else{
                     $(this).attr('href',url_f+$(this).attr('href'));
                 }
+                $(this).removeAttr('target');
 
                 is_modifed = true;
             }

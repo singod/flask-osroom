@@ -1347,7 +1347,7 @@ li.have-img {
 }
 
 .osr-side-img{
-    max-width:150px!important;
+    /*max-width:150px!important;*/
     padding: 10px 0px 10px 0px;
 }
 

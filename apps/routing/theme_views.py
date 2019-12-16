@@ -46,7 +46,7 @@ def pages(path):
 def view_pages(name, path):
     """
     GET:
-        通用视图函数,那些公共的页面将从此进入
+        通用视图函数,那些公共的页面将从此进入(主题预览用)
         :param path:
         :return:
     """

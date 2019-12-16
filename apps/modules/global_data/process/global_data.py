@@ -160,7 +160,8 @@ def get_global_media(dbname, collname):
                 d["_id"] = str(d["_id"])
                 if "url" in d and d["url"]:
                     d["url"] = get_file_url(d["url"])
-                d["category"] = categories[str(d["category_id"])]
+                if d["category_id"] and str(d["category_id"]) in categories:
+                    d["category"] = categories[str(d["category_id"])]
             medias[condition["result_key"]] = temp_media
     data = {"medias": medias}
     return data
