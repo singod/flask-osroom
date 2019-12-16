@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  v1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-12-02 17:27+0800\n"
+"POT-Creation-Date: 2019-12-16 17:30+0800\n"
 "PO-Revision-Date: 2018-05-01 13:31+0800\n"
 "Last-Translator: AllenWoo\n"
 "Language: en_GB\n"
@@ -69,7 +69,7 @@ msgid "Keep at least one active token"
 msgstr "保留至少一个激活令牌"
 
 #: apps/core/auth/rest_token_auth.py:111
-#: apps/modules/message/process/sys_message.py:94
+#: apps/modules/message/process/sys_message.py:99
 #: apps/modules/message/process/user_message.py:211
 #: apps/modules/permission/process/url_permission.py:228
 #: apps/modules/plug_in_manager/process/manager.py:154
@@ -80,10 +80,10 @@ msgstr "删除成功"
 
 #: apps/core/auth/rest_token_auth.py:113 apps/modules/audit/process/rules.py:85
 #: apps/modules/category/process/category.py:159
-#: apps/modules/category/process/theme_setting_category.py:173
+#: apps/modules/category/process/theme_setting_category.py:186
 #: apps/modules/comments/process/comment.py:296
 #: apps/modules/permission/process/url_permission.py:233
-#: apps/modules/theme_setting/process/nav_setting.py:177
+#: apps/modules/theme_setting/process/nav_setting.py:176
 msgid "Delete failed"
 msgstr "删除失败"
 
@@ -245,7 +245,7 @@ msgstr "规则已存在"
 
 #: apps/modules/audit/process/rules.py:65
 #: apps/modules/category/process/category.py:86
-#: apps/modules/category/process/theme_setting_category.py:95
+#: apps/modules/category/process/theme_setting_category.py:107
 #: apps/modules/permission/process/permission.py:94
 #: apps/modules/user/process/role.py:56
 msgid "Add a success"
@@ -253,7 +253,7 @@ msgstr "添加成功"
 
 #: apps/modules/audit/process/rules.py:81
 #: apps/modules/category/process/category.py:155
-#: apps/modules/category/process/theme_setting_category.py:169
+#: apps/modules/category/process/theme_setting_category.py:182
 msgid "Delete the success,{}"
 msgstr "删除成功:{}"
 
@@ -268,15 +268,15 @@ msgstr "category id"
 
 #: apps/modules/category/process/category.py:46
 #: apps/modules/category/process/category.py:63
-#: apps/modules/category/process/theme_setting_category.py:48
-#: apps/modules/category/process/theme_setting_category.py:68
+#: apps/modules/category/process/theme_setting_category.py:53
+#: apps/modules/category/process/theme_setting_category.py:80
 msgid "category type"
 msgstr "category type"
 
 #: apps/modules/category/process/category.py:70
 #: apps/modules/category/process/category.py:103
-#: apps/modules/category/process/theme_setting_category.py:75
-#: apps/modules/category/process/theme_setting_category.py:113
+#: apps/modules/category/process/theme_setting_category.py:87
+#: apps/modules/category/process/theme_setting_category.py:126
 #: apps/modules/media/process/media.py:57
 #: apps/modules/media/process/media.py:225
 #: apps/modules/permission/process/permission.py:100
@@ -285,7 +285,7 @@ msgstr "category type"
 #: apps/modules/plug_in_manager/process/manager.py:110
 #: apps/modules/plug_in_manager/process/manager.py:143
 #: apps/modules/theme_setting/process/display_setting.py:63
-#: apps/modules/theme_setting/process/display_setting.py:251
+#: apps/modules/theme_setting/process/display_setting.py:263
 #: apps/modules/user/process/role.py:64 apps/modules/user/process/role.py:67
 #: apps/modules/user/process/role.py:120 apps/utils/validation/str_format.py:24
 msgid "name"
@@ -293,26 +293,30 @@ msgstr "名称"
 
 #: apps/modules/category/process/category.py:79
 #: apps/modules/category/process/category.py:112
-#: apps/modules/category/process/theme_setting_category.py:85
-#: apps/modules/category/process/theme_setting_category.py:126
+#: apps/modules/category/process/theme_setting_category.py:97
+#: apps/modules/category/process/theme_setting_category.py:139
 msgid "Name already exists"
 msgstr "名称已存在"
 
 #: apps/modules/category/process/category.py:121
-#: apps/modules/category/process/theme_setting_category.py:135
+#: apps/modules/category/process/theme_setting_category.py:148
 #: apps/modules/media/process/media.py:317
 #: apps/modules/permission/process/url_permission.py:194
 #: apps/modules/plug_in_manager/process/setting.py:167
 #: apps/modules/setting/process/settings.py:305
-#: apps/modules/theme_setting/process/display_setting.py:361
+#: apps/modules/theme_setting/process/display_setting.py:373
 msgid "Modify the success"
 msgstr "修改成功"
 
 #: apps/modules/category/process/category.py:126
-#: apps/modules/category/process/theme_setting_category.py:140
+#: apps/modules/category/process/theme_setting_category.py:153
 #: apps/modules/permission/process/url_permission.py:199
 msgid "No modification"
 msgstr "未修改"
+
+#: apps/modules/category/process/theme_setting_category.py:76
+msgid "Theme name"
+msgstr "主题名称"
 
 #: apps/modules/comments/process/adm_comment.py:63
 msgid "Comment on alleged violations"
@@ -444,7 +448,7 @@ msgstr "取消关注成功"
 msgid "Unfollow failed"
 msgstr "取消关注失败"
 
-#: apps/modules/global_data/process/global_data.py:52
+#: apps/modules/global_data/process/global_data.py:61
 msgid "Get the current user information successfully"
 msgstr "获取当前用户信息成功"
 
@@ -458,7 +462,7 @@ msgstr "类型"
 #: apps/modules/media/process/media.py:74
 #: apps/modules/media/process/media.py:285
 #: apps/modules/theme_setting/process/display_setting.py:85
-#: apps/modules/theme_setting/process/display_setting.py:323
+#: apps/modules/theme_setting/process/display_setting.py:335
 msgid "The type \"{}\" exists in the name \"{}\""
 msgstr "当前类型 \"{}\" 已存在名称 \"{}\""
 
@@ -475,31 +479,31 @@ msgid "Added successfully"
 msgstr "添加成功"
 
 #: apps/modules/media/process/media.py:248
-#: apps/modules/theme_setting/process/display_setting.py:284
+#: apps/modules/theme_setting/process/display_setting.py:296
 msgid "Update picture successfully"
 msgstr "更新图片成功"
 
 #: apps/modules/media/process/media.py:253
-#: apps/modules/theme_setting/process/display_setting.py:289
+#: apps/modules/theme_setting/process/display_setting.py:301
 msgid "Failed to update"
 msgstr "更新失败"
 
 #: apps/modules/media/process/media.py:322
-#: apps/modules/theme_setting/process/display_setting.py:366
+#: apps/modules/theme_setting/process/display_setting.py:378
 msgid "The content is not modified"
 msgstr "内容未修改"
 
 #: apps/modules/media/process/media.py:352
-#: apps/modules/theme_setting/process/display_setting.py:401
+#: apps/modules/theme_setting/process/display_setting.py:413
 msgid "{} files have been deleted"
 msgstr "{} 文件已被删除"
 
 #: apps/modules/media/process/media.py:356
-#: apps/modules/message/process/sys_message.py:99
+#: apps/modules/message/process/sys_message.py:104
 #: apps/modules/message/process/user_message.py:216
 #: apps/modules/plug_in_manager/process/manager.py:168
 #: apps/modules/setting/process/host_setting.py:82
-#: apps/modules/theme_setting/process/display_setting.py:405
+#: apps/modules/theme_setting/process/display_setting.py:417
 msgid "Failed to delete"
 msgstr "删除失败"
 
@@ -530,19 +534,19 @@ msgstr "站内通知成功"
 msgid "No relevant user"
 msgstr "没有相关用户"
 
-#: apps/modules/message/process/send_msg.py:105
+#: apps/modules/message/process/send_msg.py:104
 msgid "Mail message is being sent"
 msgstr "邮件通知已发送"
 
-#: apps/modules/message/process/send_msg.py:108
+#: apps/modules/message/process/send_msg.py:107
 msgid "There is no such email address user"
 msgstr "没有找到用户邮件地址"
 
-#: apps/modules/message/process/send_msg.py:121
+#: apps/modules/message/process/send_msg.py:120
 msgid "SMS sent"
 msgstr "短信发送"
 
-#: apps/modules/message/process/send_msg.py:124
+#: apps/modules/message/process/send_msg.py:123
 msgid "No user mobile phone number was obtained"
 msgstr "没有获得用户手机号码"
 
@@ -613,7 +617,7 @@ msgid "The update is successful. {}"
 msgstr "更新成功. {}"
 
 #: apps/modules/permission/process/permission.py:226
-#: apps/modules/theme_setting/process/nav_setting.py:149
+#: apps/modules/theme_setting/process/nav_setting.py:141
 msgid "Update failed"
 msgstr "更新失败"
 
@@ -863,10 +867,10 @@ msgstr "切换成功"
 #: apps/modules/theme_setting/process/display_setting.py:42
 #: apps/modules/theme_setting/process/display_setting.py:149
 #: apps/modules/theme_setting/process/display_setting.py:183
-#: apps/modules/theme_setting/process/display_setting.py:243
-#: apps/modules/theme_setting/process/display_setting.py:380
-#: apps/modules/theme_setting/process/nav_setting.py:54
-#: apps/modules/theme_setting/process/nav_setting.py:85
+#: apps/modules/theme_setting/process/display_setting.py:255
+#: apps/modules/theme_setting/process/display_setting.py:392
+#: apps/modules/theme_setting/process/nav_setting.py:46
+#: apps/modules/theme_setting/process/nav_setting.py:77
 #: apps/modules/theme_setting/process/page.py:24
 #: apps/modules/theme_setting/process/page.py:93
 #: apps/modules/theme_setting/process/static_file.py:24
@@ -875,44 +879,44 @@ msgstr "切换成功"
 msgid "theme name"
 msgstr "theme name"
 
-#: apps/modules/theme_setting/process/nav_setting.py:55
-#: apps/modules/theme_setting/process/nav_setting.py:86
+#: apps/modules/theme_setting/process/nav_setting.py:47
+#: apps/modules/theme_setting/process/nav_setting.py:78
 msgid "language"
 msgstr "language"
 
-#: apps/modules/theme_setting/process/nav_setting.py:84
+#: apps/modules/theme_setting/process/nav_setting.py:76
 msgid "Display name"
 msgstr "显示名称"
 
-#: apps/modules/theme_setting/process/nav_setting.py:87
+#: apps/modules/theme_setting/process/nav_setting.py:79
 msgid "Json data"
 msgstr "Json数据"
 
-#: apps/modules/theme_setting/process/nav_setting.py:96
+#: apps/modules/theme_setting/process/nav_setting.py:88
 msgid "Value must be of type json"
 msgstr "值必须是Json类型"
 
-#: apps/modules/theme_setting/process/nav_setting.py:113
+#: apps/modules/theme_setting/process/nav_setting.py:105
 msgid "Navigation added successfully"
 msgstr "添加成功"
 
-#: apps/modules/theme_setting/process/nav_setting.py:119
+#: apps/modules/theme_setting/process/nav_setting.py:111
 msgid "Failed to add navigation"
 msgstr "添加失败"
 
-#: apps/modules/theme_setting/process/nav_setting.py:137
+#: apps/modules/theme_setting/process/nav_setting.py:129
 msgid "Updated successfully"
 msgstr "更新成功"
 
-#: apps/modules/theme_setting/process/nav_setting.py:143
+#: apps/modules/theme_setting/process/nav_setting.py:135
 msgid "Unmodified"
 msgstr "未修改"
 
-#: apps/modules/theme_setting/process/nav_setting.py:159
+#: apps/modules/theme_setting/process/nav_setting.py:158
 msgid "ids"
 msgstr "ids"
 
-#: apps/modules/theme_setting/process/nav_setting.py:171
+#: apps/modules/theme_setting/process/nav_setting.py:170
 msgid "Deleted successfully"
 msgstr "删除成功"
 
@@ -1285,12 +1289,12 @@ msgid ""
 msgstr "当前平台没有登录处理插件，请先安装相关插件"
 
 #: apps/modules/user/process/sign_in.py:281
-#: apps/modules/user/process/sign_up.py:149
+#: apps/modules/user/process/sign_up.py:150
 msgid "Registered successfully"
 msgstr "注册成功"
 
 #: apps/modules/user/process/sign_in.py:285
-#: apps/modules/user/process/sign_up.py:153
+#: apps/modules/user/process/sign_up.py:154
 msgid "Data saved incorrectly, please try again"
 msgstr "数据保存不正确，请重试"
 
@@ -1309,6 +1313,16 @@ msgstr "此手机号码已在本站注册，请直接登录。"
 #: apps/modules/user/process/sign_up.py:127
 msgid "Registration success notification"
 msgstr "注册成功通知"
+
+#: apps/modules/user/process/sign_up.py:128
+msgid ""
+"Welcome to register <b>{}</b>.<br><a>{}</a> registered the account "
+"successfully."
+msgstr "欢迎注册 <b>{}</b>.<br><a>{}</a> 账号, 注册成功!"
+
+#: apps/modules/user/process/sign_up.py:145
+msgid "[{}] Successful registration account."
+msgstr "[{}] 注册成功"
 
 #: apps/modules/user/process/user.py:66
 msgid "Password is not a readable attribute"
