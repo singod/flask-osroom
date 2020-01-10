@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from flask import request
 from flask_babel import gettext
 from apps.core.flask.login_manager import osr_login_required
@@ -8,8 +11,6 @@ from apps.app import mdbs
 from apps.core.flask.permission import permission_required
 from apps.core.flask.reqparse import arg_verify
 from apps.core.flask.response import response_format
-
-__author__ = 'Allen Woo'
 
 
 @api.route('/account/data/availability', methods=['GET'])

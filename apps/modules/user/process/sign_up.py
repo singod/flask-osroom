@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from flask import request
 from flask_babel import gettext
 from flask_login import current_user
@@ -122,7 +125,7 @@ def p_sign_up(
             if email:
                 # 发送邮件
                 subject = gettext("Registration success notification")
-                body = "Welcome to register <b>{}</b>.<br><a>{}</a> registered the account successfully.".format(
+                body = gettext("""Welcome to register <b>{}</b>.<br><a>{}</a> registered the account successfully.""").format(
                     get_config("site_config", "APP_NAME"), email)
                 data = {"title": subject,
                         "body": body,
@@ -135,12 +138,13 @@ def p_sign_up(
                     "recipients": [email],
                     "html_msg": html
                 }
-                send_email(msg=msg)
+                send_email(msg=msg, ctype="nt")
 
             elif mobile_phone_number:
                 # 发送短信
-                content = "[{}] Successful registration account.".format(
-                    get_config("site_config", "APP_NAME"))
+                content = gettext("[{}] Successful registration account.").format(
+                    get_config("site_config", "APP_NAME")
+                )
                 send_mobile_msg(mobile_phone_number, content)
 
             data = {'msg': gettext('Registered successfully'),

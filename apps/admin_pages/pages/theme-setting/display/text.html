@@ -14,12 +14,22 @@
                     <i class="fa fa-file-text-o"></i>
                     <strong>
                         {{_("文本")}}(<span class="osr-color-success">{{_("结果")}}{[medias.data_total]}</span>)
-                        <span class="osr-color-secondary">[{{_("主题")}}: {[theme_name]}]</span>
+                        <span class="osr-color-secondary">[{{_("当前设置主题")}}: {[theme_name]}]</span>
                     </strong>
                 </header>
                 <div class="panel-body table-responsive">
                     <div class="box-tools form-inline">
                         <div class="input-group pull-left">
+                            <select id="theme_name" name="theme_name"  class="form-control osr-form-control input-sm"
+                                    @change="switch_theme_name($event.target.value)">
+                               <option v-if="name==current_theme_name" v-for="name in theme_names" :value="name" selected>
+                                        {[name]}
+                                </option>
+                                <option v-if="name!=current_theme_name" v-for="name in theme_names" :value="name">
+                                        {[name]}
+                                </option>
+                            </select>
+
                             <select id="status" name="status"  class="form-control osr-form-control input-sm" @change="switch_category($event.target.value)">
                                <option v-if="ct._id==curren_category" v-for="ct in media_categorys" :value="ct._id+'___'+ct.name" selected>
                                     {[ct.name]}
@@ -46,7 +56,7 @@
                     </div>
                     <br><br>
                     <div class="btn-group-sm">
-                       <a v-bind:href="'/osr-admin/theme-setting/category?type='+media_type+'&fp='+page+'&fs=theme-setting/display/text'" class="btn osr-btn btn-info">
+                       <a v-bind:href="'/osr-admin/theme-setting/category?theme='+current_theme_name+'&type='+media_type+'&fp='+page+'&fs=theme-setting/display/text'" class="btn osr-btn btn-info">
                            <i class="fa fa-cog"></i>  {{_("分类设置")}}
                        </a>
 
@@ -123,7 +133,7 @@
                             </td>
                             <td width="150px">{[media.time | formatDate]}</td>
                             <td width="150px">
-                                <a v-bind:href="'/osr-admin/theme-setting/display/text-edit?cid='+curren_category+'&id='+media._id+'&fp='+page" class="btn-sm btn osr-btn btn-info">
+                                <a v-bind:href="'/osr-admin/theme-setting/display/text-edit?theme='+current_theme_name+'&cid='+curren_category+'&id='+media._id+'&fp='+page" class="btn-sm btn osr-btn btn-info">
                                     <span class="fa fa-pencil-square-o"></span> {{_("详情|编辑")}}
                                 </a>
                             </td>
@@ -150,6 +160,8 @@
           media_view:{},
           media_edit:{},
           media_categorys:[],
+          current_theme_name:null,
+          theme_names:[],
           curren_category:"",
           checkAll:false, set:false,
           keyword:"",
@@ -169,7 +181,9 @@
 
         var cid = $("#cid").attr("content");
         vue.curren_category = cid;
-        get_category();
+        var url_s = get_url_parameter();
+        vue.current_theme_name = get_obj_value(url_s, "theme", null);
+        get_theme_names();
         var page = $("#page").attr("content");
         vue.page = page?page:vue.page;
         var sort = $("#sort").attr("content");
@@ -177,7 +191,6 @@
         var keyword = $("#keyword").attr("content");
         vue.keyword = keyword?keyword:vue.keyword;
 
-        get_media(vue.page, vue.keyword)
     });
 
     //获取媒体数据
@@ -188,13 +201,14 @@
         var sort = sorting(sort_field);
         var d = {
             ctype:vue.media_type,
+            theme_name: vue.current_theme_name,
             category_id:vue.curren_category,
             keyword:vue.keyword,
             page:vue.page,
             sort:JSON.stringify(sort)
         }
 
-        var result = osrHttp("GET","/api/admin/theme/display-setting",d,args={not_prompt:true});
+        var result = osrHttp("GET","/api/admin/theme/display-setting",d, args={not_prompt:true});
         result.then(function (r) {
 
             vue.medias = r.data.medias;
@@ -208,16 +222,34 @@
         if(vue.keyword){
             url = url + "&keyword="+vue.keyword;
         }
+        if(vue.current_theme_name){
+            url = url + "&theme="+vue.current_theme_name;
+        }
         history_state(title=null,url=url);
 
+    }
+
+    //获取所有主题名称
+    function get_theme_names(){
+
+        var result = osrHttp("GET","/api/admin/theme-names",{},args={not_prompt:true});
+        result.then(function (r) {
+            vue.theme_names = r.data.names;
+            vue.current_theme_name = vue.current_theme_name?vue.current_theme_name:r.data.current_theme_name;
+            get_category();
+        });
     }
 
     //获取分类
     function get_category(){
 
-        var result = osrHttp("GET","/api/admin/content/theme-category",{type:vue.media_type},args={not_prompt:true});
+        var result = osrHttp(
+            "GET","/api/admin/content/theme-category",
+            {type:vue.media_type, theme_name:vue.current_theme_name},
+            args={not_prompt:true});
         result.then(function (r) {
             vue.media_categorys = r.data.categorys;
+            get_media(1, "");
         });
     }
 
@@ -233,6 +265,13 @@
 
     }
 
+    //切换要设置的主题
+    function switch_theme_name(value) {
+        vue.current_theme_name = value;
+        get_category();
+    }
+
+
     //切换分类
     function switch_category(value) {
         vue.curren_category = value.split("___")[0];
@@ -245,6 +284,7 @@
         if(ids.length){
             ids = JSON.stringify(ids);
             var d = {
+                theme_name: vue.current_theme_name,
                 ids:ids
             }
             var result = osrHttp("DELETE","/api/admin/theme/display-setting", d);

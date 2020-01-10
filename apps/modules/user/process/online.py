@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from flask_babel import gettext
 
 from apps.app import cache
@@ -7,7 +10,6 @@ from apps.core.utils.get_config import get_config
 from apps.modules.user.process.sign_in import p_sign_in
 from flask import request
 from apps.modules.user.process.sign_up import p_sign_up
-__author__ = "Allen Woo"
 
 
 def sign_up():

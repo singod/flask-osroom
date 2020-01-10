@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from bson import ObjectId
 from flask import request
 from flask_babel import gettext
@@ -14,8 +17,6 @@ from apps.utils.format.obj_format import json_to_pyseq, str_to_num
 from apps.utils.format.time_format import time_to_utcdate
 from apps.app import mdbs
 from apps.utils.validation.str_format import url_format_ver
-
-__author__ = "Allen Woo"
 
 
 def public_profile():

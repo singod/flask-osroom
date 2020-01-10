@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import regex as re
 import time
 import datetime
-
-__author__ = 'Allen Woo'
 
 
 def time_to_utcdate(time_stamp=None, tformat="%Y%m%d"):

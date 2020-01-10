@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import collections
 import getopt
 import os
@@ -8,7 +10,6 @@ current_path = os.path.abspath(os.path.dirname(__file__))
 project_path = os.path.abspath("{}/..".format(current_path))
 sys.path.append(project_path)
 from tools.usage import usage_help
-__author__ = 'Allen Woo'
 
 
 class TempTool:

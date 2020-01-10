@@ -33,9 +33,9 @@
 
 </div>
 
-<script src="/theme/static/js/markdown/marked.min.js?v={{g.site_global.site_config.STATIC_FILE_VERSION}}"></script>
-<link href="/theme/static/css/highlight-style-github.css?v={{g.site_global.site_config.STATIC_FILE_VERSION}}" rel="stylesheet">
-<script src="/theme/static/js/highlight.js?v={{g.site_global.site_config.STATIC_FILE_VERSION}}"></script>
+<script src="/theme/osr-theme-w/static/js/markdown/marked.min.js?v={{g.site_global.site_config.STATIC_FILE_VERSION}}"></script>
+<link href="/theme/osr-theme-w/static/css/highlight-style-github.css?v={{g.site_global.site_config.STATIC_FILE_VERSION}}" rel="stylesheet">
+<script src="/theme/osr-theme-w/static/js/highlight.js?v={{g.site_global.site_config.STATIC_FILE_VERSION}}"></script>
 <script>
 
      Vue.directive('highlight',function (el) {
@@ -77,7 +77,8 @@
              }
         ]
         var d ={
-            conditions:JSON.stringify(conditions)
+            conditions:JSON.stringify(conditions),
+            theme_name:"osr-theme-w"
 
         }
 

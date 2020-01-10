@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from flask_login import current_user
 import regex as re
 from flask_babel import gettext
@@ -7,8 +10,6 @@ from apps.core.flask.reqparse import arg_verify
 from apps.core.utils.get_config import get_config
 from apps.utils.content_evaluation.content import content_inspection_text
 from apps.utils.format.url_format import get_domain
-
-__author__ = 'Allen Woo'
 
 
 def short_str_verifi(short_str, project=None, allow_special_chart=False):

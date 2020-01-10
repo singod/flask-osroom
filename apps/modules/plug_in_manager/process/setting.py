@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import json
 import re
 
@@ -15,8 +18,6 @@ from apps.core.plug_in.manager import plugin_manager
 from apps.core.utils.get_config import get_config
 from apps.utils.osr_async.osr_async import async_process
 from apps.utils.pyssh.pyssh import audit_host_info, MySSH
-
-__author__ = "Allen Woo"
 
 
 def get_plugin_setting():

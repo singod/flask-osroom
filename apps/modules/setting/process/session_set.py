@@ -1,11 +1,12 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from flask import request, session
 from flask_babel import gettext
 
 from apps.app import rest_session
 from apps.core.utils.get_config import get_config
-
-__author__ = "Allen Woo"
 
 
 def language_set():

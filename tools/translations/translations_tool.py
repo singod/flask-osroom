@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import getopt
 import os
 import sys
@@ -7,8 +9,6 @@ current_path = os.path.abspath(os.path.dirname(__file__))
 project_path = os.path.abspath("{}/../..".format(current_path))
 sys.path.append(project_path)
 from tools.usage import usage_help
-
-__author__ = 'Allen Woo'
 
 
 class Transations:
@@ -48,8 +48,23 @@ class Transations:
 
         action = [
             "init, [--init --ext <path> -o <dir name> --lan en_US]",
-            "update, [--update --ext <path> -o <dir name> --lan <lang> --cfg <cfg file path>]",
-            "compile, [--compile -o <dir name>]"]
+            "update, [--update --ext <path> -o <dir name> --cfg <cfg file path>]",
+            "compile, [--compile -o <dir name>]",
+            """Eg:
+Ext theme text:
+--update --ext apps/themes -o theme --lan en_US\n
+Ext admin pages text:
+--update --ext apps/admin_pages -o admin_pages --lan en_US\n
+Ext python:
+--update --ext apps -o python-pg --cfg tools/translations/babel_py.cfg --lan zh_Hans_CN\n
+Theme Tr compile:
+--compile -o theme\n
+Admin pages Tr compile:
+--compile -o admin_pages\n
+Python Tr compile:
+--compile -o python-pg
+"""
+        ]
 
         opts, args = getopt.getopt(sys.argv[1:], s_ops, l_ops)
         func = None

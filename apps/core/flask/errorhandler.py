@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import os
 from flask import request, render_template, g
 from flask_babel import gettext
@@ -13,8 +16,6 @@ from apps.core.flask.response import response_format
 from apps.core.template.template import render_absolute_path_template
 from apps.core.utils.get_config import get_config
 from apps.modules.global_data.process.global_data import get_global_site_data
-
-__author__ = "Allen Woo"
 
 
 class ErrorHandler:
@@ -144,8 +145,11 @@ def internal_server_error(e):
     else:
         g.site_global = dict(g.site_global,
                              **get_global_site_data(req_type="view"))
-        path = "{}/pages/{}.html".format(get_config("theme",
-                                                    "CURRENT_THEME_NAME"), code)
+        path = "{}/pages/{}.html".format(
+            # get_config("theme", "CURRENT_THEME_NAME"),
+            g.get_config("theme", "CURRENT_THEME_NAME"),
+            code
+        )
         absolute_path = os.path.abspath(
             "{}/{}".format(theme_view.template_folder, path))
         if not os.path.isfile(absolute_path):

@@ -1,8 +1,9 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from apps.app import cache, mdbs, app
 from apps.configs.sys_config import CONFIG_CACHE_KEY, CONFIG_CACHE_TIMEOUT
-
-__author__ = 'Allen Woo'
 """
 注意:配置有cache,默认CONFIG_TIMEOUT秒过期, 修改配置的程序中保存新后应该删除此cache，让配置立即生效
 """
@@ -42,3 +43,14 @@ def get_configs(project):
     """
     with app.app_context():
         return get_all_config()[project]
+
+
+class GetConfig:
+    def __init__(self, fixed_value={}):
+        self.fixed_value = fixed_value
+
+    def get_config(self, project, key):
+        return get_config(project, key)
+
+    def get_config_fixed(self, project, key):
+        return self.fixed_value[project][key]

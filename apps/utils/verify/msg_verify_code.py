@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import random
 from bson import ObjectId
 from flask_babel import gettext
@@ -78,7 +81,7 @@ def create_code_send(account, account_type):
             "recipients": [account],
             "html_msg": html
         }
-        send_email(msg=msg)
+        send_email(msg=msg, ctype="code")
 
         return {"msg": gettext("Has been sent. If not, please check spam"),
                 "msg_type": "s", "custom_status": 201}

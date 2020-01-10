@@ -1,11 +1,12 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from uuid import uuid1
 import time
 from flask import request
 
 from apps.utils.format.obj_format import json_to_pyseq
-
-__author__ = "Allen Woo"
 
 
 class RestSession:

@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from flask_babel import gettext
 from apps.app import csrf, rest_session
 from apps.core.auth.rest_token_auth import OsrTokenError
 from apps.core.blueprint import api
-from apps.core.utils.get_config import get_config
+from apps.core.utils.get_config import get_config, GetConfig
 from flask import request, g, session, current_app
 from apps.modules.token.process.rest_token import rest_token_auth
-
-__author__ = "Allen Woo"
 
 
 class Request:
@@ -96,9 +96,15 @@ class OsrRequestProcess:
             if request.argget.all("_method"):
                 request.c_method = request.argget.all("_method").upper()
             if "site_global" not in g:
-                g.site_global = {}
-                g.site_global["language"] = {"all_language": get_config(
-                    'babel', 'LANGUAGES'), "current": self.get_current_lang()}
+                g.site_global = {
+                    "language": {
+                        "all_language": get_config('babel', 'LANGUAGES'),
+                        "current": self.get_current_lang()
+                    }
+                }
+
+            get_conf = GetConfig()
+            g.get_config = get_conf.get_config
 
     def init_babel_locale_selector(self, babel):
         """
@@ -109,9 +115,12 @@ class OsrRequestProcess:
         @babel.localeselector
         def get_locale():
             if "site_global" not in g:
-                g.site_global = {}
-                g.site_global["language"] = {"all_language": get_config(
-                    'babel', 'LANGUAGES'), "current": self.get_current_lang()}
+                g.site_global = {
+                    "language": {
+                        "all_language": get_config('babel', 'LANGUAGES'),
+                        "current": self.get_current_lang()
+                    }
+                }
             return g.site_global["language"]["current"]
 
     def get_current_lang(self):

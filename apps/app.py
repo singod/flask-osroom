@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from flask_babel import Babel
 from flask_oauthlib.client import OAuth
 from apps.core.flask.myflask import OsrApp
@@ -11,7 +14,6 @@ from flask_wtf import CSRFProtect
 from flask_login import LoginManager
 from redis import StrictRedis
 from apps.configs.db_config import DB_CONFIG
-__author__ = 'Allen Woo'
 
 """
  Flask app 与其他核心模块实例化

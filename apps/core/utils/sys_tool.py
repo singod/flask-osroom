@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import json
 import os
 import re
@@ -6,11 +9,8 @@ import sys
 import subprocess
 from getpass import getpass
 from copy import deepcopy
-from apps.configs.config import CONFIG
+import requests
 from apps.configs.sys_config import PROJECT_PATH, SUPER_PER
-from apps.core.logger.web_logging import web_start_log
-
-__author__ = "Allen Woo"
 
 
 def copy_config_to_sample():
@@ -165,27 +165,21 @@ def add_user(mdbs):
     print('End')
 
 
-def update_pylib(input_venv_path=True, latest=False):
+def update_pylib(venv_path=True, latest=False):
     """
     更新python环境库
-    :param need_input:
+    :param input_venv_path:
     :return:
     """
-    if input_venv_path:
-        try:
-            input_str = input(
-                "Already running this script in your project python virtual environment?(yes/no):\n")
-            if input_str.upper() == "YES":
-                venv_path = None
-            else:
-                venv_path = CONFIG["py_venv"]["VENV_PATH"]["value"]
-                input_str = input(
-                    "The default path is: {}, Use the default(yes/no)\n".format(venv_path))
-                if input_str.upper() != "YES":
-                    venv_path = input("Enter a virtual environment:\n")
-        except BaseException:
-            venv_path = CONFIG["py_venv"]["VENV_PATH"]["value"]
-    else:
+    if venv_path == "default":
+        input_str = input(
+            "Already running this script in your project python virtual environment?(yes/no):\n"
+        )
+        if input_str.upper() == "YES":
+            venv_path = None
+        else:
+            venv_path = input("Enter a virtual environment:\n")
+    elif venv_path == "null":
         venv_path = None
 
     if venv_path:
@@ -196,25 +190,30 @@ def update_pylib(input_venv_path=True, latest=False):
     else:
         venv = ""
 
-    print(" * Update pip...{}".format(venv))
-    s, r = subprocess.getstatusoutput("{}pip3 install -U pip".format(venv))
-    print(r)
-
+    # 检查网络情况
+    is_time_out = False
+    try:
+        requests.get("https://www.bing.com/", timeout=10)
+    except Exception as e:
+        is_time_out = True
+        print(e)
+    if not is_time_out:
+        print(" * Update pip...")
+        s, r = subprocess.getstatusoutput("{}pip3 install -U pip".format(venv))
+        print("   {}".format(r))
+    else:
+        print(" ** Connection to external network timeout")
     s, r = subprocess.getstatusoutput("{}pip3 freeze".format(venv))
-    old_reqs = r.split()
+    venv_libs = r.split()
     with open("{}/requirements.txt".format(PROJECT_PATH)) as rf:
-        new_reqs = rf.read().split()
+        # req_file_libs
+        req_file_libs = rf.read().split()
 
     # 查找需要安装的包
-    ret_list = list(set(new_reqs) ^ set(old_reqs))
-    install_list = []
     if latest:
-        install_list = new_reqs
+        install_list = req_file_libs
     else:
-        # 非更新到最新的时候，找出需要安装的
-        for ret in ret_list:
-            if (ret not in old_reqs) and (ret in new_reqs):
-                install_list.append(ret)
+        install_list = list(set(req_file_libs).difference(set(venv_libs)))
 
     for pylib in install_list[:]:
         if "==" not in pylib:
@@ -223,66 +222,47 @@ def update_pylib(input_venv_path=True, latest=False):
     if install_list:
         msg = " * To install the following libs"
         print(msg)
-        print(install_list)
-        if not input_venv_path:
-            web_start_log.info(msg)
-            web_start_log.info(install_list)
+        install_s = " ".join(install_list)
+        print("   {}".format(install_s))
+        if not venv_path:
             pass
 
     install_failed = []
-    for sf in install_list:
-        if latest:
-            sf = sf.split("==")[0]
-        print("pip install -U {}".format(sf))
-        s, r = subprocess.getstatusoutput(
-            "{}pip install -U {}".format(venv, sf))
-        if s:
-            install_failed.append(sf)
+    if not is_time_out:
+        for sf in install_list:
+            if latest:
+                sf = sf.split("==")[0]
+            shcmd = "{}pip3 install -U {}".format(venv, sf)
+            print(shcmd)
+            s, r = subprocess.getstatusoutput(shcmd)
+            if s:
+                install_failed.append(sf)
 
-    for sf in install_failed:
-        if latest:
-            sf = sf.split("==")[0]
-        s, r = subprocess.getstatusoutput(
-            "{}pip install -U {}".format(venv, sf))
-        if not s:
-            install_failed.remove(sf)
-        else:
-            print(r)
+        for sf in install_failed:
+            s, r = subprocess.getstatusoutput(
+                "{}pip3 install -U {}".format(venv, sf))
+            if not s:
+                install_failed.remove(sf)
 
-    if install_failed:
-        msg = " * Installation failed library, please manually install"
-        print(msg)
-        print(install_failed)
-        web_start_log.info(msg)
-        web_start_log.info(install_failed)
-    if latest:
-        subprocess.getstatusoutput(
-            "{}pip freeze > {}/requirements.txt".format(venv, PROJECT_PATH))
+        if install_failed:
+            msg = " * Installation failed library, please manually install"
+            print(msg)
+            print(install_failed)
 
     # 查找需要卸载的包
-    s, r = subprocess.getstatusoutput("{}pip freeze".format(venv))
-    old_reqs = r.split()
-    with open("{}/requirements.txt".format(PROJECT_PATH)) as rf:
-        new_reqs = rf.read().split()
-    ret_list = list(set(new_reqs) ^ set(old_reqs))
-    uninstall_list = []
-    for ret in ret_list:
-        if (ret in old_reqs) and (ret not in new_reqs):
-            uninstall_list.append(ret)
-
+    s, r = subprocess.getstatusoutput("{}pip3 freeze".format(venv))
+    venv_libs = r.split()
+    uninstall_list = list(set(venv_libs).difference(set(req_file_libs)))
     for sf in uninstall_list[:]:
         if "==" not in sf:
             uninstall_list.remove(sf)
 
     if uninstall_list:
-        msg = " * Now don't need python library(uninstall cmd):\n"
+        msg = " * Now don't need python library:"
         print(msg)
-        uninstall_cmd = "pip uninstall"
-        for pylib in uninstall_list:
-            uninstall_cmd = "{} {}".format(uninstall_cmd, pylib)
-        print(uninstall_cmd + "\n")
-        if not input_venv_path:
-            web_start_log.info(msg)
-            web_start_log.info(uninstall_list)
+        uninstall_s = " ".join(uninstall_list)
+        print("   {}".format(uninstall_s))
+        if not venv_path:
+            pass
 
 

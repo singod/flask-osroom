@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import time
 from flask import request
 from flask_babel import gettext
@@ -12,8 +15,6 @@ from apps.utils.format.obj_format import json_to_pyseq, str_to_num
 from apps.utils.validation.str_format import email_format_ver, mobile_phone_format_ver
 from apps.utils.verify.img_verify_code import create_img_code, verify_image_code
 from apps.utils.verify.msg_verify_code import create_code_send
-
-__author__ = "Allen Woo"
 
 
 def send_code():

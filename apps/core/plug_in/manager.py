@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from importlib import import_module, reload
 import os
 import sys
@@ -13,8 +16,6 @@ from flask_babel import gettext
 
 from apps.app import mdbs, cache
 from apps.configs.sys_config import PLUG_IN_FOLDER, PLUG_IN_FOLDER_NAME, PLUG_IN_REQUIRED_CONF
-
-__author__ = "Allen Woo"
 
 
 class PluginManager:

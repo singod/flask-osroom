@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from bson import Code
 import time
 from flask import request
@@ -7,8 +9,6 @@ from flask import request
 from apps.core.utils.get_config import get_config
 from apps.utils.format.time_format import time_to_utcdate
 from apps.app import mdbs
-
-__author__ = "Allen Woo"
 
 
 def comment_access():

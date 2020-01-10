@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from copy import deepcopy
 from flask_babel import gettext
 from flask_login import current_user
@@ -7,8 +10,6 @@ from apps.utils.format.time_format import time_to_utcdate
 from apps.utils.paging.paging import datas_paging
 from apps.app import mdbs
 from apps.core.utils.get_config import get_config
-
-__author__ = 'Allen Woo'
 
 
 def find_comments(

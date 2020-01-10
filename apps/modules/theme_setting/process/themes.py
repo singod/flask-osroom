@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import glob
 import json
 import os
@@ -20,7 +23,24 @@ from apps.core.utils.update_sys_data import init_theme_data
 from apps.utils.format.time_format import time_to_utcdate
 
 
-__author__ = "Allen Woo"
+def get_theme_names():
+
+    names = []
+    for fname in os.listdir(THEME_TEMPLATE_FOLDER):
+        path = os.path.join(THEME_TEMPLATE_FOLDER, fname)
+        if not os.path.isdir(path):
+            continue
+        s, r = verify_theme(path, fname, fname)
+        if s:
+            names.append(fname)
+    data = {
+        "current_theme_name": get_config(
+            "theme",
+            "CURRENT_THEME_NAME"
+        ),
+        "names": names
+    }
+    return data
 
 
 def get_theme_readme():

@@ -1,14 +1,12 @@
 #!/usr/bin/env python
 # -*-coding:utf-8-*-
-__author__ = "Allen Woo"
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 
 import sys
 
-__author__ = 'Allen Woo'
 
-
-def usage_help(short_ops, short_opexplain, long_ops=[],
-               long_opexplain=[], usage=[], action=[]):
+def usage_help(short_ops, short_opexplain, long_ops=[], long_opexplain=[], usage=[], action=[]):
     if usage:
         print("Usage:")
         for u in usage:
@@ -21,20 +19,20 @@ def usage_help(short_ops, short_opexplain, long_ops=[],
         if len(v) != 1:
             v2_n = 0
             for v2 in v:
-                print("\t-{}: {}".format(v2, short_opexplain[v2_n + i]).replace("\n", "\n\t\t"))
+                print("\t-{}: {}".format(v2, short_opexplain[v2_n + i].replace("\n", "\n\t\t")))
                 v2_n += 1
             i += len(v)
         else:
-            print("\t-{}: {}".format(v, short_opexplain[i]).replace("\n", "\n\t\t"))
+            print("\t-{}: {}".format(v, short_opexplain[i].replace("\n", "\n\t\t")))
             i += 1
     # long
     l = len(long_ops)
     for i in range(0, l):
-        print("\t--{}: {}".format(long_ops[i].strip("="), long_opexplain[i]).replace("\n", "\n\t\t"))
+        print("\t--{}: {}".format(long_ops[i].strip("="), long_opexplain[i].replace("\n", "\n\t\t")))
 
     if action:
         print("[action]:")
-        for a in action:
-            print("\t{}".format(a).replace("\n", "\n\t\t"))
+        for i, a in enumerate(action):
+            print("\t{}: {}".format(i+1, a.replace("\n", "\n\t\t")))
     print("\n")
     sys.exit()

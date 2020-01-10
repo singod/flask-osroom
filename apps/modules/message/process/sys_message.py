@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import os
 from bson import ObjectId
 from copy import deepcopy
@@ -11,8 +14,6 @@ from apps.utils.paging.paging import datas_paging
 from apps.utils.text_parsing.text_parsing import richtext_extract_img
 from apps.utils.upload.file_up import file_del
 
-__author__ = "Allen Woo"
-
 
 def get_sys_message():
     """
@@ -20,13 +21,18 @@ def get_sys_message():
     :return:
     """
     data = {}
+    msg_type = request.argget.all("msg_type")
     ctype = request.argget.all("type")
-    status = request.argget.all("status", "normal")
+    status = request.argget.all("status", "successful")
     keyword = request.argget.all("keyword", "")
     pre = str_to_num(request.argget.all("pre", 10))
     page = str_to_num(request.argget.all("page", 1))
 
+    if status == "normal":
+        status = "successful"
     q = {"status": status, "type": ctype}
+    if msg_type:
+        q["msg_type"] = msg_type
     if keyword:
         keyword = {"$regex": keyword, "$options": "$i"}
         q["$or"] = [

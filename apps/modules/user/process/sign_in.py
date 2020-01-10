@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from random import randint
 from flask import request
 from flask_babel import gettext
@@ -19,8 +22,6 @@ from apps.utils.validation.str_format import email_format_ver, mobile_phone_form
 from apps.utils.verify.img_verify_code import verify_image_code
 from apps.app import mdbs
 from apps.core.utils.get_config import get_config
-
-__author__ = "Allen Woo"
 
 
 def p_sign_in(
@@ -107,7 +108,7 @@ def p_sign_in(
         data["custom_status"] = 401
 
     else:
-        #　密码错误
+        # 密码错误
         mdbs["user"].db.user_login_log.update_one({'user_id': user.str_id},
                                               {"$inc": {"pass_error": 1}},
                                               upsert=True)
@@ -116,6 +117,7 @@ def p_sign_in(
         if user_p and 'pass_error' in user_p and user_p['pass_error'] >= PW_WRONG_NUM_IMG_CODE:
             # 图片验证码验证码
             data["open_img_verif_code"] = True
+
         data['msg'] = gettext("Account or password error")
         data["msg_type"] = "e"
         data["custom_status"] = 401
@@ -187,7 +189,7 @@ def login_log(user, client):
                 "recipients": [user["email"]],
                 "html_msg": html
             }
-            send_email(msg=msg)
+            send_email(msg=msg, ctype="nt")
 
 
 def third_party_sign_in(platform_name):

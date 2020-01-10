@@ -1472,7 +1472,7 @@ li.have-img {
 @media screen and (min-width:768px){
     .osr-img-tag{
         position:absolute;
-        left:3px;
+        left:25px;
     }
 }
 

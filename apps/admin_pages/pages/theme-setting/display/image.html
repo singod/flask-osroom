@@ -11,7 +11,7 @@
                         <i class="fa fa-image"></i>
                         <strong>
                             {{_("图文|图库")}}(<span class="osr-color-success">{{_("结果")}}{[medias.data_total]}</span>)
-                            <span class="osr-color-secondary">[{{_("主题")}}: {[theme_name]}]</span>
+                            <span class="osr-color-secondary">[{{_("当前设置主题")}}: {[theme_name]}]</span>
                         </strong>
                     </header>
                     <div class="panel-body table-responsive">
@@ -47,7 +47,7 @@
                                      <div class="checkbox checkbox-success">
                                            <input :id="media._id" type="checkbox"  v-bind:value="media._id" unchecked>
                                            <label :for="media._id"></label>
-                                           <a class="pull-right" :href="'/osr-admin/theme-setting/display/image-edit?cid='+curren_category+'&id='+media._id+'&fp='+page">
+                                           <a class="pull-right" :href="'/osr-admin/theme-setting/display/image-edit?theme='+current_theme_name+'&cid='+curren_category+'&id='+media._id+'&fp='+page">
                                             <i class="fa fa-edit"></i>{{_("编辑|详情")}}
                                            </a>
                                       </div>
@@ -89,6 +89,8 @@
           media_edit:{},
           media_categorys:[],
           curren_category:"",
+          current_theme_name:null,
+          theme_names:[],
           start_upload:false,
           checkAll:false, set:false,
           keyword:"",
@@ -106,7 +108,7 @@
 
     //文件上传配置
     function uploader_conf(data){
-
+        data["theme_name"] = vue.current_theme_name;
         var conf = {
             pick: {
                 id: '#filePicker',

@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from flask import request
 from apps.core.flask.login_manager import osr_login_required
 
@@ -8,8 +11,6 @@ from apps.core.flask.permission import permission_required
 from apps.core.flask.response import response_format
 from apps.modules.category.process.category import categorys, category_add, category_edit, \
     category_delete, get_category_type
-
-__author__ = 'Allen Woo'
 
 
 @api.route('/admin/content/category', methods=['GET', 'POST', 'PUT', 'DELETE'])

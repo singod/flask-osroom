@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from apps.core.blueprint import api
 from apps.core.flask.permission import permission_required
 from apps.core.flask.response import response_format
 from apps.modules.global_data.process.global_data import get_global_media, get_global_site_data
-
-__author__ = "Allen Woo"
 
 
 @api.route('/global', methods=['GET'])

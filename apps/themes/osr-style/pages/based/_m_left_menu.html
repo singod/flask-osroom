@@ -11,20 +11,20 @@
                 </a>
             </li>
 
-            {% for k,v in g.site_global.theme_config.TOP_NAV.items()|sort%}
+             {% for nav in g.site_global.theme_config.navs%}
 
-                {% if v.next_lev %}
+                {% if nav.json_data.next_lev %}
                     <li >
-                    <a class="lv1-a" href="javascript:;" data-target="#{{v.nav}}" data-toggle="collapse">
-                        <span>{{v.nav}}</span>
+                    <a class="lv1-a" href="javascript:;" data-target="#{{nav.display_name}}" data-toggle="collapse">
+                        <span>{{nav.display_name}}</span>
                         <i class="fa fa-angle-right osr-sidebar-fa-right osr-sidebar-fa-right"></i>
                     </a>
 
-                    <ul id="{{v.nav}}" class="osr-sidebar-menu-lv2 collapse">
-                        {% for nav2 in v.next_lev %}
+                    <ul id="{{nav.display_name}}" class="osr-sidebar-menu-lv2 collapse">
+                        {% for nav2 in nav.json_data.next_lev %}
                         <li>
                             <a href="{{nav2.link}}">
-                                {{nav2.nav}}
+                                {{nav2.display_name}}
                             </a>
                         </li>
                         {% endfor %}
@@ -32,8 +32,8 @@
                     </li>
                 {% else %}
                     <li >
-                        <a class="lv1-a" href="{{v.link}}">
-                            {{v.nav}}
+                        <a class="lv1-a" href="{{nav.json_data.link}}">
+                            {{nav.display_name}}
                         </a>
                     </li>
                 {% endif %}

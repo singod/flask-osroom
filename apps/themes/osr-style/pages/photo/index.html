@@ -1,5 +1,5 @@
 {% extends "osr-style/pages/based/based.html" %}
-{% block title %}{{_("摄影")}}-{% endblock %}
+{% block title %}{{_("图库")}}-{% endblock %}
 {% block content %}
 <data id="category" content="{{data.category}}"></data>
 <div id="app" v-cloak>
@@ -92,9 +92,9 @@
         </div>
     </div>
 </div>
-<script src="/theme/static/js/image/viewer.min.js?v={{g.site_global.site_config.STATIC_FILE_VERSION}}"></script>
-<script src="/theme/static/js/image/jquery-viewer.min.js?v={{g.site_global.site_config.STATIC_FILE_VERSION}}"></script>
-<link href="/theme/static/css/image/viewer.min.css?v={{g.site_global.site_config.STATIC_FILE_VERSION}}" rel="stylesheet" type="text/css" />
+<script src="/theme/osr-style/static/js/image/viewer.min.js?v={{g.site_global.site_config.STATIC_FILE_VERSION}}"></script>
+<script src="/theme/osr-style/static/js/image/jquery-viewer.min.js?v={{g.site_global.site_config.STATIC_FILE_VERSION}}"></script>
+<link href="/theme/osr-style/static/css/image/viewer.min.css?v={{g.site_global.site_config.STATIC_FILE_VERSION}}" rel="stylesheet" type="text/css" />
 <script>
 
     var vue = new Vue({
@@ -160,7 +160,8 @@
 
         ];
         var d ={
-            conditions:JSON.stringify(conditions)
+            conditions:JSON.stringify(conditions),
+            theme_name:"osr-style"
         }
 
         var result = osrHttp("GET","/api/global/theme-data/display", d, args={not_prompt:true});

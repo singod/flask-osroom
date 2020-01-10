@@ -22,7 +22,7 @@
                   <span v-if="single_type"> {[curren_type[0]]}分类</span>
                   <span v-else>{{_("内容分类")}}</span>
 
-                  <a class="pull-right" v-if="single_type" href="/osr-admin/{{data.fs}}?page={{data.fp}}">
+                  <a class="pull-right" v-if="single_type" href="/osr-admin/{{data.fs}}?page={{data.fp}}&theme={{ data.theme }}">
                         <i class="fa fa-arrow-circle-left"></i>
                         {{_("返回")}}
                     </a>
@@ -70,6 +70,7 @@
         theme_name:"",
         categorys:[],
         new_category:"",
+        current_theme_name:null,
         single_type:false
       },
       methods: {show_btn:show_btn}
@@ -85,6 +86,8 @@
         if(vue.curren_type){
             vue.single_type = true;
         }
+        var url_s = get_url_parameter();
+        vue.current_theme_name = get_obj_value(url_s, "theme");
         get_category_type();
         get_categorys();
     })
@@ -103,7 +106,7 @@
     function get_category_type(){
 
         var result = osrHttp("GET","/api/admin/content/theme-category",
-                            {action:'get_category_type'},
+                            {action:'get_category_type', theme_name:vue.current_theme_name},
                             args={not_prompt:true});
         result.then(function (r) {
             vue.category_types = r.data.types;
@@ -125,7 +128,7 @@
     function get_categorys(){
 
         var result = osrHttp("GET","/api/admin/content/theme-category",
-                            {type:vue.curren_type[1]},
+                            {type:vue.curren_type[1], theme_name:vue.current_theme_name},
                             args={not_prompt:true});
         result.then(function (r) {
             vue.categorys = r.data.categorys;
@@ -149,7 +152,8 @@
 
         var d = {
             name:vue.new_category,
-            type:vue.curren_type[1]
+            type:vue.curren_type[1],
+            theme_name:vue.current_theme_name
         }
         // 提交数据
         var result = osrHttp("POST","/api/admin/content/theme-category", d);

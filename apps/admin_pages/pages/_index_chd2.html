@@ -5,60 +5,61 @@
               <i class="fa fa-bar-chart"></i>
                {{_("动态数据")}}
           </header>
-            <div class="panel-body table-responsive">
-                <table class="table table-hover">
-                  <thead>
-                    <tr>
-                        <th>{{_("名称")}}</th>
-                        <th>{{_("7天")}}</th>
-                        <th>{{_("30天")}}</th>
-                        <th>{{_("总数")}}</th>
-                    </tr>
-                </thead>
-                  <tbody>
-                        <tr >
-                            <td>
-                               <span class="fa fa-file-text-o"> {{_("文章")}}</span>
-                            </td>
-
-                            <td>{[datas.post["7_total"]]}</td>
-                            <td>{[datas.post["30_total"]]}</td>
-                            <td>{[datas.post["total"]]}</td>
-                        </tr>
-                        <tr >
-                            <td>
-                               <span class="fa fa-comment-o"> {{_("评论")}}</span>
-                            </td>
-
-                            <td>{[datas.comment["7_total"]]}</td>
-                            <td>{[datas.comment["30_total"]]}</td>
-                            <td>{[datas.comment["total"]]}</td>
-                        </tr>
-                        <tr >
-                            <td>
-                               <span class="fa fa-play-circle"> {{_("多媒体库")}}</span>
-                            </td>
-
-                            <td>{[datas.media["7_total"]]}</td>
-                            <td>{[datas.media["30_total"]]}</td>
-                            <td>
-                                {[datas.media.media_image + datas.media.media_text
-                                +datas.media.media_video +datas.media.media_audio
-                                +datas.media.media_other]}
-                            </td>
-                        </tr>
-                        <tr >
-                            <td>
-                               <span class="fa fa-user"> {{_("用户")}}</span>
-                            </td>
-                            <td>{[datas.user["7_total"]]}</td>
-                            <td>{[datas.user["30_total"]]}</td>
-                            <td>{[datas.user["total"]]}</td>
-                        </tr>
-
-                    </tbody>
-              </table>
-          </div>
+             <canvas id="d-data"></canvas>
+{#            <div class="panel-body table-responsive">#}
+{#                <table class="table table-hover">#}
+{#                  <thead>#}
+{#                    <tr>#}
+{#                        <th>{{_("名称")}}</th>#}
+{#                        <th>{{_("7天")}}</th>#}
+{#                        <th>{{_("30天")}}</th>#}
+{#                        <th>{{_("总数")}}</th>#}
+{#                    </tr>#}
+{#                </thead>#}
+{#                  <tbody>#}
+{#                        <tr >#}
+{#                            <td>#}
+{#                               <span class="fa fa-file-text-o"> {{_("文章")}}</span>#}
+{#                            </td>#}
+{##}
+{#                            <td>{[datas.post["7_total"]]}</td>#}
+{#                            <td>{[datas.post["30_total"]]}</td>#}
+{#                            <td>{[datas.post["total"]]}</td>#}
+{#                        </tr>#}
+{#                        <tr >#}
+{#                            <td>#}
+{#                               <span class="fa fa-comment-o"> {{_("评论")}}</span>#}
+{#                            </td>#}
+{##}
+{#                            <td>{[datas.comment["7_total"]]}</td>#}
+{#                            <td>{[datas.comment["30_total"]]}</td>#}
+{#                            <td>{[datas.comment["total"]]}</td>#}
+{#                        </tr>#}
+{#                        <tr >#}
+{#                            <td>#}
+{#                               <span class="fa fa-play-circle"> {{_("多媒体库")}}</span>#}
+{#                            </td>#}
+{##}
+{#                            <td>{[datas.media["7_total"]]}</td>#}
+{#                            <td>{[datas.media["30_total"]]}</td>#}
+{#                            <td>#}
+{#                                {[datas.media.media_image + datas.media.media_text#}
+{#                                +datas.media.media_video +datas.media.media_audio#}
+{#                                +datas.media.media_other]}#}
+{#                            </td>#}
+{#                        </tr>#}
+{#                        <tr >#}
+{#                            <td>#}
+{#                               <span class="fa fa-user"> {{_("用户")}}</span>#}
+{#                            </td>#}
+{#                            <td>{[datas.user["7_total"]]}</td>#}
+{#                            <td>{[datas.user["30_total"]]}</td>#}
+{#                            <td>{[datas.user["total"]]}</td>#}
+{#                        </tr>#}
+{##}
+{#                    </tbody>#}
+{#              </table>#}
+{#          </div>#}
         </section>
     </div>
     <!--end col-6 -->

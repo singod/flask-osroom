@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import base64
 import glob
 import shutil
@@ -14,8 +17,6 @@ from apps.utils.osr_async.osr_async import async_process
 from apps.utils.content_evaluation.content import content_inspection_image
 from apps.utils.format.time_format import time_to_utcdate
 from apps.utils.upload.get_filepath import get_file_url, get_localfile_path
-
-__author__ = 'Allen Woo'
 
 
 def file_up(uploaded_files, prefix="", file_name=None, tailoring=None):

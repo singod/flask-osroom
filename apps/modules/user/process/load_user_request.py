@@ -1,11 +1,14 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from apps.app import login_manager
 from apps.core.auth.jwt_auth import JwtAuth
 from apps.modules.user.process.user import User, AnonymousUser
-
-__author__ = 'Allen Woo'
 # JWT验证
 jwt_auth = JwtAuth()
+
+
 @login_manager.user_loader
 def load_user(user_id):
     """

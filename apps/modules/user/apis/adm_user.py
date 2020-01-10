@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from flask import request
 from apps.core.flask.login_manager import osr_login_required
 
@@ -9,8 +11,6 @@ from apps.core.flask.permission import permission_required
 from apps.core.flask.response import response_format
 from apps.modules.user.process.adm_user import user, users, user_restore, user_activation, user_edit, user_del
 
-
-__author__ = "Allen Woo"
 
 
 @api.route('/admin/user', methods=['GET', 'PUT', 'DELETE'])

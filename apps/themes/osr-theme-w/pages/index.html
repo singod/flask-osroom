@@ -1,5 +1,5 @@
 {% extends "osr-theme-w/pages/based/based.html" %}
-{% block title %}{{_("DEMO")}}-{% endblock %}
+{% block title %}{{_("首页")}}-{% endblock %}
 {% block osr_top_img %}{% endblock %}
 {% block content %}
 <div id="app" v-cloak>
@@ -23,9 +23,9 @@
         {% include 'osr-theme-w/pages/_index_s3.html' %}
     </div>
 </div>
-<!--<script src="/theme/static/js/markdown/marked.min.js?v={{g.site_global.site_config.STATIC_FILE_VERSION}}"></script>-->
-<!--<link href="/theme/static/css/highlight-style-github.css?v={{g.site_global.site_config.STATIC_FILE_VERSION}}" rel="stylesheet">-->
-<!--<script src="/theme/static/js/highlight.js?v={{g.site_global.site_config.STATIC_FILE_VERSION}}"></script>-->
+<!--<script src="/theme/osr-theme-w/static/js/markdown/marked.min.js?v={{g.site_global.site_config.STATIC_FILE_VERSION}}"></script>-->
+<!--<link href="/theme/osr-theme-w/static/css/highlight-style-github.css?v={{g.site_global.site_config.STATIC_FILE_VERSION}}" rel="stylesheet">-->
+<!--<script src="/theme/osr-theme-w/static/js/highlight.js?v={{g.site_global.site_config.STATIC_FILE_VERSION}}"></script>-->
 <script>
 
     var vue = new Vue({
@@ -84,7 +84,8 @@
              }
         ];
         var d ={
-            conditions:JSON.stringify(conditions)
+            conditions:JSON.stringify(conditions),
+            theme_name:"osr-theme-w"
         }
         var result = osrHttp("GET","/api/global/theme-data/display", d, args={not_prompt:true});
         result.then(function (r) {

@@ -10,7 +10,7 @@
                     <i class="fa fa-volume-up"></i>
                     <strong>
                         {{_("音频库")}}(<span class="osr-color-success">{{_("结果")}}{[medias.data_total]}</span>)
-                        <span class="osr-color-secondary">[{{_("主题")}}: {[theme_name]}]</span>
+                        <span class="osr-color-secondary">[{{_("当前设置主题")}}: {[theme_name]}]</span>
                     </strong>
                 </header>
                 <div class="panel-body table-responsive">
@@ -65,7 +65,7 @@
                                     <button v-on:click="play(media)" class="btn-sm btn osr-btn btn-success">
                                         <i class="fa fa-play-circle-o" > {{_("播放")}}</i>
                                     </button>
-                                    <a :href="'/osr-admin/theme-setting/display/audio-edit?cid='+curren_category+'&id='+media._id+'&fp='+page" class="btn-sm btn osr-btn btn-info">
+                                    <a :href="'/osr-admin/theme-setting/display/audio-edit?theme='+current_theme_name+'&cid='+curren_category+'&id='+media._id+'&fp='+page" class="btn-sm btn osr-btn btn-info">
                                         <span class="fa fa-pencil-square-o"></span> {{_("详情|编辑")}}
                                     </a>
                                 </td>
@@ -94,8 +94,11 @@
           media_edit:{},
           media_categorys:[],
           curren_category:"",
+          current_theme_name:null,
+          theme_names:[],
           start_upload:false,
-          checkAll:false, set:false,
+          checkAll:false,
+          set:false,
           keyword:"",
           paly_url:"",
           pages:{}
@@ -114,7 +117,7 @@
 
     //文件上传配置
     function uploader_conf(data){
-
+        data["theme_name"] = vue.current_theme_name;
         var conf = {
             pick: {
                 id: '#filePicker',

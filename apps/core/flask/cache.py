@@ -1,11 +1,12 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import base64
 from functools import wraps
 import time
 from flask import current_app, request
 from apps.utils.format.obj_format import json_to_pyseq, pyseq_to_json
-
-__author__ = "Allen Woo"
 
 
 class Cache:
@@ -167,7 +168,11 @@ class Cache:
                 self.delete(key, db_type=db_type)
                 return self.cache_none
             elif value:
-                return value["value"]
+                value["value"] = value["value"]
+                if value["value"] == self.cache_none_obj.value:
+                    return None
+                value = json_to_pyseq(value["value"])
+                return value
 
             # 防止value为None时, 所以查询不到缓存时, 使用cache空类
             return self.cache_none
@@ -203,10 +208,11 @@ class Cache:
 
         elif db_type == "mongodb" or (not db_type and self.config["CACHE_TYPE"] == "mongodb")\
                 or self.redis_exists_exception:
-
-            r = self.mdb_coll.update_one({"key": key},
-                                         {"$set": {"value": value, "expiration": time.time() + ex}},
-                                         upsert=True)
+            json_value = pyseq_to_json(value)
+            r = self.mdb_coll.update_one(
+                {"key": key},
+                {"$set": {"value": json_value, "expiration": time.time() + ex}},
+                upsert=True)
             if r.modified_count:
                 return value
 
@@ -228,7 +234,10 @@ class Cache:
                 and not self.redis_exists_exception:
             try:
                 if key_regex:
-                    key = key.replace(".*", "*")
+                    if ".*" in key:
+                        key = key.replace(".*", "*")
+                    else:
+                        key = "*{}*".format(key)
                     keys = self.redis.keys(pattern=key)
                     for key in keys:
                         self.redis.delete(key.decode())

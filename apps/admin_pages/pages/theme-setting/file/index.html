@@ -13,11 +13,21 @@
                     <i class="fa fa-html5"></i>
                     <strong>
                         {{_("页面编辑")}}(<span class="osr-color-success">{{_("结果")}}{[files.data_total]}</span>)
+                        <span class="osr-color-secondary">[{{_("当前设置主题")}}: {[current_theme_name]}]</span>
                     </strong>
                 </header>
-                <div class="panel-body table-responsive">
                     <div class="box-tools form-inline">
                         <div class="input-group pull-left">
+                             <select id="theme_name" name="theme_name"  class="form-control osr-form-control input-sm"
+                                    @change="switch_theme_name($event.target.value)">
+                               <option v-if="name==current_theme_name" v-for="name in theme_names" :value="name" selected>
+                                        {[name]}
+                                </option>
+                                <option v-if="name!=current_theme_name" v-for="name in theme_names" :value="name">
+                                        {[name]}
+                                </option>
+                            </select>
+
                             <select class="form-control osr-form-control input-sm" @change="switch_type($event.target.value)">
                                  <option  v-for="t,k in type_list" v-if="t==type" selected = "selected" :value ="t">{[k]}</option>
                                 <option v-for="t,k in type_list" v-if="t!=type" :value ="t">{[k]}</option>
@@ -37,7 +47,7 @@
                     <br><br>
                     <div class="btn-group-sm">
 
-                         <a :href="'/osr-admin/theme-setting/file/add-page?from_type='+type+'&from_page='+page" type="button"
+                         <a :href="'/osr-admin/theme-setting/file/add-page?theme='+current_theme_name+'&from_type='+type+'&from_page='+page" type="button"
                              class="btn osr-btn btn-sm btn-info">
                               <i class="fa fa-plus"></i> {{_("添加页面")}}
                           </a>
@@ -55,7 +65,7 @@
                          </p>
 
                         <div class="btn-group-sm">
-                            <a class="btn osr-btn btn-info" :href="'/osr-admin/theme-setting/file/edit?filename='+file.name+'&path='+file.relative_path+'&from_type='+type+'&from_page='+page" >
+                            <a class="btn osr-btn btn-info" :href="'/osr-admin/theme-setting/file/edit?theme='+current_theme_name+'&filename='+file.name+'&path='+file.relative_path+'&from_type='+type+'&from_page='+page" >
                                 <i class="fa fa-edit"></i> {{_("编辑")}}
                             </a>
                              <a  class="btn osr-btn btn-danger" v-on:click="warning_modal(null, 'del_file', file.relative_path, file.name)"
@@ -130,6 +140,8 @@
             del_filename:"",
             del_file_path:"",
             confirm_filename:"",
+            theme_names: [],
+            current_theme_name: null,
             page:1,
             pages:{},
             type_list:{
@@ -148,10 +160,29 @@
         var page = $("#page").attr("content");
         vue.page = page?page:vue.page;
         var keyword = $("#keyword").attr("content");
-        vue.keyword = keyword?keyword:vue.keyword
-        get_files(vue.page, "");
+        vue.keyword = keyword?keyword:vue.keyword;
+        var url_s = get_url_parameter();
+        vue.current_theme_name = get_obj_value(url_s, "theme", null);
+        get_theme_names();
 
     })
+
+    //获取所有主题名称
+    function get_theme_names(){
+        var result = osrHttp("GET","/api/admin/theme-names",{},args={not_prompt:true});
+        result.then(function (r) {
+            vue.theme_names = r.data.names;
+            vue.current_theme_name = vue.current_theme_name?vue.current_theme_name:r.data.current_theme_name;
+            get_files(vue.page, "");
+        });
+    }
+
+    //切换要设置的主题
+    function switch_theme_name(value) {
+        vue.current_theme_name = value;
+        get_files(1, "");
+    }
+
     function switch_type(value){
         vue.type = value;
         get_files(1, "");
@@ -161,6 +192,7 @@
         vue.keyword = keyword;
         d = {
             keyword:keyword,
+            theme_name: vue.current_theme_name,
             page:page,
             pre:10,
             type:vue.type
@@ -181,13 +213,17 @@
         if(vue.keyword){
             url = url + "&keyword="+vue.keyword;
         }
+        if(vue.current_theme_name){
+            url = url + "&theme="+vue.current_theme_name;
+        }
         history_state(title=null,url=url);
     }
 
     function del_file(path, filename){
         d = {
             file_path:path,
-            filename:filename
+            filename:filename,
+            theme_name: vue.current_theme_name,
         }
         if(vue.confirm_filename == vue.del_filename){
              var result = osrHttp("DELETE","/api/admin/theme/page", d);

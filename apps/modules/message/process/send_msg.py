@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import time
 from flask import request
 from flask_babel import gettext
@@ -12,8 +15,6 @@ from apps.utils.send_msg.send_email import send_email
 from apps.utils.format.obj_format import json_to_pyseq
 from apps.utils.send_msg.send_message import send_mobile_msg
 from apps.utils.text_parsing.text_parsing import richtext_extract_img
-
-__author__ = "Allen Woo"
 
 
 def send_msg():
@@ -92,13 +93,12 @@ def send_msg():
             for user in users:
                 to_emails.append(user["email"])
             if to_emails:
-                path = "email/code"
                 msg = {
                     "subject": title,
                     "recipients": to_emails,
                     "html_msg": content_html
                 }
-                send_email(msg=msg)
+                send_email(msg=msg, ctype="nt")
 
                 data["msg"] = "{}. {}".format(
                     data["msg"], gettext("Mail message is being sent"))

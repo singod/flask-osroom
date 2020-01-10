@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from bson import ObjectId
 from flask import request
 from apps.utils.osr_async.osr_async import async_process
 from apps.app import mdbs
-
-__author__ = "Allen Woo"
 
 
 @async_process()

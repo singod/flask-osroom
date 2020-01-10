@@ -36,11 +36,11 @@
                   <!--数组-->
                   <td width="300px" :id="'list_'+conf.key" width="300px" v-if="conf.type=='list'" class="form-group" >
                      <p>
-                          <button v-on:click="add_input_tag(conf.key)" class="btn btn-sm osr-btn btn-success">
+                          <button v-on:click="add_input_tag(conf.key, index)" class="btn btn-sm osr-btn btn-success">
                              {{_("添加元素")}}
                          </button>
                      </p>
-                      <span id="list_input"></span>
+                      <span :id="'list_input'+index"></span>
                       <div :id="conf.key+'_input_'+index" v-for="v,index in conf.value"
                            class="form-group">
                           <input  class="form-control osr-input" type="text" :value="v" />
@@ -52,12 +52,12 @@
                     <!--dict-->
                   <td width="300px" :id="'dict_'+conf.key" width="300px" v-if="conf.type=='dict'" class="form-group" >
                      <p>
-                        <button v-on:click="add_dict_tag(conf.key)" class="btn btn-sm osr-btn btn-success">
+                        <button v-on:click="add_dict_tag(conf.key, index)" class="btn btn-sm osr-btn btn-success">
                          {{_("添加元素")}}
                         </button>
                      </p>
                       <data :id="conf.key+'_add'"></data>
-                        <span id="dict_input"></span>
+                      <span :id="'dict_input'+index"></span>
                       <div :id="conf.key+'_input_'+k" v-for="v,k in conf.value"
                            class="form-group">
                            <input class="form-control osr-input" type="text" :value="k" />
@@ -89,20 +89,20 @@
         </tbody>
     </table>
 <script>
-    function add_input_tag(conf_key){
+    function add_input_tag(conf_key, index){
         var id = osr_guid();
         html = '<div id="'+id+ '" class="list_dict form-group form-icon form-feedback">'
                 +'<input class="form-control osr-input" type="text" placeholder="Value" /></div>';
 
-        $("#list_input").before(html);
+        $("#list_input"+index).before(html);
     }
 
-    function add_dict_tag(conf_key){
+    function add_dict_tag(conf_key, index){
         var id = osr_guid();
         html = '<div id="'+id+ '" class="list_dict form-group form-icon form-feedback">'
                 +'<input class="form-control osr-input" type="text" placeholder="Key:String" />'
                 +'<textarea class="form-control osr-input" style="height:80px;" placeholder="Value:String or Json"  ></textarea></div>'
-         $("#dict_input").before(html);
+         $("#dict_input"+index).before(html);
     }
 
     function remove_tag(id){

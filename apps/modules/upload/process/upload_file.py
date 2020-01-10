@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from flask import request
 from flask_babel import gettext
 from flask_login import current_user
@@ -6,8 +9,6 @@ from apps.core.utils.get_config import get_config
 from apps.utils.upload.file_up import file_up
 from apps.utils.upload.get_filepath import get_file_url
 from apps.app import mdbs
-
-__author__ = "Allen Woo"
 
 
 def file_upload(

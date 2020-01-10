@@ -1,9 +1,10 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import time
 from apps.app import mdbs, cache, app
 from apps.configs.sys_config import PLUG_IN_CONFIG_CACHE_KEY, CONFIG_CACHE_TIMEOUT
-
-__author__ = "Allen Woo"
 
 
 def import_plugin_config(plugin_name, config):

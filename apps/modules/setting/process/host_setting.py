@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from bson import ObjectId
 from flask import request
 from flask_babel import gettext
@@ -8,8 +11,6 @@ from apps.core.flask.reqparse import arg_verify
 from apps.core.utils.get_config import get_config
 from apps.utils.format.obj_format import json_to_pyseq
 from apps.utils.pyssh.pyssh import audit_host_info, MySSH
-
-__author__ = "Allen Woo"
 
 
 def get_sys_host():

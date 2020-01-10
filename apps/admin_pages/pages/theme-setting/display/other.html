@@ -10,7 +10,7 @@
                     <i class="fa fa-file-zip-o"></i>
                     <strong>
                         {{_("其他类型库")}}(<span class="osr-color-success">{{_("结果")}}{[medias.data_total]}</span>)
-                        <span class="osr-color-secondary">[{{_("主题")}}: {[theme_name]}]</span>
+                        <span class="osr-color-secondary">[{{_("当前设置主题")}}: {[theme_name]}]</span>
                     </strong>
                 </header>
                 <div class="panel-body table-responsive">
@@ -65,7 +65,7 @@
                                 </td>
                                 <td width="150px">{[media.time | formatDate]}</td>
                                 <td width="150px">
-                                    <a v-bind:href="'/osr-admin/theme-setting/display/other-edit?cid='+curren_category+'&id='+media._id+'&fp='+page" class="btn-sm btn osr-btn btn-info">
+                                    <a v-bind:href="'/osr-admin/theme-setting/display/other-edit?theme='+current_theme_name+'&cid='+curren_category+'&id='+media._id+'&fp='+page" class="btn-sm btn osr-btn btn-info">
                                         <span class="fa fa-pencil-square-o"></span> {{_("详情|编辑")}}
                                     </a>
                                 </td>
@@ -93,6 +93,8 @@
           media_edit:{},
           media_categorys:[],
           curren_category:"",
+          current_theme_name:null,
+          theme_names:[],
           start_upload:false,
           checkAll:false, set:false,
           keyword:"",
@@ -107,7 +109,7 @@
     })
     //文件上传配置
     function uploader_conf(data){
-
+        data["theme_name"] = vue.current_theme_name;
         var conf = {
             pick: {
                 id: '#filePicker',

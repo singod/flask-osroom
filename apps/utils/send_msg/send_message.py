@@ -1,12 +1,13 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from gettext import gettext
 
 import time
 
 from apps.app import mdbs
 from apps.core.plug_in.manager import plugin_manager
-
-__author__ = "Allen Woo"
 
 
 def send_mobile_msg(numbers, content):

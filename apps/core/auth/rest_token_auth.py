@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import base64
 from gettext import gettext
 from random import randint
@@ -13,8 +16,6 @@ from apps.app import mdbs, cache, rest_session
 from apps.configs.sys_config import REST_SECRET_TOKEN_CACHE_KEY, REST_SECRET_TOKEN_CACHE_TIMEOUT
 from apps.core.utils.get_config import get_config
 from apps.utils.format.obj_format import objid_to_str
-
-__author__ = "Allen Woo"
 
 
 class RestTokenAuth:

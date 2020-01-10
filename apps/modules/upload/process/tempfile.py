@@ -1,9 +1,10 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from apps.app import mdbs
 from apps.utils.upload.file_up import file_del
 from apps.utils.upload.get_filepath import get_file_url
-
-__author__ = "Allen Woo"
 
 
 def clean_tempfile(user_id, type, old_file=[], keey_file=[]):

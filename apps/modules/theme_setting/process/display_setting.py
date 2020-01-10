@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import time
 from uuid import uuid1
 from bson import ObjectId
@@ -16,8 +19,6 @@ from apps.utils.paging.paging import datas_paging
 from apps.utils.text_parsing.text_parsing import richtext_extract_img
 from apps.utils.upload.file_up import file_del
 from apps.utils.upload.get_filepath import get_file_url
-
-__author__ = "Allen Woo"
 
 
 def add_display_setting():
@@ -37,6 +38,11 @@ def add_display_setting():
     code_type = request.argget.all("code_type")
     ctype = request.argget.all("ctype")
     category_id = request.argget.all("category_id")
+    theme_name = request.argget.all("theme_name")
+    s, r = arg_verify([(gettext("theme name"), theme_name)], required=True)
+    if not s:
+        return r
+
     data = {}
     category = "Default"
 
@@ -66,7 +72,6 @@ def add_display_setting():
         if data["msg_type"] != "s":
             return data
 
-    theme_name = get_config("theme", "CURRENT_THEME_NAME")
     if not batch and mdbs["sys"].db.theme_display_setting.find_one(
             {"name": name,
              "type": ctype,
@@ -140,7 +145,11 @@ def get_display_setting():
         return r
 
     data = {}
-    theme_name = get_config("theme", "CURRENT_THEME_NAME")
+    theme_name = request.argget.all("theme_name")
+    s, r = arg_verify([(gettext("theme name"), theme_name)], required=True)
+    if not s:
+        return r
+
     display_setting = mdbs["sys"].db.theme_display_setting.find_one(
         {"_id": ObjectId(tid),
          "theme_name": theme_name})
@@ -165,8 +174,13 @@ def get_display_settings():
     page = str_to_num(request.argget.all("page", 1))
     pre = str_to_num(request.argget.all("pre", 12))
     sort = json_to_pyseq(request.argget.all('sort'))
+    theme_name = request.argget.all("theme_name")
     s, r = arg_verify([(gettext("type"), ctype)],
                       only=get_config("category", "CATEGORY_TYPE").values())
+    if not s:
+        return r
+
+    s, r = arg_verify([(gettext("theme name"), theme_name)], required=True)
     if not s:
         return r
 
@@ -182,7 +196,7 @@ def get_display_settings():
         k_rule = {"$regex": keyword, "$options": "$i"}
         query["$or"] = [{"name": k_rule}, {"title": k_rule},
                         {"link": k_rule}, {"text": k_rule}]
-    theme_name = get_config("theme", "CURRENT_THEME_NAME")
+
     query["theme_name"] = theme_name
     # sort
     if sort:
@@ -195,10 +209,22 @@ def get_display_settings():
     data_cnt = display_settings.count(True)
     display_settings = list(display_settings.sort(
         sort).skip(pre * (page - 1)).limit(pre))
+
+    r = list(mdbs["web"].db.theme_category.find(
+        {
+            "user_id": 0,
+            "type": ctype,
+            "theme_name": theme_name}
+    ))
+    categories = {}
+    for cate in r:
+        categories[str(cate["_id"])] = cate["name"]
     for d in display_settings:
         d["_id"] = str(d["_id"])
         if "url" in d and d["url"]:
             d["url"] = get_file_url(d["url"])
+        if d["category_id"] and str(d["category_id"]) in categories:
+            d["category"] = categories[str(d["category_id"])]
 
     data["medias"] = datas_paging(
         pre=pre,
@@ -225,6 +251,11 @@ def edit_display_setting():
     code_type = request.argget.all("code_type")
     switch = request.argget.all("switch")
     category_id = request.argget.all("category_id")
+    theme_name = request.argget.all("theme_name")
+    s, r = arg_verify([(gettext("theme name"), theme_name)], required=True)
+    if not s:
+        return r
+
     s, r = arg_verify([("id", display_setting_id)], required=True)
     if not s:
         return r
@@ -236,7 +267,6 @@ def edit_display_setting():
     if code_type == "json":
         code = json_to_pyseq(code)
 
-    theme_name = get_config("theme", "CURRENT_THEME_NAME")
     old_display_setting = mdbs["sys"].db.theme_display_setting.find_one(
         {"_id": ObjectId(display_setting_id),
          "theme_name": theme_name
@@ -358,8 +388,11 @@ def del_display_setting():
     """
 
     display_setting_ids = json_to_pyseq(request.argget.all("ids", []))
+    theme_name = request.argget.all("theme_name")
+    s, r = arg_verify([(gettext("theme name"), theme_name)], required=True)
+    if not s:
+        return r
     deleted_count = 0
-    theme_name = get_config("theme", "CURRENT_THEME_NAME")
     for tid in display_setting_ids:
         display_setting = mdbs["sys"].db.theme_display_setting.find_one(
             {"_id": ObjectId(tid),

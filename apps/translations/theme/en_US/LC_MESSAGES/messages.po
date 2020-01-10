@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-08-02 12:08+0800\n"
+"POT-Creation-Date: 2019-12-16 17:34+0800\n"
 "PO-Revision-Date: 2018-01-04 20:50+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en_US\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: apps/themes/osr-style/pages/401.html:2
 #: apps/themes/osr-theme-w/pages/401.html:2
 msgid "401无权访问"
-msgstr ""
+msgstr "401. No permission to restrict access"
 
 #: apps/themes/osr-style/pages/401.html:32
 #: apps/themes/osr-theme-w/pages/401.html:17
@@ -118,7 +118,7 @@ msgstr "Default"
 #: apps/themes/osr-theme-w/pages/post/index.html:26
 #: apps/themes/osr-theme-w/pages/post/index.html:100
 #: apps/themes/osr-theme-w/pages/posts/_posts_weiget.html:19
-#: apps/themes/osr-theme-w/pages/search/index.html:64
+#: apps/themes/osr-theme-w/pages/search/index.html:63
 #: apps/themes/osr-theme-w/pages/user/_self_introduction.html:6
 #: apps/themes/osr-theme-w/pages/user/_user_info.html:4
 #: apps/themes/osr-theme-w/pages/user/follow/index.html:30
@@ -152,11 +152,14 @@ msgstr "There's no more"
 msgid "标签"
 msgstr "Tags"
 
+#: apps/themes/osr-style/pages/based/_header_bar_menu_left.html:4
+#: apps/themes/osr-style/pages/based/_header_bar_menu_left.html:8
 #: apps/themes/osr-style/pages/index.html:2
+#: apps/themes/osr-theme-w/pages/based/_header_bar_menu_left.html:4
+#: apps/themes/osr-theme-w/pages/based/_header_bar_menu_left.html:8
 #: apps/themes/osr-theme-w/pages/index.html:2
-#: apps/themes/osr-theme-w/pages/posts/index.html:2
-msgid "DEMO"
-msgstr "DEMO"
+msgid "首页"
+msgstr "Home"
 
 #: apps/themes/osr-style/pages/recover-password.html:2
 #: apps/themes/osr-theme-w/pages/recover-password.html:2
@@ -730,13 +733,6 @@ msgstr "New password"
 msgid "确认密码"
 msgstr "Confirm password"
 
-#: apps/themes/osr-style/pages/based/_header_bar_menu_left.html:4
-#: apps/themes/osr-style/pages/based/_header_bar_menu_left.html:8
-#: apps/themes/osr-theme-w/pages/based/_header_bar_menu_left.html:4
-#: apps/themes/osr-theme-w/pages/based/_header_bar_menu_left.html:8
-msgid "首页"
-msgstr "Home"
-
 #: apps/themes/osr-style/pages/based/_header_bar_menu_user.html:27
 #: apps/themes/osr-style/pages/based/_user_dropdown.html:25
 #: apps/themes/osr-style/pages/user/message/index.html:2
@@ -1154,7 +1150,7 @@ msgstr " Articles"
 #: apps/themes/osr-style/pages/search/index.html:26
 #: apps/themes/osr-style/pages/user/index.html:24
 #: apps/themes/osr-theme-w/pages/post/index.html:2
-#: apps/themes/osr-theme-w/pages/search/index.html:22
+#: apps/themes/osr-theme-w/pages/search/index.html:21
 #: apps/themes/osr-theme-w/pages/user/index.html:58
 msgid "文章"
 msgstr " Articles"
@@ -1199,8 +1195,13 @@ msgstr "Upload up to 5 pictures at a time"
 msgid "您当前使用的是富文本编辑器"
 msgstr "You are currently using a rich text editor"
 
-#: apps/themes/osr-style/pages/module/email/send-temp.html:79
-#: apps/themes/osr-theme-w/pages/module/email/send-temp.html:79
+#: apps/themes/osr-style/pages/module/email/send-temp.html:76
+#: apps/themes/osr-theme-w/pages/module/email/send-temp.html:76
+msgid "谢谢"
+msgstr "Thanks,"
+
+#: apps/themes/osr-style/pages/module/email/send-temp.html:84
+#: apps/themes/osr-theme-w/pages/module/email/send-temp.html:85
 msgid "系统邮件, 请勿回复"
 msgstr "System mail, please do not reply"
 
@@ -1213,8 +1214,8 @@ msgstr "Agreement"
 
 #: apps/themes/osr-style/pages/photo/index.html:2
 #: apps/themes/osr-theme-w/pages/photo/index.html:2
-msgid "摄影"
-msgstr "Photography"
+msgid "图库"
+msgstr "Pictures"
 
 #: apps/themes/osr-style/pages/photo/index.html:12
 #: apps/themes/osr-theme-w/pages/photo/index.html:12
@@ -1250,7 +1251,7 @@ msgstr "Uploaded"
 #: apps/themes/osr-theme-w/pages/photo/index.html:80
 #: apps/themes/osr-theme-w/pages/post/_comment.html:306
 #: apps/themes/osr-theme-w/pages/posts/_posts_weiget.html:108
-#: apps/themes/osr-theme-w/pages/search/index.html:85
+#: apps/themes/osr-theme-w/pages/search/index.html:84
 #: apps/themes/osr-theme-w/pages/user/follow/index.html:63
 #: apps/themes/osr-theme-w/pages/user/message/index.html:85
 #: apps/themes/osr-theme-w/pages/user/post/_comment.html:155
@@ -1274,7 +1275,7 @@ msgstr "{{photos.current_page]}Page/Total {[photos.page_total]}Page"
 #: apps/themes/osr-theme-w/pages/photo/index.html:86
 #: apps/themes/osr-theme-w/pages/post/_comment.html:310
 #: apps/themes/osr-theme-w/pages/posts/_posts_weiget.html:114
-#: apps/themes/osr-theme-w/pages/search/index.html:91
+#: apps/themes/osr-theme-w/pages/search/index.html:90
 #: apps/themes/osr-theme-w/pages/user/follow/index.html:69
 #: apps/themes/osr-theme-w/pages/user/message/index.html:89
 #: apps/themes/osr-theme-w/pages/user/post/_comment.html:159
@@ -1573,12 +1574,12 @@ msgid "文章 用户"
 msgstr "Articles User"
 
 #: apps/themes/osr-style/pages/search/index.html:31
-#: apps/themes/osr-theme-w/pages/search/index.html:27
+#: apps/themes/osr-theme-w/pages/search/index.html:26
 msgid "用户"
 msgstr "User"
 
 #: apps/themes/osr-style/pages/search/index.html:92
-#: apps/themes/osr-theme-w/pages/search/index.html:88
+#: apps/themes/osr-theme-w/pages/search/index.html:87
 msgid "第{[posts.items.current_page]}页/共{[posts.items.page_total]}页"
 msgstr "Page{[posts.items.current_page]}/Pages of {[posts.items.page_total]}"
 
@@ -1704,7 +1705,7 @@ msgstr "Preview"
 
 #: apps/themes/osr-theme-w/pages/500.html:2
 msgid "500 Server Error"
-msgstr ""
+msgstr "500 Server Error"
 
 #: apps/themes/osr-theme-w/pages/_index_s2.html:49
 msgid "标签云"
@@ -1727,7 +1728,15 @@ msgstr "Other tags"
 msgid "{[posts.current_page]}/{[posts.page_total]}"
 msgstr "{[posts.current_page]}/{[posts.page_total]}"
 
+#: apps/themes/osr-theme-w/pages/posts/index.html:2
+msgid "文章列表"
+msgstr "Article list"
+
 #: apps/themes/osr-theme-w/pages/user/post/_user_posts.html:63
 #: apps/themes/osr-theme-w/pages/user/post/_user_posts.html:81
 msgid "移除"
 msgstr "Remove"
+
+#~ msgid "摄影"
+#~ msgstr "Photography"
+

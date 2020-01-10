@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import json
 from bson import ObjectId
 from flask import request
@@ -9,7 +12,6 @@ from apps.core.flask.reqparse import arg_verify
 from apps.utils.format.obj_format import objid_to_str, json_to_pyseq
 from apps.utils.paging.paging import datas_paging
 from apps.app import mdbs
-__author__ = "Allen Woo"
 
 
 def audit_rules():

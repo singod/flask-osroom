@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 import json
 from bson import ObjectId
 from flask import request
@@ -11,7 +14,6 @@ from apps.utils.format.obj_format import objid_to_str, json_to_pyseq
 from apps.utils.validation.str_format import short_str_verifi
 from apps.app import mdbs
 from apps.core.utils.get_config import get_config
-__author__ = "Allen Woo"
 
 
 def get_category_info():

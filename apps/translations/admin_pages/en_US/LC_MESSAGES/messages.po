@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-07-31 11:19+0800\n"
+"POT-Creation-Date: 2019-12-16 17:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en_US\n"
@@ -35,7 +35,7 @@ msgstr "Total num of articles"
 #: apps/admin_pages/pages/setting/_config_warning_info.html:14
 #: apps/admin_pages/pages/setting/host/index.html:36
 #: apps/admin_pages/pages/theme-setting/display/other.html:62
-#: apps/admin_pages/pages/theme-setting/display/text.html:120
+#: apps/admin_pages/pages/theme-setting/display/text.html:130
 msgid "查看"
 msgstr "View"
 
@@ -48,7 +48,6 @@ msgid "用户总数"
 msgstr "Total Users"
 
 #: apps/admin_pages/pages/_index_chd1.html:66
-#: apps/admin_pages/pages/_index_chd2.html:39
 #: apps/admin_pages/pages/_index_chd3.html:52
 msgid "多媒体库"
 msgstr "Multimedia Gallery"
@@ -57,8 +56,11 @@ msgstr "Multimedia Gallery"
 msgid "动态数据"
 msgstr "Dynamic Data"
 
-#: apps/admin_pages/pages/_index_chd2.html:12
-#: apps/admin_pages/pages/_index_chd2.html:76
+#: apps/admin_pages/pages/_index_chd2.html:71
+msgid "待处理事件"
+msgstr "pending events"
+
+#: apps/admin_pages/pages/_index_chd2.html:77
 #: apps/admin_pages/pages/_index_chd3.html:12
 #: apps/admin_pages/pages/media/audio-edit.html:47
 #: apps/admin_pages/pages/media/audio-edit.html:49
@@ -83,39 +85,45 @@ msgstr "Dynamic Data"
 #: apps/admin_pages/pages/theme-setting/display/other.html:34
 #: apps/admin_pages/pages/theme-setting/display/text-edit.html:46
 #: apps/admin_pages/pages/theme-setting/display/text-edit.html:48
-#: apps/admin_pages/pages/theme-setting/display/text.html:82
+#: apps/admin_pages/pages/theme-setting/display/text.html:92
 #: apps/admin_pages/pages/theme-setting/display/video-edit.html:47
 #: apps/admin_pages/pages/theme-setting/display/video-edit.html:49
 msgid "名称"
 msgstr "Name"
 
-#: apps/admin_pages/pages/_index_chd2.html:13
-#: apps/admin_pages/pages/_index_chd3.html:16
-msgid "7天"
-msgstr "7 days"
+#: apps/admin_pages/pages/_index_chd2.html:78
+#: apps/admin_pages/pages/own/user/index.html:16
+msgid "待处理"
+msgstr "pending"
 
-#: apps/admin_pages/pages/_index_chd2.html:14
-msgid "30天"
-msgstr "30 days"
+#: apps/admin_pages/pages/_index_chd2.html:79
+#: apps/admin_pages/pages/_index_chd2.html:118
+#: apps/admin_pages/pages/_index_chd2.html:136
+#: apps/admin_pages/pages/message/email.html:189
+#: apps/admin_pages/pages/message/sms.html:142
+msgid "异常"
+msgstr "Exception"
 
-#: apps/admin_pages/pages/_index_chd2.html:15
-msgid "总数"
-msgstr "Total"
-
-#: apps/admin_pages/pages/_index_chd2.html:21
-#: apps/admin_pages/pages/_index_chd2.html:84
+#: apps/admin_pages/pages/_index_chd2.html:85
 #: apps/admin_pages/pages/_index_chd3.html:23
+#: apps/admin_pages/pages/index.html:89
 #: apps/admin_pages/pages/own/corpus/index.html:25
 #: apps/admin_pages/pages/own/user/index.html:24
 #: apps/admin_pages/pages/post/index.html:15
 msgid "文章"
 msgstr "Articles"
 
-#: apps/admin_pages/pages/_index_chd2.html:30
-#: apps/admin_pages/pages/_index_chd2.html:97
+#: apps/admin_pages/pages/_index_chd2.html:90
+#: apps/admin_pages/pages/_index_chd2.html:103
+#: apps/admin_pages/pages/own/user/post/pending.html:27
+msgid "待审核"
+msgstr "To be reviewed"
+
+#: apps/admin_pages/pages/_index_chd2.html:98
 #: apps/admin_pages/pages/_index_chd3.html:37
 #: apps/admin_pages/pages/comment/index.html:15
 #: apps/admin_pages/pages/comment/index.html:201
+#: apps/admin_pages/pages/index.html:89
 #: apps/admin_pages/pages/own/user/message/_comment.html:7
 #: apps/admin_pages/pages/own/user/message/index.html:21
 #: apps/admin_pages/pages/own/user/post/_comment.html:17
@@ -125,55 +133,23 @@ msgstr "Articles"
 msgid "评论"
 msgstr "Comment"
 
-#: apps/admin_pages/pages/_index_chd2.html:52
-#: apps/admin_pages/pages/_index_chd3.html:67
-#: apps/admin_pages/pages/based/sidebar.html:161
-#: apps/admin_pages/pages/message/on-site.html:68
-#: apps/admin_pages/pages/setting/host/exec-cmd.html:32
-#: apps/admin_pages/pages/user/index.html:14
-msgid "用户"
-msgstr "User"
-
-#: apps/admin_pages/pages/_index_chd2.html:70
-msgid "待处理事件"
-msgstr "pending events"
-
-#: apps/admin_pages/pages/_index_chd2.html:77
-#: apps/admin_pages/pages/own/user/index.html:16
-msgid "待处理"
-msgstr "pending"
-
-#: apps/admin_pages/pages/_index_chd2.html:78
-#: apps/admin_pages/pages/_index_chd2.html:117
-#: apps/admin_pages/pages/_index_chd2.html:135
-#: apps/admin_pages/pages/message/email.html:175
-#: apps/admin_pages/pages/message/sms.html:142
-msgid "异常"
-msgstr "Exception"
-
-#: apps/admin_pages/pages/_index_chd2.html:89
-#: apps/admin_pages/pages/_index_chd2.html:102
-#: apps/admin_pages/pages/own/user/post/pending.html:27
-msgid "待审核"
-msgstr "To be reviewed"
-
-#: apps/admin_pages/pages/_index_chd2.html:110
+#: apps/admin_pages/pages/_index_chd2.html:111
 msgid "邮件发送"
 msgstr "Mail Send"
 
-#: apps/admin_pages/pages/_index_chd2.html:121
-#: apps/admin_pages/pages/_index_chd2.html:139
-#: apps/admin_pages/pages/_index_chd2.html:153
-#: apps/admin_pages/pages/message/email.html:176
+#: apps/admin_pages/pages/_index_chd2.html:122
+#: apps/admin_pages/pages/_index_chd2.html:140
+#: apps/admin_pages/pages/_index_chd2.html:154
+#: apps/admin_pages/pages/message/email.html:190
 #: apps/admin_pages/pages/message/sms.html:143
 msgid "错误"
 msgstr "Error"
 
-#: apps/admin_pages/pages/_index_chd2.html:128
+#: apps/admin_pages/pages/_index_chd2.html:129
 msgid "短信发送"
 msgstr "SMS sending"
 
-#: apps/admin_pages/pages/_index_chd2.html:146
+#: apps/admin_pages/pages/_index_chd2.html:147
 #: apps/admin_pages/pages/based/sidebar.html:303
 msgid "插件"
 msgstr "Plugins"
@@ -194,13 +170,28 @@ msgstr "8 hrs"
 msgid "1天"
 msgstr "1 day"
 
+#: apps/admin_pages/pages/_index_chd3.html:16
+#: apps/admin_pages/pages/index.html:92
+msgid "7天"
+msgstr "7 days"
+
 #: apps/admin_pages/pages/_index_chd3.html:17
 #: apps/admin_pages/pages/based/_inform_modal_input.html:23
+#: apps/admin_pages/pages/message/email.html:197
 #: apps/admin_pages/pages/message/on-site.html:201
 #: apps/admin_pages/pages/post/index.html:67
 #: apps/admin_pages/pages/user/index.html:52
 msgid "其他"
 msgstr "other"
+
+#: apps/admin_pages/pages/_index_chd3.html:67
+#: apps/admin_pages/pages/based/sidebar.html:161
+#: apps/admin_pages/pages/index.html:89
+#: apps/admin_pages/pages/message/on-site.html:68
+#: apps/admin_pages/pages/setting/host/exec-cmd.html:32
+#: apps/admin_pages/pages/user/index.html:14
+msgid "用户"
+msgstr "User"
 
 #: apps/admin_pages/pages/based/sidebar.html:21
 #: apps/admin_pages/pages/index.html:2
@@ -225,11 +216,24 @@ msgstr "Check the latest version"
 msgid "查看更多"
 msgstr "See more"
 
-#: apps/admin_pages/pages/index.html:66
+#: apps/admin_pages/pages/index.html:65
 msgid "数据有缓存延迟"
 msgstr "Data has cache delay"
 
-#: apps/admin_pages/pages/index.html:72
+#: apps/admin_pages/pages/based/sidebar.html:60
+#: apps/admin_pages/pages/index.html:89
+msgid "多媒体"
+msgstr "Multimedia"
+
+#: apps/admin_pages/pages/index.html:103
+msgid "30天"
+msgstr "30 days"
+
+#: apps/admin_pages/pages/index.html:114
+msgid "总数"
+msgstr "Total"
+
+#: apps/admin_pages/pages/index.html:136
 msgid "加载中"
 msgstr "Loading"
 
@@ -367,6 +371,15 @@ msgstr "Username is at least 3 characters"
 msgid "已有账户"
 msgstr "Has an account"
 
+#: apps/admin_pages/pages/theme-view.html:2
+#: apps/admin_pages/pages/theme-view.html:8
+msgid "主题预览"
+msgstr "Theme preview"
+
+#: apps/admin_pages/pages/theme-view.html:9
+msgid "部分开启新Tab链接已被修改"
+msgstr "Some of the links that open the new Tab have been modified"
+
 #: apps/admin_pages/pages/audit/rule/index.html:2
 #: apps/admin_pages/pages/audit/rule/index.html:14
 #: apps/admin_pages/pages/based/sidebar.html:331
@@ -380,7 +393,7 @@ msgstr "Audit Rules"
 #: apps/admin_pages/pages/media/other.html:12
 #: apps/admin_pages/pages/media/text.html:16
 #: apps/admin_pages/pages/media/video.html:12
-#: apps/admin_pages/pages/message/email.html:14
+#: apps/admin_pages/pages/message/email.html:15
 #: apps/admin_pages/pages/message/on-site.html:15
 #: apps/admin_pages/pages/message/sms.html:14
 #: apps/admin_pages/pages/permission/index.html:13
@@ -403,7 +416,7 @@ msgstr "Results "
 #: apps/admin_pages/pages/comment/index.html:27
 #: apps/admin_pages/pages/media/_bar.html:20
 #: apps/admin_pages/pages/media/text.html:38
-#: apps/admin_pages/pages/message/email.html:26
+#: apps/admin_pages/pages/message/email.html:34
 #: apps/admin_pages/pages/message/on-site.html:31
 #: apps/admin_pages/pages/message/sms.html:26
 #: apps/admin_pages/pages/permission/url/index.html:30
@@ -411,9 +424,9 @@ msgstr "Results "
 #: apps/admin_pages/pages/post/index.html:29
 #: apps/admin_pages/pages/setting/config-edit.html:33
 #: apps/admin_pages/pages/setting/configs.html:19
-#: apps/admin_pages/pages/theme-setting/display/_bar.html:20
-#: apps/admin_pages/pages/theme-setting/display/text.html:39
-#: apps/admin_pages/pages/theme-setting/file/index.html:29
+#: apps/admin_pages/pages/theme-setting/display/_bar.html:31
+#: apps/admin_pages/pages/theme-setting/display/text.html:49
+#: apps/admin_pages/pages/theme-setting/file/index.html:39
 #: apps/admin_pages/pages/user/index.html:26
 msgid "搜索"
 msgstr "Search"
@@ -479,7 +492,7 @@ msgstr "Rules"
 #: apps/admin_pages/pages/category/index.html:55
 #: apps/admin_pages/pages/media/_bar.html:69
 #: apps/admin_pages/pages/media/text.html:67
-#: apps/admin_pages/pages/message/email.html:87
+#: apps/admin_pages/pages/message/email.html:101
 #: apps/admin_pages/pages/message/on-site.html:109
 #: apps/admin_pages/pages/message/sms.html:80
 #: apps/admin_pages/pages/own/content/category/index.html:27
@@ -494,10 +507,12 @@ msgstr "Rules"
 #: apps/admin_pages/pages/setting/host/index.html:49
 #: apps/admin_pages/pages/theme-setting/category.html:47
 #: apps/admin_pages/pages/theme-setting/category.html:55
-#: apps/admin_pages/pages/theme-setting/display/_bar.html:69
-#: apps/admin_pages/pages/theme-setting/display/text.html:68
-#: apps/admin_pages/pages/theme-setting/file/index.html:63
-#: apps/admin_pages/pages/theme-setting/themes.html:86
+#: apps/admin_pages/pages/theme-setting/display/_bar.html:80
+#: apps/admin_pages/pages/theme-setting/display/text.html:78
+#: apps/admin_pages/pages/theme-setting/file/index.html:73
+#: apps/admin_pages/pages/theme-setting/nav.html:54
+#: apps/admin_pages/pages/theme-setting/nav.html:67
+#: apps/admin_pages/pages/theme-setting/themes.html:90
 #: apps/admin_pages/pages/token/rest-token.html:45
 msgid "删除"
 msgstr "Delete"
@@ -509,7 +524,7 @@ msgstr "Delete Selection"
 #: apps/admin_pages/pages/audit/rule/index.html:149
 #: apps/admin_pages/pages/comment/index.html:184
 #: apps/admin_pages/pages/media/_paging.html:38
-#: apps/admin_pages/pages/message/email.html:129
+#: apps/admin_pages/pages/message/email.html:143
 #: apps/admin_pages/pages/message/on-site.html:150
 #: apps/admin_pages/pages/message/sms.html:121
 #: apps/admin_pages/pages/own/user/follow/index.html:63
@@ -524,7 +539,7 @@ msgstr "Delete Selection"
 #: apps/admin_pages/pages/setting/configs.html:117
 #: apps/admin_pages/pages/sys-logs/log.html:56
 #: apps/admin_pages/pages/theme-setting/display/_paging.html:38
-#: apps/admin_pages/pages/theme-setting/file/index.html:107
+#: apps/admin_pages/pages/theme-setting/file/index.html:117
 #: apps/admin_pages/pages/user/index.html:169
 msgid "上一页"
 msgstr "​​Pre"
@@ -532,7 +547,7 @@ msgstr "​​Pre"
 #: apps/admin_pages/pages/audit/rule/index.html:153
 #: apps/admin_pages/pages/comment/index.html:188
 #: apps/admin_pages/pages/media/_paging.html:42
-#: apps/admin_pages/pages/message/email.html:133
+#: apps/admin_pages/pages/message/email.html:147
 #: apps/admin_pages/pages/message/on-site.html:155
 #: apps/admin_pages/pages/message/sms.html:125
 #: apps/admin_pages/pages/own/user/follow/index.html:69
@@ -547,7 +562,7 @@ msgstr "​​Pre"
 #: apps/admin_pages/pages/setting/configs.html:121
 #: apps/admin_pages/pages/sys-logs/log.html:60
 #: apps/admin_pages/pages/theme-setting/display/_paging.html:42
-#: apps/admin_pages/pages/theme-setting/file/index.html:111
+#: apps/admin_pages/pages/theme-setting/file/index.html:121
 #: apps/admin_pages/pages/user/index.html:173
 msgid "下一页"
 msgstr "Next"
@@ -585,15 +600,16 @@ msgstr "Can't be empty"
 #: apps/admin_pages/pages/theme-setting/display/image-edit.html:15
 #: apps/admin_pages/pages/theme-setting/display/other-edit.html:15
 #: apps/admin_pages/pages/theme-setting/display/text-edit.html:14
-#: apps/admin_pages/pages/theme-setting/display/text.html:63
+#: apps/admin_pages/pages/theme-setting/display/text.html:73
 #: apps/admin_pages/pages/theme-setting/display/video-edit.html:15
+#: apps/admin_pages/pages/theme-setting/nav.html:53
 msgid "添加"
 msgstr "Add"
 
 #: apps/admin_pages/pages/audit/rule/index.html:180
 #: apps/admin_pages/pages/comment/index.html:234
 #: apps/admin_pages/pages/media/_inform_modal.html:19
-#: apps/admin_pages/pages/message/email.html:157
+#: apps/admin_pages/pages/message/email.html:171
 #: apps/admin_pages/pages/message/on-site.html:180
 #: apps/admin_pages/pages/message/send.html:64
 #: apps/admin_pages/pages/module/_send_code.html:43
@@ -626,6 +642,7 @@ msgid "审核未通过"
 msgstr "Audit failed"
 
 #: apps/admin_pages/pages/based/_header_bar_menu.html:45
+#: apps/admin_pages/pages/message/email.html:196
 #: apps/admin_pages/pages/own/user/message/_notice.html:10
 #: apps/admin_pages/pages/own/user/message/index.html:12
 msgid "通知"
@@ -773,7 +790,7 @@ msgstr "Installation has been successful, please refresh"
 
 #: apps/admin_pages/pages/based/js_tr.html:10
 #: apps/admin_pages/pages/media/other.html:112
-#: apps/admin_pages/pages/theme-setting/display/other.html:114
+#: apps/admin_pages/pages/theme-setting/display/other.html:116
 msgid "点击选择文件"
 msgstr "Click to select file"
 
@@ -880,7 +897,7 @@ msgstr "Admin"
 
 #: apps/admin_pages/pages/based/sidebar.html:31
 #: apps/admin_pages/pages/comment/index.html:207
-#: apps/admin_pages/pages/message/email.html:45
+#: apps/admin_pages/pages/message/email.html:53
 #: apps/admin_pages/pages/message/sms.html:44
 msgid "内容"
 msgstr "Content"
@@ -894,10 +911,6 @@ msgstr "Posts"
 #: apps/admin_pages/pages/comment/index.html:2
 msgid "评论管理"
 msgstr "Comments"
-
-#: apps/admin_pages/pages/based/sidebar.html:60
-msgid "多媒体"
-msgstr "Multimedia"
 
 #: apps/admin_pages/pages/based/sidebar.html:69
 #: apps/admin_pages/pages/media/image.html:2
@@ -922,7 +935,7 @@ msgstr "Graphic | Gallery"
 #: apps/admin_pages/pages/theme-setting/display/other-edit.html:72
 #: apps/admin_pages/pages/theme-setting/display/other.html:36
 #: apps/admin_pages/pages/theme-setting/display/text-edit.html:117
-#: apps/admin_pages/pages/theme-setting/display/text.html:85
+#: apps/admin_pages/pages/theme-setting/display/text.html:95
 #: apps/admin_pages/pages/theme-setting/display/video-edit.html:72
 msgid "文本内容"
 msgstr "Text content"
@@ -957,7 +970,7 @@ msgstr "Station msg"
 
 #: apps/admin_pages/pages/based/sidebar.html:133
 #: apps/admin_pages/pages/message/email.html:2
-#: apps/admin_pages/pages/message/email.html:14
+#: apps/admin_pages/pages/message/email.html:15
 msgid "系统邮件"
 msgstr "System Mail"
 
@@ -1004,17 +1017,13 @@ msgstr "Rest Token"
 
 #: apps/admin_pages/pages/based/sidebar.html:232
 #: apps/admin_pages/pages/theme-setting/category.html:13
-#: apps/admin_pages/pages/theme-setting/display/audio.html:13
-#: apps/admin_pages/pages/theme-setting/display/image.html:14
-#: apps/admin_pages/pages/theme-setting/display/other.html:13
-#: apps/admin_pages/pages/theme-setting/display/text.html:17
-#: apps/admin_pages/pages/theme-setting/display/video.html:13
 #: apps/admin_pages/pages/theme-setting/themes.html:2
 #: apps/admin_pages/pages/theme-setting/themes.html:11
 msgid "主题"
 msgstr "Theme"
 
 #: apps/admin_pages/pages/based/sidebar.html:241
+#: apps/admin_pages/pages/theme-setting/nav.html:9
 msgid "主题安装"
 msgstr "Install"
 
@@ -1125,7 +1134,7 @@ msgid "作者"
 msgstr "Author"
 
 #: apps/admin_pages/pages/comment/index.html:47
-#: apps/admin_pages/pages/message/email.html:66
+#: apps/admin_pages/pages/message/email.html:75
 #: apps/admin_pages/pages/message/on-site.html:51
 #: apps/admin_pages/pages/message/on-site.html:77
 #: apps/admin_pages/pages/message/on-site.html:88
@@ -1142,7 +1151,7 @@ msgid "赞"
 msgstr "Like"
 
 #: apps/admin_pages/pages/comment/index.html:55
-#: apps/admin_pages/pages/message/email.html:49
+#: apps/admin_pages/pages/message/email.html:58
 #: apps/admin_pages/pages/message/on-site.html:53
 #: apps/admin_pages/pages/message/sms.html:48
 #: apps/admin_pages/pages/plugin/_edit.html:137
@@ -1280,7 +1289,7 @@ msgid "最后举报"
 msgstr "Last report"
 
 #: apps/admin_pages/pages/comment/index.html:250
-#: apps/admin_pages/pages/message/email.html:174
+#: apps/admin_pages/pages/message/email.html:188
 #: apps/admin_pages/pages/message/sms.html:141
 #: apps/admin_pages/pages/post/index.html:284
 #: apps/admin_pages/pages/user/index.html:284
@@ -1301,10 +1310,10 @@ msgstr "To be deleted"
 #: apps/admin_pages/pages/media/_bar.html:9
 #: apps/admin_pages/pages/media/text.html:27
 #: apps/admin_pages/pages/media/text.html:28
-#: apps/admin_pages/pages/theme-setting/display/_bar.html:8
-#: apps/admin_pages/pages/theme-setting/display/_bar.html:9
-#: apps/admin_pages/pages/theme-setting/display/text.html:28
-#: apps/admin_pages/pages/theme-setting/display/text.html:29
+#: apps/admin_pages/pages/theme-setting/display/_bar.html:19
+#: apps/admin_pages/pages/theme-setting/display/_bar.html:20
+#: apps/admin_pages/pages/theme-setting/display/text.html:38
+#: apps/admin_pages/pages/theme-setting/display/text.html:39
 msgid "全部"
 msgstr "All"
 
@@ -1326,9 +1335,9 @@ msgstr "All"
 #: apps/admin_pages/pages/post/index.html:237
 #: apps/admin_pages/pages/role/index.html:31
 #: apps/admin_pages/pages/setting/host/edit.html:43
-#: apps/admin_pages/pages/theme-setting/display/_bar.html:11
-#: apps/admin_pages/pages/theme-setting/display/_bar.html:12
-#: apps/admin_pages/pages/theme-setting/display/_script.html:11
+#: apps/admin_pages/pages/theme-setting/display/_bar.html:22
+#: apps/admin_pages/pages/theme-setting/display/_bar.html:23
+#: apps/admin_pages/pages/theme-setting/display/_script.html:12
 #: apps/admin_pages/pages/theme-setting/display/audio-edit.html:37
 #: apps/admin_pages/pages/theme-setting/display/audio-edit.html:38
 #: apps/admin_pages/pages/theme-setting/display/image-edit.html:53
@@ -1337,8 +1346,8 @@ msgstr "All"
 #: apps/admin_pages/pages/theme-setting/display/other-edit.html:38
 #: apps/admin_pages/pages/theme-setting/display/text-edit.html:36
 #: apps/admin_pages/pages/theme-setting/display/text-edit.html:37
-#: apps/admin_pages/pages/theme-setting/display/text.html:30
-#: apps/admin_pages/pages/theme-setting/display/text.html:31
+#: apps/admin_pages/pages/theme-setting/display/text.html:40
+#: apps/admin_pages/pages/theme-setting/display/text.html:41
 #: apps/admin_pages/pages/theme-setting/display/video-edit.html:37
 #: apps/admin_pages/pages/theme-setting/display/video-edit.html:38
 msgid "默认"
@@ -1346,25 +1355,25 @@ msgstr "Default"
 
 #: apps/admin_pages/pages/media/_bar.html:31
 #: apps/admin_pages/pages/media/text.html:49
-#: apps/admin_pages/pages/theme-setting/display/_bar.html:31
-#: apps/admin_pages/pages/theme-setting/display/text.html:50
+#: apps/admin_pages/pages/theme-setting/display/_bar.html:42
+#: apps/admin_pages/pages/theme-setting/display/text.html:60
 msgid "分类设置"
 msgstr "category settings"
 
 #: apps/admin_pages/pages/media/_bar.html:41
 #: apps/admin_pages/pages/media/text.html:59
-#: apps/admin_pages/pages/theme-setting/display/_bar.html:41
-#: apps/admin_pages/pages/theme-setting/display/text.html:60
+#: apps/admin_pages/pages/theme-setting/display/_bar.html:52
+#: apps/admin_pages/pages/theme-setting/display/text.html:70
 msgid "时间排序"
 msgstr "Sort by time"
 
 #: apps/admin_pages/pages/media/_bar.html:45
-#: apps/admin_pages/pages/theme-setting/display/_bar.html:45
+#: apps/admin_pages/pages/theme-setting/display/_bar.html:56
 msgid "举报排序"
 msgstr "Report Sort"
 
 #: apps/admin_pages/pages/media/_bar.html:51
-#: apps/admin_pages/pages/theme-setting/display/_bar.html:51
+#: apps/admin_pages/pages/theme-setting/display/_bar.html:62
 msgid "选"
 msgstr "Selection"
 
@@ -1375,9 +1384,9 @@ msgstr "Selection"
 #: apps/admin_pages/pages/media/video.html:59
 #: apps/admin_pages/pages/module/editor/markdown.html:28
 #: apps/admin_pages/pages/plugin/index.html:26
-#: apps/admin_pages/pages/theme-setting/display/_bar.html:55
-#: apps/admin_pages/pages/theme-setting/display/_bar.html:60
-#: apps/admin_pages/pages/theme-setting/display/_script.html:38
+#: apps/admin_pages/pages/theme-setting/display/_bar.html:66
+#: apps/admin_pages/pages/theme-setting/display/_bar.html:71
+#: apps/admin_pages/pages/theme-setting/display/_script.html:41
 #: apps/admin_pages/pages/theme-setting/display/image.html:61
 #: apps/admin_pages/pages/theme-setting/display/video.html:60
 #: apps/admin_pages/pages/theme-setting/themes.html:24
@@ -1387,9 +1396,9 @@ msgstr " Upload"
 #: apps/admin_pages/pages/media/_bar.html:64
 #: apps/admin_pages/pages/media/_script.html:124
 #: apps/admin_pages/pages/media/text.html:227
-#: apps/admin_pages/pages/theme-setting/display/_bar.html:64
-#: apps/admin_pages/pages/theme-setting/display/_script.html:126
-#: apps/admin_pages/pages/theme-setting/display/text.html:230
+#: apps/admin_pages/pages/theme-setting/display/_bar.html:75
+#: apps/admin_pages/pages/theme-setting/display/_script.html:155
+#: apps/admin_pages/pages/theme-setting/display/text.html:262
 msgid "全选"
 msgstr "Select All"
 
@@ -1404,19 +1413,19 @@ msgid "批量上传"
 msgstr "Batch upload"
 
 #: apps/admin_pages/pages/media/_script.html:34
-#: apps/admin_pages/pages/theme-setting/display/_script.html:35
+#: apps/admin_pages/pages/theme-setting/display/_script.html:38
 msgid "关闭上传"
 msgstr "Close upload"
 
 #: apps/admin_pages/pages/media/_script.html:102
-#: apps/admin_pages/pages/theme-setting/display/_script.html:104
+#: apps/admin_pages/pages/theme-setting/display/_script.html:127
 msgid "请选择要删除的项"
 msgstr "Please select items to delete"
 
 #: apps/admin_pages/pages/media/_script.html:122
 #: apps/admin_pages/pages/media/text.html:225
-#: apps/admin_pages/pages/theme-setting/display/_script.html:124
-#: apps/admin_pages/pages/theme-setting/display/text.html:228
+#: apps/admin_pages/pages/theme-setting/display/_script.html:153
+#: apps/admin_pages/pages/theme-setting/display/text.html:260
 msgid "取消全选"
 msgstr "Unselect all"
 
@@ -1450,7 +1459,7 @@ msgstr "Audio"
 #: apps/admin_pages/pages/theme-setting/display/other-edit.html:13
 #: apps/admin_pages/pages/theme-setting/display/text-edit.html:12
 #: apps/admin_pages/pages/theme-setting/display/video-edit.html:13
-#: apps/admin_pages/pages/theme-setting/file/index.html:59
+#: apps/admin_pages/pages/theme-setting/file/index.html:69
 #: apps/admin_pages/pages/user/edit-user.html:10
 #: apps/admin_pages/pages/user/index.html:103
 msgid "编辑"
@@ -1487,7 +1496,7 @@ msgstr "Name cannot be null"
 #: apps/admin_pages/pages/media/text.html:82
 #: apps/admin_pages/pages/media/video-edit.html:52
 #: apps/admin_pages/pages/media/video-edit.html:53
-#: apps/admin_pages/pages/message/email.html:44
+#: apps/admin_pages/pages/message/email.html:52
 #: apps/admin_pages/pages/message/send.html:14
 #: apps/admin_pages/pages/message/send.html:17
 #: apps/admin_pages/pages/post/index.html:46
@@ -1501,7 +1510,7 @@ msgstr "Name cannot be null"
 #: apps/admin_pages/pages/theme-setting/display/other.html:35
 #: apps/admin_pages/pages/theme-setting/display/text-edit.html:51
 #: apps/admin_pages/pages/theme-setting/display/text-edit.html:52
-#: apps/admin_pages/pages/theme-setting/display/text.html:83
+#: apps/admin_pages/pages/theme-setting/display/text.html:93
 #: apps/admin_pages/pages/theme-setting/display/video-edit.html:52
 #: apps/admin_pages/pages/theme-setting/display/video-edit.html:53
 msgid "标题"
@@ -1521,7 +1530,7 @@ msgstr "Upload time"
 #: apps/admin_pages/pages/role/index.html:33
 #: apps/admin_pages/pages/theme-setting/display/audio.html:38
 #: apps/admin_pages/pages/theme-setting/display/other.html:38
-#: apps/admin_pages/pages/theme-setting/display/text.html:87
+#: apps/admin_pages/pages/theme-setting/display/text.html:97
 #: apps/admin_pages/pages/user/index.html:53
 msgid "操作"
 msgstr "Operation"
@@ -1536,12 +1545,12 @@ msgstr "Play"
 #: apps/admin_pages/pages/media/text.html:126
 #: apps/admin_pages/pages/theme-setting/display/audio.html:69
 #: apps/admin_pages/pages/theme-setting/display/other.html:69
-#: apps/admin_pages/pages/theme-setting/display/text.html:127
+#: apps/admin_pages/pages/theme-setting/display/text.html:137
 msgid "详情|编辑"
 msgstr "Details | Edit"
 
 #: apps/admin_pages/pages/media/audio.html:119
-#: apps/admin_pages/pages/theme-setting/display/audio.html:121
+#: apps/admin_pages/pages/theme-setting/display/audio.html:124
 msgid "点击选择音频"
 msgstr "Click to select"
 
@@ -1580,7 +1589,7 @@ msgstr "Upload updates"
 #: apps/admin_pages/pages/theme-setting/display/image-edit.html:90
 #: apps/admin_pages/pages/theme-setting/display/text-edit.html:72
 #: apps/admin_pages/pages/theme-setting/display/text-edit.html:73
-#: apps/admin_pages/pages/theme-setting/display/text.html:84
+#: apps/admin_pages/pages/theme-setting/display/text.html:94
 msgid "链接"
 msgstr "Links"
 
@@ -1620,7 +1629,7 @@ msgid "编辑|详情"
 msgstr "​​Edit|Details"
 
 #: apps/admin_pages/pages/media/image.html:111
-#: apps/admin_pages/pages/theme-setting/display/image.html:113
+#: apps/admin_pages/pages/theme-setting/display/image.html:115
 msgid "点击选择图片"
 msgstr "Click to select"
 
@@ -1660,7 +1669,7 @@ msgid "文本库"
 msgstr "Text Library"
 
 #: apps/admin_pages/pages/media/text.html:85
-#: apps/admin_pages/pages/theme-setting/display/text.html:86
+#: apps/admin_pages/pages/theme-setting/display/text.html:96
 msgid "创建时间"
 msgstr "Created"
 
@@ -1680,35 +1689,47 @@ msgid "视频播放"
 msgstr "Video Playback"
 
 #: apps/admin_pages/pages/media/video.html:109
-#: apps/admin_pages/pages/theme-setting/display/video.html:111
+#: apps/admin_pages/pages/theme-setting/display/video.html:113
 msgid "点击选择视频"
 msgstr "Click to select"
 
-#: apps/admin_pages/pages/message/email.html:46
+#: apps/admin_pages/pages/message/email.html:54
 #: apps/admin_pages/pages/message/sms.html:45
 msgid "收件人"
 msgstr "Recipients"
 
-#: apps/admin_pages/pages/message/email.html:47
+#: apps/admin_pages/pages/message/email.html:55
+#: apps/admin_pages/pages/permission/url/index.html:71
+#: apps/admin_pages/pages/plugin/_edit.html:33
+#: apps/admin_pages/pages/setting/_config_edit.html:6
+#: apps/admin_pages/pages/user/index.html:249
+msgid "类型"
+msgstr "Type"
+
+#: apps/admin_pages/pages/message/email.html:56
 #: apps/admin_pages/pages/message/on-site.html:52
 #: apps/admin_pages/pages/message/sms.html:46
 #: apps/admin_pages/pages/user/index.html:250
 msgid "状态"
 msgstr "Status"
 
-#: apps/admin_pages/pages/message/email.html:48
+#: apps/admin_pages/pages/message/email.html:57
 #: apps/admin_pages/pages/message/sms.html:47
 msgid "异常|错误信息"
 msgstr "Exceptions | Error Message"
 
-#: apps/admin_pages/pages/message/email.html:71
-#: apps/admin_pages/pages/message/sms.html:64
-msgid "多用户"
-msgstr "Multi-user"
-
-#: apps/admin_pages/pages/message/email.html:147
+#: apps/admin_pages/pages/message/email.html:161
 msgid "发件人"
 msgstr "Sender"
+
+#: apps/admin_pages/pages/message/email.html:194
+#: apps/admin_pages/pages/permission/url/index.html:189
+msgid "所有"
+msgstr "All"
+
+#: apps/admin_pages/pages/message/email.html:195
+msgid "安全码"
+msgstr "Security code"
 
 #: apps/admin_pages/pages/message/on-site.html:2
 #: apps/admin_pages/pages/message/on-site.html:15
@@ -1789,6 +1810,10 @@ msgstr "Send"
 #: apps/admin_pages/pages/message/send.html:121
 msgid "确认失败,未发送"
 msgstr "Failed to confirm, not sent"
+
+#: apps/admin_pages/pages/message/sms.html:64
+msgid "多用户"
+msgstr "Multi-user"
 
 #: apps/admin_pages/pages/module/_send_code.html:3
 #: apps/admin_pages/pages/own/account/settings/email.html:32
@@ -2277,6 +2302,7 @@ msgstr "Violation content"
 
 #: apps/admin_pages/pages/own/user/post/preview.html:2
 #: apps/admin_pages/pages/own/user/post/preview.html:10
+#: apps/admin_pages/pages/theme-setting/themes.html:74
 msgid "预览"
 msgstr "Preview"
 
@@ -2472,7 +2498,7 @@ msgstr "URL & API Rights Control"
 
 #: apps/admin_pages/pages/permission/url/index.html:42
 #: apps/admin_pages/pages/theme-setting/file/add-page.html:2
-#: apps/admin_pages/pages/theme-setting/file/index.html:42
+#: apps/admin_pages/pages/theme-setting/file/index.html:52
 msgid "添加页面"
 msgstr "Add Page"
 
@@ -2494,13 +2520,6 @@ msgstr ""
 msgid "Endpoint"
 msgstr "Endpoint"
 
-#: apps/admin_pages/pages/permission/url/index.html:71
-#: apps/admin_pages/pages/plugin/_edit.html:33
-#: apps/admin_pages/pages/setting/_config_edit.html:6
-#: apps/admin_pages/pages/user/index.html:249
-msgid "类型"
-msgstr "Type"
-
 #: apps/admin_pages/pages/permission/url/index.html:89
 #: apps/admin_pages/pages/plugin/_edit.html:53
 #: apps/admin_pages/pages/plugin/_edit.html:54
@@ -2514,10 +2533,6 @@ msgstr "No"
 #: apps/admin_pages/pages/permission/url/index.html:101
 msgid "权限验证"
 msgstr "Permission verification"
-
-#: apps/admin_pages/pages/permission/url/index.html:189
-msgid "所有"
-msgstr "All"
 
 #: apps/admin_pages/pages/permission/url/index.html:190
 msgid "ApiUrl"
@@ -2869,7 +2884,7 @@ msgstr "Key cannot be empty"
 
 #: apps/admin_pages/pages/setting/config-edit.html:194
 msgid "Value不能为空"
-msgstr ""
+msgstr "Value cannot be empty"
 
 #: apps/admin_pages/pages/setting/config-edit.html:197
 msgid "的value格式错误,请检查"
@@ -3040,6 +3055,43 @@ msgstr "Management of theme settings"
 msgid "分类"
 msgstr "Categorys"
 
+#: apps/admin_pages/pages/theme-setting/nav.html:2
+#: apps/admin_pages/pages/theme-setting/nav.html:10
+#: apps/admin_pages/pages/theme-setting/themes.html:83
+msgid "菜单设置"
+msgstr "Menu Settings"
+
+#: apps/admin_pages/pages/theme-setting/display/audio.html:13
+#: apps/admin_pages/pages/theme-setting/display/image.html:14
+#: apps/admin_pages/pages/theme-setting/display/other.html:13
+#: apps/admin_pages/pages/theme-setting/display/text.html:17
+#: apps/admin_pages/pages/theme-setting/display/video.html:13
+#: apps/admin_pages/pages/theme-setting/file/index.html:16
+#: apps/admin_pages/pages/theme-setting/nav.html:23
+msgid "当前设置主题"
+msgstr "The theme being set is"
+
+#: apps/admin_pages/pages/theme-setting/nav.html:45
+#: apps/admin_pages/pages/theme-setting/nav.html:58
+msgid "排序"
+msgstr "Sorting"
+
+#: apps/admin_pages/pages/theme-setting/nav.html:47
+#: apps/admin_pages/pages/theme-setting/nav.html:60
+msgid "显示名称"
+msgstr "Display name"
+
+#: apps/admin_pages/pages/theme-setting/nav.html:49
+#: apps/admin_pages/pages/theme-setting/nav.html:62
+msgid "Json数据, 每个主题需要的格式可能不一样，根据主题要求设置"
+msgstr ""
+"Json data. The format required for each topic may be different, which can"
+" be set according to the theme requirements."
+
+#: apps/admin_pages/pages/theme-setting/nav.html:66
+msgid "更新"
+msgstr "Update"
+
 #: apps/admin_pages/pages/theme-setting/readme.html:2
 #: apps/admin_pages/pages/theme-setting/readme.html:10
 msgid "主题配置文档"
@@ -3081,11 +3133,15 @@ msgstr ""
 
 #: apps/admin_pages/pages/theme-setting/themes.html:45
 msgid "[恢复已删默认设置] 为了防止覆盖存在的设置数据, 只恢复已删除的[默认设置],"
-msgstr "[Restore del default settings] to prevent overwriting existing setting data, restore only deleted [Default settings]"
+msgstr ""
+"[Restore del default settings] to prevent overwriting existing setting "
+"data, restore only deleted [Default settings]"
 
 #: apps/admin_pages/pages/theme-setting/themes.html:49
 msgid "删除主题前请手动清理主题设置数据, 系统不会主动清理!"
-msgstr "Please clean up the theme settings data manually before deleting the theme, the system will not actively clean up"
+msgstr ""
+"Please clean up the theme settings data manually before deleting the "
+"theme, the system will not actively clean up"
 
 #: apps/admin_pages/pages/theme-setting/themes.html:63
 msgid "致命错误"
@@ -3095,28 +3151,24 @@ msgstr "Fatal Error"
 msgid "查看配置文档"
 msgstr "View config doc"
 
-#: apps/admin_pages/pages/theme-setting/themes.html:73
+#: apps/admin_pages/pages/theme-setting/themes.html:77
 msgid "已启用"
 msgstr "Enabled"
 
-#: apps/admin_pages/pages/theme-setting/themes.html:76
+#: apps/admin_pages/pages/theme-setting/themes.html:80
 #: apps/admin_pages/pages/token/rest-token.html:36
 msgid "启用"
 msgstr "Enabled"
 
-#: apps/admin_pages/pages/theme-setting/themes.html:79
-msgid "菜单设置"
-msgstr "Menu Settings"
-
-#: apps/admin_pages/pages/theme-setting/themes.html:82
+#: apps/admin_pages/pages/theme-setting/themes.html:86
 msgid "确定? 只恢复已删除的默认设置"
 msgstr "Are you sure? Restore only deleted default settings"
 
-#: apps/admin_pages/pages/theme-setting/themes.html:83
+#: apps/admin_pages/pages/theme-setting/themes.html:87
 msgid "恢复已删默认设置"
 msgstr "Restore deleted default settings"
 
-#: apps/admin_pages/pages/theme-setting/themes.html:85
+#: apps/admin_pages/pages/theme-setting/themes.html:89
 msgid "确定? 刪除前请手动清理该主题设置数据"
 msgstr ""
 "Are you sure? Please clean up the topic setting data manually before "
@@ -3150,22 +3202,22 @@ msgstr "Code Type"
 #: apps/admin_pages/pages/theme-setting/display/image-edit.html:115
 #: apps/admin_pages/pages/theme-setting/display/text-edit.html:98
 msgid "Html/Css/String"
-msgstr ""
+msgstr "Html/Css/字符串"
 
 #: apps/admin_pages/pages/theme-setting/display/image-edit.html:121
 #: apps/admin_pages/pages/theme-setting/display/text-edit.html:104
 msgid "Json/Array"
-msgstr ""
+msgstr "Json/数组"
 
 #: apps/admin_pages/pages/theme-setting/display/image-edit.html:126
 #: apps/admin_pages/pages/theme-setting/display/text-edit.html:109
 msgid "Code"
-msgstr ""
+msgstr "代码"
 
 #: apps/admin_pages/pages/theme-setting/display/image-edit.html:127
 #: apps/admin_pages/pages/theme-setting/display/text-edit.html:110
 msgid "html/array/json"
-msgstr ""
+msgstr "Html/数组/json"
 
 #: apps/admin_pages/pages/theme-setting/display/text-edit.html:2
 msgid "文本展示编辑"
@@ -3216,19 +3268,19 @@ msgstr "Current Edit"
 msgid "主题静态文件"
 msgstr "Theme Static Files"
 
-#: apps/admin_pages/pages/theme-setting/file/index.html:50
+#: apps/admin_pages/pages/theme-setting/file/index.html:60
 msgid "自添加页面)"
 msgstr "Since the page was added)"
 
-#: apps/admin_pages/pages/theme-setting/file/index.html:136
+#: apps/admin_pages/pages/theme-setting/file/index.html:148
 msgid "所有文件"
 msgstr "All Files"
 
-#: apps/admin_pages/pages/theme-setting/file/index.html:137
+#: apps/admin_pages/pages/theme-setting/file/index.html:149
 msgid "自带文件"
 msgstr "bring your own file"
 
-#: apps/admin_pages/pages/theme-setting/file/index.html:138
+#: apps/admin_pages/pages/theme-setting/file/index.html:150
 msgid "自定义文件"
 msgstr "Custom File"
 
@@ -3423,7 +3475,4 @@ msgstr "Not activated"
 #: apps/admin_pages/pages/user/index.html:286
 msgid "已移除"
 msgstr "Removed"
-
-#~ msgid "主图设置分类管理"
-#~ msgstr ""
 

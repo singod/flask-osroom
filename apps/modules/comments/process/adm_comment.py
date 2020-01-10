@@ -1,4 +1,7 @@
+#!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from bson import ObjectId
 from flask import request
 from flask_babel import gettext
@@ -8,7 +11,6 @@ from apps.modules.message.process.user_message import insert_user_msg
 from apps.utils.format.obj_format import json_to_pyseq
 from apps.app import mdbs
 from apps.core.utils.get_config import get_config
-__author__ = "Allen Woo"
 
 
 def adm_comments():

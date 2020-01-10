@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*-coding:utf-8-*-
+# @Time : 2017/11/1 ~ 2019/9/1
+# @Author : Allen Woo
 from functools import wraps
 from multiprocessing import Process
 import threading
-
-__author__ = 'Allen Woo'
 """
 decorators
 """
